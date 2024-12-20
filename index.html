@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="fr">
   <head>
+    <link rel="icon" type="image/png" href="logo.png" />
+    <link rel="apple-touch-icon" href="logo.png" />
+    <meta name="msapplication-TileImage" content="logo.png" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Babacoiffure - Plateforme de Réservation pour Coiffeurs</title>
@@ -270,6 +273,134 @@
         .hero p {
           font-size: 0.9rem;
         }
+      }
+      /* Ajoutez ces styles à votre CSS existant */
+      .hero {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle at center,
+          rgba(246, 57, 136, 0.1) 0%,
+          transparent 70%
+        );
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .email-section {
+        position: relative;
+        z-index: 2;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        will-change: transform, box-shadow;
+      }
+
+      .email-input,
+      .email-btn {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .email-section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .email-input:focus,
+      .email-btn:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(246, 57, 136, 0.4);
+      }
+
+      .feature {
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .feature:hover {
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        transform: translateY(-10px) scale(1.05);
+      }
+
+      .cta {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle at center,
+          rgba(255, 255, 255, 0.1) 0%,
+          transparent 70%
+        );
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      /* Effet de brillance subtil */
+      @keyframes shine {
+        0% {
+          background-position: -200% 0;
+        }
+        100% {
+          background-position: 200% 0;
+        }
+      }
+
+      .btn {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 200%;
+        height: 100%;
+        background: linear-gradient(
+          115deg,
+          transparent 0%,
+          rgba(255, 255, 255, 0.3) 50%,
+          transparent 100%
+        );
+        transition: all 0.5s ease;
+      }
+
+      .btn:hover::before {
+        left: 100%;
+      }
+
+      /* Effet de profondeur pour le logo */
+      .logo {
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .logo:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
       }
     </style>
   </head>
