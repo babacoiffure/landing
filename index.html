@@ -6,6 +6,11 @@
     <meta name="msapplication-TileImage" content="logo.png" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Babacoiffure - Plateforme de Réservation pour Coiffeurs"
+    />
+    <meta name="keywords" content="coiffure, réservation, coiffeurs, gestion" />
     <title>Babacoiffure - Plateforme de Réservation pour Coiffeurs</title>
     <style>
       :root {
@@ -29,6 +34,9 @@
         background-color: var(--background-blue);
         color: var(--white);
         line-height: 1.6;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Ensure body takes full height */
       }
 
       .container {
@@ -53,6 +61,9 @@
       .hero {
         text-align: center;
         padding: 4rem 0;
+        flex: 1; /* Allow hero section to grow and take available space */
+        position: relative; /* Ensure pseudo-elements are positioned correctly */
+        overflow: hidden;
       }
 
       .hero h1 {
@@ -64,6 +75,18 @@
       .hero p {
         color: var(--soft-pink);
         margin-bottom: 2rem;
+      }
+
+      .price {
+        font-size: 1.5rem;
+        color: var(--accent-yellow);
+        margin-bottom: 1.5rem;
+      }
+
+      .discount-message {
+        color: var(--soft-pink);
+        margin-top: 1rem;
+        font-weight: bold; /* Make the discount message stand out */
       }
 
       .email-section {
@@ -274,12 +297,8 @@
           font-size: 0.9rem;
         }
       }
-      /* Ajoutez ces styles à votre CSS existant */
-      .hero {
-        position: relative;
-        overflow: hidden;
-      }
 
+      /* Ajoutez ces styles à votre CSS existant */
       .hero::before {
         content: "";
         position: absolute;
@@ -412,7 +431,13 @@
     <div class="hero">
       <div class="container">
         <h1>Simplifiez Votre Activité de Coiffure</h1>
-        <p>Gestion automatisée des rendez-vous pour coiffeurs independants</p>
+        <p>Gestion automatisée des rendez-vous pour coiffeurs indépendants</p>
+        <div class="price">Prix: 14,99 €</div>
+        <!-- Price Section -->
+        <p class="discount-message" id="discountMessage">
+          Partagez votre email pour obtenir 1 mois gratuit !
+        </p>
+        <!-- Discount Message -->
 
         <form
           action="https://formspree.io/f/xqakrwyk"
@@ -425,8 +450,15 @@
             placeholder="Entrez votre email professionnel"
             class="email-input"
             required
+            aria-label="Adresse email professionnelle"
           />
-          <button type="submit" class="email-btn">Commencer</button>
+          <button
+            type="submit"
+            class="email-btn"
+            aria-label="Commencer l'inscription"
+          >
+            Commencer
+          </button>
         </form>
       </div>
     </div>
@@ -449,14 +481,6 @@
       </div>
     </div>
 
-    <!-- <div class="cta"> -->
-    <!--   <div class="container"> -->
-    <!--     <h2>Prêt à Développer Votre Entreprise de Coiffure ?</h2> -->
-    <!--     <p>Rejoignez Babacoiffure et prenez le contrôle de vos rendez-vous</p> -->
-    <!--     <a href="#" class="btn">Commencer Maintenant</a> -->
-    <!--   </div> -->
-    <!-- </div> -->
-
     <footer>
       <div class="container">
         <p>&copy; 2024 Babacoiffure. Tous droits réservés.</p>
@@ -465,11 +489,17 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        const emailInput = document.getElementById("emailInput");
-        const emailBtn = document.getElementById("emailBtn");
-        const successMessage = document.getElementById("successMessage");
+        const emailInput = document.querySelector(".email-input");
+        const emailBtn = document.querySelector(".email-btn");
+        const successMessage = document.createElement("div");
+        successMessage.className = "success-message";
+        successMessage.innerText =
+          "Email valide ! Vous avez obtenu 10 % de réduction !";
+        emailInput.parentElement.appendChild(successMessage);
 
-        emailBtn.addEventListener("click", () => {
+        emailBtn.addEventListener("click", (event) => {
+          event.preventDefault(); // Prevent form submission for validation
+
           // Validation basique de l'email
           const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -477,18 +507,27 @@
             // Email valide
             successMessage.classList.add("show");
 
+            // Show discount message
+            document.getElementById("discountMessage").style.display = "block";
+
             // Masquer le message après 3 secondes
             setTimeout(() => {
               successMessage.classList.remove("show");
+              // Optionally hide the discount message after a delay
+              // document.getElementById("discountMessage").style.display = "none";
             }, 3000);
 
-            // Vous pouvez ajouter ici l'envoi de l'email à votre backend
+            // You can add here the email submission logic to your backend
             console.log("Email valide:", emailInput.value);
           } else {
             // Email invalide
             emailInput.style.borderColor = "red";
+            successMessage.innerText = "Veuillez entrer un email valide.";
+            successMessage.classList.add("show");
+
             setTimeout(() => {
               emailInput.style.borderColor = "#F63988";
+              successMessage.classList.remove("show");
             }, 1000);
           }
         });
