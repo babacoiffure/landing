@@ -167,7 +167,7 @@
 
       .features {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-between; /* Keep the desktop view unchanged */
         padding: 3rem 0;
       }
 
@@ -238,7 +238,7 @@
 
         .features {
           flex-wrap: wrap;
-          justify-content: center;
+          justify-content: center; /* Center features on smaller screens */
         }
 
         .feature {
@@ -253,13 +253,18 @@
         }
 
         .features {
-          flex-direction: column;
+          flex-direction: column; /* Stack features vertically on mobile */
+          align-items: center; /* Center items horizontally */
         }
 
         .feature {
           margin-bottom: 1rem;
-          width: 100%;
-          flex-basis: 100%;
+          width: 100%; /* Full width on mobile */
+          flex-basis: 100%; /* Ensure each feature takes full width */
+          display: flex; /* Use flexbox for the feature items */
+          flex-direction: column; /* Stack items vertically */
+          justify-content: center; /* Center content vertically */
+          align-items: center; /* Center content horizontally */
         }
 
         .logo {
