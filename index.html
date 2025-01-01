@@ -77,12 +77,6 @@
         margin-bottom: 2rem;
       }
 
-      .price {
-        font-size: 1.5rem;
-        color: var(--accent-yellow);
-        margin-bottom: 1.5rem;
-      }
-
       .discount-message {
         color: var(--soft-pink);
         margin-top: 1rem;
@@ -249,6 +243,12 @@
 
       @media (max-width: 768px) {
         .hero h1 {
+          margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+          font-size: 1rem;
+          margin-bottom: 1.5rem;
           font-size: 1.5rem;
         }
 
@@ -259,7 +259,7 @@
 
         .feature {
           margin-bottom: 1rem;
-          width: 100%; /* Full width on mobile */
+          width: 90%; /* Slightly reduce width for better spacing */
           flex-basis: 100%; /* Ensure each feature takes full width */
           display: flex; /* Use flexbox for the feature items */
           flex-direction: column; /* Stack items vertically */
@@ -268,22 +268,25 @@
         }
 
         .logo {
-          max-width: 200px;
+          max-width: 150px; /* Reduce logo size for smaller screens */
         }
 
         .email-section {
           flex-direction: column;
+          padding: 0 10px; /* Add padding for better spacing */
           width: 100%;
         }
 
         .email-input {
           width: 100%;
           border-radius: 30px;
+          padding: 10px 12px; /* Adjust padding for better touch targets */
           margin-bottom: 1rem;
         }
 
         .email-btn {
           border-radius: 30px;
+          padding: 10px 20px; /* Adjust padding for better touch targets */
           width: 100%;
         }
       }
@@ -295,11 +298,19 @@
         }
 
         .hero {
-          padding: 2rem 0;
+          padding: 1.5rem 0; /* Reduce padding for smaller screens */
+        }
+
+        .hero h1 {
+          font-size: 1.2rem; /* Further reduce font size for very small screens */
         }
 
         .hero p {
-          font-size: 0.9rem;
+          font-size: 0.85rem; /* Adjust font size for better readability */
+        }
+
+        .discount-message {
+          font-size: 0.8rem; /* Adjust font size for better readability */
         }
       }
 
@@ -428,29 +439,78 @@
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
       }
 
-      /* Center iframe container */
-      .iframe-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
       .hero-content {
         display: flex;
-        justify-content: space-between; /* Space between the text section and iframe */
-        align-items: flex-start; /* Align items at the start */
+        justify-content: center; /* Center content horizontally */
+        align-items: center; /* Center content vertically */
         flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        height: 100%; /* Ensure it takes full height of the hero section */
+      }
+
+      /* Mobile layout */
+      @media (max-width: 768px) {
+        .hero-content {
+          flex-direction: column; /* Stack items vertically on mobile */
+          align-items: stretch; /* Stretch items to full width */
+        }
+
+        .text-section {
+          width: 100%; /* Full width on mobile */
+          margin-bottom: 1rem; /* Add some space between the text section and iframe */
+        }
+
+        .email-section {
+          width: 100%; /* Ensure the form takes full width */
+        }
+
+        .iframe-container {
+          width: 100%; /* Full width on mobile */
+        }
+      }
+
+      /* Desktop layout */
+      @media (min-width: 769px) {
+        .hero-content {
+          flex-direction: row; /* Align items in a row on larger screens */
+        }
+
+        .text-section {
+          flex: 1; /* Allow text section to grow */
+          max-width: 50%; /* Set a max width for the text section */
+          padding-right: 20px; /* Space between text and iframe */
+        }
+
+        .iframe-container {
+          flex: 1; /* Allow iframe section to grow */
+          max-width: 50%; /* Set a max width for the iframe section */
+        }
       }
 
       .text-section {
         flex: 1; /* Allow this section to grow */
         max-width: 50%; /* Set a max width for the text section */
         padding-right: 20px; /* Add some space between text and iframe */
+        display: flex; /* Use flexbox for vertical centering */
+        flex-direction: column; /* Stack items vertically */
+        justify-content: center; /* Center content vertically */
       }
 
       .iframe-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         flex: 1; /* Allow iframe section to grow */
         max-width: 50%; /* Set a max width for the iframe section */
+        display: flex;
+        justify-content: center; /* Center iframe horizontally */
+        align-items: center; /* Center iframe vertically */
+      }
+
+      iframe {
+        height: 70vh; /* Set height to 70% of the viewport height */
+        max-height: 800px; /* Set a max height for the iframe */
+        width: 100%; /* Make iframe responsive */
+        border: none; /* Remove default border */
       }
     </style>
   </head>
@@ -492,13 +552,12 @@
         </div>
 
         <!-- Figma Prototype Integration -->
-        <iframe
-          class="iframe-container"
-          height="800"
-          width="450"
-          src="https://embed.figma.com/proto/akA44FXMBtjXnQMRIiv1B8/Baba-Hairstyle---Professional---Client-Source?page-id=1%3A3&node-id=383-212&viewport=596%2C1398%2C0.33&scaling=contain&content-scaling=fixed&starting-point-node-id=383%3A212&embed-host=share"
-          allowfullscreen
-        ></iframe>
+        <div class="iframe-container">
+          <iframe
+            src="https://embed.figma.com/proto/akA44FXMBtjXnQMRIiv1B8/Baba-Hairstyle---Professional---Client-Source?page-id=1%3A3&node-id=383-212&viewport=596%2C1398%2C0.33&scaling=contain&content-scaling=fixed&starting-point-node-id=383%3A212&embed-host=share"
+            allowfullscreen
+          ></iframe>
+        </div>
       </div>
     </div>
 
@@ -527,6 +586,23 @@
     </footer>
 
     <script>
+      // Function to adjust the iframe height dynamically
+      function adjustIframeHeight() {
+        const iframe = document.querySelector("iframe");
+        const heroHeight = document.querySelector(".hero").clientHeight;
+        iframe.style.height = `${heroHeight * 0.7}px`; // Set iframe height to 70% of hero section height
+      }
+
+      // Adjust on load
+      window.addEventListener("load", () => {
+        adjustIframeHeight();
+      });
+
+      // Adjust on resize
+      window.addEventListener("resize", () => {
+        adjustIframeHeight();
+      });
+
       document.addEventListener("DOMContentLoaded", () => {
         const emailInput = document.querySelector(".email-input");
         const emailBtn = document.querySelector(".email-btn");
