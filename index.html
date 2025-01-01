@@ -427,6 +427,31 @@
         transform: scale(1.05);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
       }
+
+      /* Center iframe container */
+      .iframe-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .hero-content {
+        display: flex;
+        justify-content: space-between; /* Space between the text section and iframe */
+        align-items: flex-start; /* Align items at the start */
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+      }
+
+      .text-section {
+        flex: 1; /* Allow this section to grow */
+        max-width: 50%; /* Set a max width for the text section */
+        padding-right: 20px; /* Add some space between text and iframe */
+      }
+
+      .iframe-container {
+        flex: 1; /* Allow iframe section to grow */
+        max-width: 50%; /* Set a max width for the iframe section */
+      }
     </style>
   </head>
   <body>
@@ -435,37 +460,45 @@
     </header>
 
     <div class="hero">
-      <div class="container">
-        <h1>Simplifiez Votre Activité de Coiffure</h1>
-        <p>Gestion automatisée des rendez-vous pour coiffeurs indépendants</p>
-        <div class="price">Prix: 13,99 €</div>
-        <!-- Price Section -->
-        <p class="discount-message" id="discountMessage">
-          Partagez votre email pour obtenir 1 mois gratuit !
-        </p>
-        <!-- Discount Message -->
+      <h1>Simplifiez Votre Activité de Coiffure</h1>
+      <p>Gestion automatisée des rendez-vous pour coiffeurs indépendants</p>
+      <div class="container hero-content">
+        <div class="text-section">
+          <p class="discount-message" id="discountMessage">
+            Partagez votre email pour obtenir 1 mois gratuit !
+          </p>
 
-        <form
-          action="https://formspree.io/f/xqakrwyk"
-          method="POST"
-          class="email-section"
-        >
-          <input
-            type="email"
-            name="email"
-            placeholder="Entrez votre email professionnel"
-            class="email-input"
-            required
-            aria-label="Adresse email professionnelle"
-          />
-          <button
-            type="submit"
-            class="email-btn"
-            aria-label="Commencer l'inscription"
+          <form
+            action="https://formspree.io/f/xqakrwyk"
+            method="POST"
+            class="email-section"
           >
-            Commencer
-          </button>
-        </form>
+            <input
+              type="email"
+              name="email"
+              placeholder="Entrez votre email professionnel"
+              class="email-input"
+              required
+              aria-label="Adresse email professionnelle"
+            />
+            <button
+              type="submit"
+              class="email-btn"
+              aria-label="Commencer l'inscription"
+            >
+              Commencer
+            </button>
+          </form>
+        </div>
+
+        <!-- Figma Prototype Integration -->
+        <iframe
+          class="iframe-container"
+          height="800"
+          width="450"
+          src="https://embed.figma.com/proto/akA44FXMBtjXnQMRIiv1B8/Baba-Hairstyle---Professional---Client-Source?page-id=1%3A3&node-id=383-212&viewport=596%2C1398%2C0.33&scaling=contain&content-scaling=fixed&starting-point-node-id=383%3A212&embed-host=share"
+          allowfullscreen
+        ></iframe>
       </div>
     </div>
 
@@ -519,8 +552,6 @@
             // Masquer le message après 3 secondes
             setTimeout(() => {
               successMessage.classList.remove("show");
-              // Optionally hide the discount message after a delay
-              // document.getElementById("discountMessage").style.display = "none";
             }, 3000);
 
             // You can add here the email submission logic to your backend
