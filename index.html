@@ -552,12 +552,12 @@
         </div>
 
         <!-- Figma Prototype Integration -->
-        <div class="iframe-container">
-          <iframe
-            src="https://embed.figma.com/proto/akA44FXMBtjXnQMRIiv1B8/Baba-Hairstyle---Professional---Client-Source?page-id=1%3A3&node-id=383-212&viewport=596%2C1398%2C0.33&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=383%3A212&embed-host=share"
-            allowfullscreen
-          ></iframe>
-        </div>
+        <!-- <div class="iframe-container"> -->
+        <!--   <iframe -->
+        <!--     src="https://embed.figma.com/proto/akA44FXMBtjXnQMRIiv1B8/Baba-Hairstyle---Professional---Client-Source?page-id=1%3A3&node-id=383-212&viewport=596%2C1398%2C0.33&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=383%3A212&embed-host=share" -->
+        <!--     allowfullscreen -->
+        <!--   ></iframe> -->
+        <!-- </div> -->
       </div>
     </div>
 
@@ -613,27 +613,30 @@
         emailInput.parentElement.appendChild(successMessage);
 
         emailBtn.addEventListener("click", (event) => {
-          event.preventDefault(); // Prevent form submission for validation
+          // Prevent form submission for validation
+          event.preventDefault();
 
-          // Validation basique de l'email
+          // Basic email validation
           const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
           if (emailRegex.test(emailInput.value)) {
-            // Email valide
+            // Email is valid
             successMessage.classList.add("show");
 
             // Show discount message
             document.getElementById("discountMessage").style.display = "block";
 
-            // Masquer le message après 3 secondes
+            // Hide the message after 3 seconds
             setTimeout(() => {
               successMessage.classList.remove("show");
             }, 3000);
 
-            // You can add here the email submission logic to your backend
+            // Submit the form programmatically
+            emailInput.form.submit(); // This submits the form
+
             console.log("Email valide:", emailInput.value);
           } else {
-            // Email invalide
+            // Email is invalid
             emailInput.style.borderColor = "red";
             successMessage.innerText = "Veuillez entrer un email valide.";
             successMessage.classList.add("show");
