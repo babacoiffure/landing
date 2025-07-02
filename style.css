@@ -1,12 +1,12 @@
 :root {
 	--primary-red: #f63988;
-	--primary-yellow: #ffcc00;
+	--primary-yellow: #FBC217;
 	--background-blue: #0502a7;
 	--soft-gray: #f3f2f3;
 	--white: #ffffff;
 	--dark-text: #1c1d22;
 	--soft-pink: #ebacca;
-	--accent-yellow: #ffcc00;
+	--accent-yellow: #FBC217;
 }
 
 * {
@@ -157,6 +157,13 @@ header {
 	gap: 15px;
 }
 
+@media (min-width: 769px) {
+	.app-badges-container {
+		flex-direction: row;
+		justify-content: center;
+	}
+}
+
 .app-badges-container>a {
 	display: flex;
 	align-items: center;
@@ -170,13 +177,13 @@ header {
 	width: auto;
 }
 
-.btn,
-.btn-disabled {
+.app-badges-container .btn,
+.app-badges-container .btn-disabled {
 	margin: 0;
 	padding: 12px 25px;
 	border-radius: 30px;
 	font-weight: bold;
-	color: white;
+	color: #00023B;
 }
 
 .btn {
@@ -184,12 +191,10 @@ header {
 	transition: background-color 0.3s ease;
 }
 
-.btn:hover {
-	background-color: var(--accent-yellow);
-	color: var(--dark-text);
-}
+
 
 .btn-disabled {
+	background-color: #D6A529;
 	color: white;
 	opacity: 0.7;
 	cursor: default;
@@ -271,27 +276,8 @@ header {
 }
 
 .btn {
-	position: relative;
-	overflow: hidden;
-}
 
-.btn::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: -100%;
-	width: 200%;
-	height: 100%;
-	background: linear-gradient(115deg,
-			transparent 0%,
-			rgba(255, 255, 255, 0.3) 50%,
-			transparent 100%);
-	transition: all 0.5s ease;
-}
 
-.btn:hover::before {
-	left: 100%;
-}
 
 footer {
 	background-color: rgba(255, 255, 255, 0.1);
@@ -325,7 +311,6 @@ footer {
 	.hero p {
 		font-size: 1rem;
 		margin-bottom: 1.5rem;
-		font-size: 1.5rem;
 	}
 
 	.features {
