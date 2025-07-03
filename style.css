@@ -279,6 +279,20 @@ header {
 
 
 
+}
+
+@media (max-width: 480px) {
+	.app-badges-container {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+	.app-badges-container .btn,
+	.app-badges-container .btn-disabled {
+		padding: 10px 20px;
+	}
+}
+
 footer {
 	background-color: rgba(255, 255, 255, 0.1);
 	text-align: center;
