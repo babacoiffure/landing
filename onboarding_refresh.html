@@ -2,395 +2,227 @@
 <html lang="fr">
 
 <head>
-    <link rel="icon" type="image/png" href="logo.png" />
-    <link rel="apple-touch-icon" href="logo.png" />
-    <meta name="msapplication-TileImage" content="logo.png" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Babacoiffure - Reprendre la configuration de votre compte" />
-    <meta name="keywords" content="paiement, compte, coiffure, réservation, coiffeurs, gestion" />
-    <title>Reprendre la Configuration - Babacoiffure</title>
-    <style>
-        :root {
-            --primary-red: #f63988;
-            --background-blue: #0502a7;
-            --soft-gray: #f3f2f3;
-            --white: #ffffff;
-            --dark-text: #1c1d22;
-            --soft-pink: #ebacca;
-            --accent-yellow: #ffcc00;
-            --alert-orange: #FF9800;
-        }
+	<!-- Essential Meta Tags -->
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Babacoiffure - Reprendre la configuration de votre compte et finaliser l'inscription Stripe" />
+	<meta name="keywords" content="paiement, compte, configuration, stripe, coiffure, réservation, coiffeurs, gestion" />
+	<meta name="author" content="Babacoiffure" />
+	<meta name="robots" content="noindex, nofollow" />
+	
+	<!-- Open Graph Meta Tags -->
+	<meta property="og:title" content="Configuration à Compléter - Babacoiffure" />
+	<meta property="og:description" content="Finalisez la configuration de votre compte pour recevoir des paiements" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://babacoiffure.com/onboarding_refresh.html" />
+	<meta property="og:image" content="logo.png" />
+	
+	<!-- Twitter Card Meta Tags -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Configuration à Compléter - Babacoiffure" />
+	<meta name="twitter:description" content="Finalisez la configuration de votre compte pour recevoir des paiements" />
+	<meta name="twitter:image" content="logo.png" />
+	
+	<title>Configuration à Compléter - Babacoiffure</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: "Arial", sans-serif;
-            background-color: var(--background-blue);
-            color: var(--white);
-            line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        header {
-            padding: 2rem 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .logo {
-            max-width: 250px;
-            height: auto;
-            filter: brightness(0) invert(1);
-            transition:
-                transform 0.3s ease,
-                box-shadow 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .hero {
-            text-align: center;
-            padding: 4rem 0;
-            flex: 1;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--white);
-        }
-
-        .hero p {
-            color: var(--soft-pink);
-            margin-bottom: 2rem;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at center,
-                    rgba(246, 57, 136, 0.1) 0%,
-                    transparent 70%);
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-red);
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-            margin-bottom: 1rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn:hover {
-            background-color: var(--accent-yellow);
-            color: var(--dark-text);
-        }
-
-        .btn::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 200%;
-            height: 100%;
-            background: linear-gradient(115deg,
-                    transparent 0%,
-                    rgba(255, 255, 255, 0.3) 50%,
-                    transparent 100%);
-            transition: all 0.5s ease;
-        }
-
-        .btn:hover::before {
-            left: 100%;
-        }
-
-        .refresh-section {
-            margin: 2rem 0;
-            padding: 2rem;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition:
-                transform 0.3s ease,
-                box-shadow 0.3s ease;
-            text-align: center;
-        }
-
-        .refresh-section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .refresh-icon {
-            font-size: 6rem;
-            color: var(--alert-orange);
-            margin-bottom: 1.5rem;
-            display: inline-block;
-            animation: spin 5s infinite linear;
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        .refresh-section h2 {
-            color: var(--primary-red);
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .info-section {
-            margin: 2rem 0;
-            padding: 2rem;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .info-item {
-            margin-bottom: 1.5rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding-bottom: 1rem;
-        }
-
-        .info-item h3 {
-            color: var(--white);
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-        }
-
-        .info-item h3:before {
-            content: "ℹ️";
-            margin-right: 10px;
-            color: var(--alert-orange);
-        }
-
-        .info-item p {
-            margin-bottom: 1rem;
-        }
-
-        .info-item ul {
-            margin-left: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .info-item li {
-            margin-bottom: 0.5rem;
-        }
-
-        .nav-buttons {
-            display: flex;
-            justify-content: center;
-            margin-top: 2rem;
-        }
-
-        .nav-buttons .btn {
-            margin: 0 10px;
-        }
-
-        footer {
-            background-color: rgba(255, 255, 255, 0.1);
-            text-align: center;
-            padding: 1.5rem 0;
-            color: var(--white);
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            margin-top: auto;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .logo {
-                max-width: 150px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                width: 95%;
-                padding: 0 10px;
-            }
-
-            .hero h1 {
-                font-size: 1.5rem;
-            }
-
-            .refresh-section {
-                padding: 1.5rem;
-            }
-
-            .nav-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .nav-buttons .btn {
-                margin: 5px 0;
-                width: 100%;
-                text-align: center;
-            }
-        }
-    </style>
+	<!-- Favicon and App Icons -->
+	<link rel="icon" type="image/png" href="logo.png" />
+	<link rel="apple-touch-icon" href="logo.png" />
+	<meta name="msapplication-TileImage" content="logo.png" />
+	
+	<!-- Preload Critical Resources -->
+	<link rel="preload" href="https://cdn.tailwindcss.com" as="script" />
+	<link rel="preload" href="logo.png" as="image" />
+	
+	<!-- Tailwind CSS CDN for rapid prototyping. For production, migrate to a build process. -->
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+	  tailwind.config = {
+	    theme: {
+	      extend: {
+	        colors: {
+	          primary: {
+	            red: '#f63988',
+	            yellow: '#FBC217',
+	          },
+	          background: {
+	            blue: '#0502a7',
+	          },
+	          soft: {
+	            gray: '#f3f2f3',
+	            pink: '#ebacca',
+	          },
+	          dark: {
+	            text: '#1c1d22',
+	          },
+	          alert: {
+	            orange: '#FF9800',
+	          },
+	        },
+	        fontFamily: {
+	          heading: ['Impact', 'Arial Black', 'sans-serif'],
+	          body: ['Outfit', 'Arial', 'sans-serif'],
+	        },
+	        animation: {
+	          'spin-slow': 'spin 5s linear infinite',
+	        },
+	      },
+	    },
+	  }
+	</script>
 </head>
 
-<body>
-    <header>
-        <a href="index.html">
-            <img src="logo.png" alt="Babacoiffure Logo" class="logo" />
-        </a>
-    </header>
+<body class="bg-background-blue text-white font-body min-h-screen flex flex-col">
+	<!-- Responsive header with logo -->
+	<header class="w-full flex flex-row items-center justify-center px-4 md:px-12 py-4 md:py-8 bg-background-blue" role="banner">
+	  <a href="index.html" class="flex-shrink-0 flex items-center">
+	    <img src="logo.png" alt="Babacoiffure Logo" class="h-12 md:h-20 w-auto filter brightness-0 invert transition-transform duration-300 hover:scale-105 hover:shadow-lg" loading="eager" />
+	  </a>
+	</header>
 
-    <div class="hero">
-        <div class="container">
-            <h1>Configuration à Compléter</h1>
-            <p>Il reste quelques étapes à finaliser pour connecter votre compte de paiement</p>
-        </div>
-    </div>
+	<main class="flex-1">
+		<!-- Hero Section -->
+		<section class="hero w-full flex flex-col items-center justify-center text-center py-12 md:py-20 flex-1 relative overflow-hidden bg-background-blue" role="banner" aria-labelledby="hero-title">
+			<div class="relative z-10">
+				<h1 id="hero-title" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-4 md:mb-6 text-white leading-tight md:leading-tight">Configuration à Compléter</h1>
+				<p class="text-base sm:text-lg md:text-xl lg:text-2xl text-soft-pink mb-6 md:mb-10 max-w-2xl mx-auto">Il reste quelques étapes à finaliser pour connecter votre compte de paiement</p>
+			</div>
+			<!-- Background gradient effect -->
+			<div class="absolute inset-0 bg-gradient-to-br from-primary-red/10 via-transparent to-primary-red/5 pointer-events-none"></div>
+		</section>
 
-    <div class="container">
-        <div class="refresh-section">
-            <div class="refresh-icon">⟳</div>
-            <h2>Configuration à Finaliser</h2>
-            <p>La configuration de votre compte Stripe n'est pas encore terminée. Pour recevoir des paiements via
-                Babacoiffure, vous devez compléter toutes les étapes du processus d'inscription.</p>
-            <button class="btn" id="continueBtn" style="margin-top: 1.5rem;">Continuer la Configuration</button>
-        </div>
+		<!-- Configuration Content Section -->
+		<section class="w-full max-w-4xl mx-auto px-4 sm:px-6 py-10 md:py-16" role="region" aria-labelledby="config-title">
+			<div class="bg-background-blue/90 border-2 border-alert-orange rounded-3xl p-8 shadow-lg transition-transform duration-200 hover:shadow-xl hover:-translate-y-1 text-center">
+				<div class="text-6xl mb-6 animate-spin-slow" aria-hidden="true">⟳</div>
+				<h2 id="config-title" class="text-3xl md:text-4xl font-heading font-bold text-alert-orange text-center mb-6 tracking-tight drop-shadow-lg">Configuration à Finaliser</h2>
+				<p class="text-soft-gray text-base md:text-lg leading-relaxed mb-8">La configuration de votre compte Stripe n'est pas encore terminée. Pour recevoir des paiements via Babacoiffure, vous devez compléter toutes les étapes du processus d'inscription.</p>
+				<button id="continueBtn" class="bg-primary-yellow text-black font-bold rounded-full px-6 py-3 transition-colors shadow-lg hover:bg-primary-red hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue">Continuer la Configuration</button>
+			</div>
 
-        <div class="info-section">
-            <h2>Pourquoi est-ce important ?</h2>
+			<!-- Information Section -->
+			<div class="mt-8 bg-background-blue/90 border-2 border-primary-yellow rounded-3xl p-8 shadow-lg transition-transform duration-200 hover:shadow-xl hover:-translate-y-1">
+				<h3 class="text-2xl md:text-3xl font-heading font-bold text-primary-yellow text-center mb-8 tracking-tight drop-shadow-lg">Pourquoi est-ce important ?</h3>
+				
+				<div class="space-y-6">
+					<div class="info-item border-b border-soft-gray/20 pb-6">
+						<h4 class="text-xl md:text-2xl font-heading font-bold mb-4 text-primary-red flex items-center">
+							<span class="text-2xl mr-3" aria-hidden="true">ℹ️</span>
+							Recevoir des paiements
+						</h4>
+						<p class="text-soft-gray text-base md:text-lg leading-relaxed">Pour pouvoir recevoir des paiements de vos clients via notre plateforme, vous devez disposer d'un compte Stripe correctement configuré.</p>
+					</div>
 
-            <div class="info-item">
-                <h3>Recevoir des paiements</h3>
-                <p>Pour pouvoir recevoir des paiements de vos clients via notre plateforme, vous devez disposer d'un
-                    compte Stripe correctement configuré.</p>
-            </div>
+					<div class="info-item border-b border-soft-gray/20 pb-6">
+						<h4 class="text-xl md:text-2xl font-heading font-bold mb-4 text-primary-red flex items-center">
+							<span class="text-2xl mr-3" aria-hidden="true">ℹ️</span>
+							Les informations requises
+						</h4>
+						<p class="text-soft-gray text-base md:text-lg leading-relaxed mb-4">Pour finaliser la configuration, vous devrez fournir :</p>
+						<ul class="text-soft-gray text-base md:text-lg leading-relaxed ml-6 space-y-2">
+							<li class="flex items-start">
+								<span class="text-primary-red mr-2 mt-1" aria-hidden="true">•</span>
+								Vos informations personnelles
+							</li>
+							<li class="flex items-start">
+								<span class="text-primary-red mr-2 mt-1" aria-hidden="true">•</span>
+								Les détails de votre entreprise (si applicable)
+							</li>
+							<li class="flex items-start">
+								<span class="text-primary-red mr-2 mt-1" aria-hidden="true">•</span>
+								Vos coordonnées bancaires pour recevoir vos fonds
+							</li>
+							<li class="flex items-start">
+								<span class="text-primary-red mr-2 mt-1" aria-hidden="true">•</span>
+								Une pièce d'identité valide pour vérification
+							</li>
+						</ul>
+					</div>
 
-            <div class="info-item">
-                <h3>Les informations requises</h3>
-                <p>Pour finaliser la configuration, vous devrez fournir :</p>
-                <ul>
-                    <li>Vos informations personnelles</li>
-                    <li>Les détails de votre entreprise (si applicable)</li>
-                    <li>Vos coordonnées bancaires pour recevoir vos fonds</li>
-                    <li>Une pièce d'identité valide pour vérification</li>
-                </ul>
-            </div>
+					<div class="info-item border-b border-soft-gray/20 pb-6">
+						<h4 class="text-xl md:text-2xl font-heading font-bold mb-4 text-primary-red flex items-center">
+							<span class="text-2xl mr-3" aria-hidden="true">ℹ️</span>
+							Sécurité et confidentialité
+						</h4>
+						<p class="text-soft-gray text-base md:text-lg leading-relaxed">Vos informations sont transmises directement à Stripe de manière sécurisée. Babacoiffure n'a pas accès à vos informations bancaires ou à vos documents d'identité.</p>
+					</div>
 
-            <div class="info-item">
-                <h3>Sécurité et confidentialité</h3>
-                <p>Vos informations sont transmises directement à Stripe de manière sécurisée. Babacoiffure n'a pas
-                    accès à vos informations bancaires ou à vos documents d'identité.</p>
-            </div>
+					<div class="info-item">
+						<h4 class="text-xl md:text-2xl font-heading font-bold mb-4 text-primary-red flex items-center">
+							<span class="text-2xl mr-3" aria-hidden="true">ℹ️</span>
+							Besoin d'aide ?
+						</h4>
+						<p class="text-soft-gray text-base md:text-lg leading-relaxed">Si vous rencontrez des difficultés pendant le processus d'inscription, n'hésitez pas à contacter notre support à <a href="mailto:admin@babacoiffure.com" class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded transition-all px-1">admin@babacoiffure.com</a>.</p>
+					</div>
+				</div>
+			</div>
 
-            <div class="info-item">
-                <h3>Besoin d'aide ?</h3>
-                <p>Si vous rencontrez des difficultés pendant le processus d'inscription, n'hésitez pas à contacter
-                    notre support à <a href="mailto:admin@babacoiffure.com"
-                        style="color: var(--primary-red);">admin@babacoiffure.com</a>.</p>
-            </div>
-        </div>
+			<!-- Navigation Buttons -->
+			<div class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8">
+				<a href="index.html" class="bg-primary-yellow text-black font-bold rounded-full px-6 py-3 transition-colors shadow-lg hover:bg-primary-red hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue">Retour à l'accueil</a>
+				<a href="support.html" class="bg-primary-yellow text-black font-bold rounded-full px-6 py-3 transition-colors shadow-lg hover:bg-primary-red hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue">Besoin d'aide ?</a>
+			</div>
+		</section>
+	</main>
 
-        <div class="nav-buttons">
-            <a href="index.html" class="btn">Retour à l'accueil</a>
-            <a href="support.html" class="btn">Besoin d'aide ?</a>
-        </div>
-    </div>
+	<footer class="bg-background-blue w-full py-8 px-4 sm:px-8 mt-auto" role="contentinfo">
+		<div class="max-w-4xl mx-auto flex flex-col items-center justify-center">
+			<p class="text-center text-soft-gray text-sm md:text-base leading-relaxed">
+				&copy; 2024 Babacoiffure. Tous droits réservés.
+			</p>
+			<nav class="mt-3 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4" role="navigation" aria-label="Footer navigation">
+				<a href="terms.html" class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded transition-all px-2 py-1">Conditions d'Utilisation</a>
+				<span class="hidden sm:inline-block text-soft-gray" aria-hidden="true">|</span>
+				<a href="support.html" class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded transition-all px-2 py-1">Support</a>
+				<span class="hidden sm:inline-block text-soft-gray" aria-hidden="true">|</span>
+				<a href="privacy.html" class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded transition-all px-2 py-1">Politique de Confidentialité</a>
+			</nav>
+		</div>
+	</footer>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Babacoiffure. Tous droits réservés. | <a href="terms.html"
-                    style="color: var(--primary-red); text-decoration: none;">Conditions d'Utilisation</a> | <a
-                    href="support.html" style="color: var(--primary-red); text-decoration: none;">Support</a> | <a
-                    href="privacy.html" style="color: var(--primary-red); text-decoration: none;">Politique de
-                    Confidentialité</a></p>
-        </div>
-    </footer>
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+			// Get account ID from URL parameters
+			const urlParams = new URLSearchParams(window.location.search);
+			const accountId = urlParams.get('accountId');
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            // Get account ID from URL parameters
-            const urlParams = new URLSearchParams(window.location.search);
-            const accountId = urlParams.get('accountId');
+			// Animation for info items
+			const infoItems = document.querySelectorAll('.info-item');
+			infoItems.forEach((item, index) => {
+				item.style.opacity = '0';
+				item.style.transform = 'translateY(20px)';
+				item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
 
-            // Animation for info items
-            const infoItems = document.querySelectorAll('.info-item');
-            infoItems.forEach((item, index) => {
-                item.style.opacity = '0';
-                item.style.transform = 'translateY(20px)';
-                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+				setTimeout(() => {
+					item.style.opacity = '1';
+					item.style.transform = 'translateY(0)';
+				}, 300 + (100 * index));
+			});
 
-                setTimeout(() => {
-                    item.style.opacity = '1';
-                    item.style.transform = 'translateY(0)';
-                }, 300 + (100 * index));
-            });
+			// Continue button functionality
+			const continueBtn = document.getElementById('continueBtn');
+			if (continueBtn) {
+				continueBtn.addEventListener('click', async function (e) {
+					e.preventDefault();
 
-            // Continue button functionality
-            const continueBtn = document.getElementById('continueBtn');
-            if (continueBtn) {
-                continueBtn.addEventListener('click', async function (e) {
-                    e.preventDefault();
+					// If we have an account ID, use it to restart onboarding
+					if (accountId) {
+						// In a real implementation, this would call your API to generate a new account link
+						console.log('Continuing onboarding for account:', accountId);
+						alert(`Vous allez être redirigé vers le formulaire d'inscription Stripe pour finaliser la configuration de votre compte.`);
 
-                    // If we have an account ID, use it to restart onboarding
-                    if (accountId) {
-                        // In a real implementation, this would call your API to generate a new account link
-                        console.log('Continuing onboarding for account:', accountId);
-                        alert(`Vous allez être redirigé vers le formulaire d'inscription Stripe pour finaliser la configuration de votre compte.`);
-
-                        // Typically you would call your backend here to generate a new account link
-                        // window.location.href = `/api/create-account-link?accountId=${accountId}`;
-                    } else {
-                        // If no account ID was passed, redirect to the homepage or a sign-up page
-                        console.log('No account ID found, redirecting to homepage');
-                        alert('Aucun compte trouvé. Vous allez être redirigé vers la page d\'accueil.');
-                        window.location.href = 'index.html';
-                    }
-                });
-            }
-        });
-    </script>
+						// Typically you would call your backend here to generate a new account link
+						// window.location.href = `/api/create-account-link?accountId=${accountId}`;
+					} else {
+						// If no account ID was passed, redirect to the homepage or a sign-up page
+						console.log('No account ID found, redirecting to homepage');
+						alert('Aucun compte trouvé. Vous allez être redirigé vers la page d\'accueil.');
+						window.location.href = 'index.html';
+					}
+				});
+			}
+		});
+	</script>
 </body>
 
 </html>

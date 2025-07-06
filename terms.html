@@ -2,410 +2,262 @@
 <html lang="fr">
 
 <head>
-    <link rel="icon" type="image/png" href="logo.png" />
-    <link rel="apple-touch-icon" href="logo.png" />
-    <meta name="msapplication-TileImage" content="logo.png" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Conditions d'Utilisation - Babacoiffure - Termes et conditions générales" />
-    <meta name="keywords" content="conditions, utilisation, termes, EULA, coiffure, réservation, coiffeurs, gestion" />
-    <title>Conditions d'Utilisation - Babacoiffure</title>
-    <style>
-        :root {
-            --primary-red: #f63988;
-            --background-blue: #0502a7;
-            --soft-gray: #f3f2f3;
-            --white: #ffffff;
-            --dark-text: #1c1d22;
-            --soft-pink: #ebacca;
-            --accent-yellow: #ffcc00;
-        }
+	<!-- Essential Meta Tags -->
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Conditions d'Utilisation - Babacoiffure - Termes et conditions générales pour l'utilisation de notre plateforme de réservation de coiffeurs" />
+	<meta name="keywords" content="conditions, utilisation, termes, EULA, coiffure, réservation, coiffeurs, gestion" />
+	<meta name="author" content="Babacoiffure" />
+	<meta name="robots" content="index, follow" />
+	
+	<!-- Open Graph Meta Tags -->
+	<meta property="og:title" content="Conditions d'Utilisation - Babacoiffure" />
+	<meta property="og:description" content="Termes et conditions générales pour l'utilisation de notre plateforme de réservation de coiffeurs" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://babacoiffure.com/terms.html" />
+	<meta property="og:image" content="logo.png" />
+	
+	<!-- Twitter Card Meta Tags -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Conditions d'Utilisation - Babacoiffure" />
+	<meta name="twitter:description" content="Termes et conditions générales pour l'utilisation de notre plateforme de réservation de coiffeurs" />
+	<meta name="twitter:image" content="logo.png" />
+	
+	<title>Conditions d'Utilisation - Babacoiffure</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: "Arial", sans-serif;
-            background-color: var(--background-blue);
-            color: var(--white);
-            line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        header {
-            padding: 2rem 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .logo {
-            max-width: 250px;
-            height: auto;
-            filter: brightness(0) invert(1);
-            transition:
-                transform 0.3s ease,
-                box-shadow 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .hero {
-            text-align: center;
-            padding: 4rem 0;
-            flex: 1;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--white);
-        }
-
-        .hero p {
-            color: var(--soft-pink);
-            margin-bottom: 2rem;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at center,
-                    rgba(246, 57, 136, 0.1) 0%,
-                    transparent 70%);
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-red);
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-            margin-bottom: 1rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn:hover {
-            background-color: var(--accent-yellow);
-            color: var(--dark-text);
-        }
-
-        .btn::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 200%;
-            height: 100%;
-            background: linear-gradient(115deg,
-                    transparent 0%,
-                    rgba(255, 255, 255, 0.3) 50%,
-                    transparent 100%);
-            transition: all 0.5s ease;
-        }
-
-        .btn:hover::before {
-            left: 100%;
-        }
-
-        .terms-section {
-            margin: 2rem 0;
-            padding: 2rem;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition:
-                transform 0.3s ease,
-                box-shadow 0.3s ease;
-        }
-
-        .terms-section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .terms-section h2 {
-            color: var(--primary-red);
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .terms-item {
-            margin-bottom: 1.5rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding-bottom: 1rem;
-        }
-
-        .terms-item h3 {
-            color: var(--white);
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-        }
-
-        .terms-item h3:before {
-            content: "📋";
-            margin-right: 10px;
-            color: var(--primary-red);
-        }
-
-        .terms-item p {
-            margin-bottom: 1rem;
-        }
-
-        .terms-item ul {
-            margin-left: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .terms-item li {
-            margin-bottom: 0.5rem;
-        }
-
-        .nav-buttons {
-            display: flex;
-            justify-content: center;
-            margin-top: 2rem;
-        }
-
-        .nav-buttons .btn {
-            margin: 0 10px;
-        }
-
-        footer {
-            background-color: rgba(255, 255, 255, 0.1);
-            text-align: center;
-            padding: 1.5rem 0;
-            color: var(--white);
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            margin-top: auto;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .logo {
-                max-width: 150px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                width: 95%;
-                padding: 0 10px;
-            }
-
-            .hero h1 {
-                font-size: 1.5rem;
-            }
-
-            .terms-section {
-                padding: 1.5rem;
-            }
-
-            .nav-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .nav-buttons .btn {
-                margin: 5px 0;
-                width: 100%;
-                text-align: center;
-            }
-        }
-    </style>
+	<!-- Favicon and App Icons -->
+	<link rel="icon" type="image/png" href="logo.png" />
+	<link rel="apple-touch-icon" href="logo.png" />
+	<meta name="msapplication-TileImage" content="logo.png" />
+	
+	<!-- Preload Critical Resources -->
+	<link rel="preload" href="https://cdn.tailwindcss.com" as="script" />
+	<link rel="preload" href="logo.png" as="image" />
+	
+	<!-- Tailwind CSS CDN for rapid prototyping. For production, migrate to a build process. -->
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+	  tailwind.config = {
+	    theme: {
+	      extend: {
+	        colors: {
+	          primary: {
+	            red: '#f63988',
+	            yellow: '#FBC217',
+	          },
+	          background: {
+	            blue: '#0502a7',
+	          },
+	          soft: {
+	            gray: '#f3f2f3',
+	            pink: '#ebacca',
+	          },
+	          dark: {
+	            text: '#1c1d22',
+	          },
+	        },
+	        fontFamily: {
+	          heading: ['Impact', 'Arial Black', 'sans-serif'],
+	          body: ['Outfit', 'Arial', 'sans-serif'],
+	        },
+	      },
+	    },
+	  }
+	</script>
 </head>
 
-<body>
-    <header>
-        <a href="index.html">
-            <img src="logo.png" alt="Babacoiffure Logo" class="logo" />
-        </a>
-    </header>
+<body class="bg-background-blue text-white font-body min-h-screen flex flex-col">
+	<!-- Responsive header with logo -->
+	<header class="w-full flex flex-row items-center justify-center px-4 md:px-12 py-4 md:py-8 bg-background-blue" role="banner">
+	  <a href="index.html" class="flex-shrink-0 flex items-center">
+	    <img src="logo.png" alt="Babacoiffure Logo" class="h-12 md:h-20 w-auto filter brightness-0 invert transition-transform duration-300 hover:scale-105 hover:shadow-lg" loading="eager" />
+	  </a>
+	</header>
 
-    <div class="hero">
-        <div class="container">
-            <h1>Conditions d'Utilisation (EULA)</h1>
-            <p>Veuillez lire attentivement ces conditions avant d'utiliser nos services</p>
-        </div>
-    </div>
+	<main class="flex-1">
+		<!-- Hero Section -->
+		<section class="hero w-full flex flex-col items-center justify-center text-center py-12 md:py-20 flex-1 relative overflow-hidden bg-background-blue" role="banner" aria-labelledby="hero-title">
+			<div class="relative z-10">
+				<h1 id="hero-title" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-4 md:mb-6 text-white leading-tight md:leading-tight">Conditions d'Utilisation (EULA)</h1>
+				<p class="text-base sm:text-lg md:text-xl lg:text-2xl text-soft-pink mb-6 md:mb-10 max-w-2xl mx-auto">Veuillez lire attentivement ces conditions avant d'utiliser nos services</p>
+			</div>
+			<!-- Background gradient effect -->
+			<div class="absolute inset-0 bg-gradient-to-br from-primary-red/10 via-transparent to-primary-red/5 pointer-events-none"></div>
+		</section>
 
-    <div class="container">
-        <div class="terms-section">
-            <h2>Conditions Générales d'Utilisation</h2>
+		<!-- Terms Content Section -->
+		<section class="w-full max-w-4xl mx-auto px-4 sm:px-6 py-10 md:py-16" role="region" aria-labelledby="terms-title">
+			<div class="bg-background-blue/90 border-2 border-primary-yellow rounded-3xl p-8 shadow-lg transition-transform duration-200 hover:shadow-xl hover:-translate-y-1">
+				<h2 id="terms-title" class="text-3xl md:text-4xl font-heading font-bold text-primary-yellow text-center mb-12 tracking-tight drop-shadow-lg">Conditions Générales d'Utilisation</h2>
+				
+				<div class="space-y-8">
+					<div class="terms-item border-b border-soft-gray/20 pb-6">
+						<h3 class="text-xl md:text-2xl font-heading font-bold mb-4 text-primary-red flex items-center">
+							<span class="text-2xl mr-3" aria-hidden="true">📋</span>
+							1. Acceptation des Conditions
+						</h3>
+						<p class="text-soft-gray text-base md:text-lg leading-relaxed">En accédant ou en utilisant la plateforme Babacoiffure (site web, application mobile ou tout autre service associé), vous acceptez d'être lié par ces Conditions d'Utilisation. Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser nos services.</p>
+					</div>
 
-            <div class="terms-item">
-                <h3>1. Acceptation des Conditions</h3>
-                <p>En accédant ou en utilisant la plateforme Babacoiffure (site web, application mobile ou tout
-                    autre
-                    service associé), vous acceptez d'être lié par ces Conditions d'Utilisation. Si vous n'acceptez
-                    pas
-                    ces conditions, veuillez ne pas utiliser nos services.</p>
-            </div>
+					<div class="terms-item border-b border-soft-gray/20 pb-6">
+						<h3 class="text-xl md:text-2xl font-heading font-bold mb-4 text-primary-red flex items-center">
+							<span class="text-2xl mr-3" aria-hidden="true">📋</span>
+							2. Description du Service
+						</h3>
+						<p class="text-soft-gray text-base md:text-lg leading-relaxed">Babacoiffure est une plateforme qui permet aux utilisateurs de découvrir, réserver et gérer des rendez-vous avec des coiffeurs professionnels. Nous fournissons des outils technologiques pour faciliter cette connexion, mais ne sommes pas directement responsables des services de coiffure fournis.</p>
+					</div>
 
-            <div class="terms-item">
-                <h3>2. Description du Service</h3>
-                <p>Babacoiffure est une plateforme qui permet aux utilisateurs de découvrir, réserver et gérer des
-                    rendez-vous avec des coiffeurs professionnels. Nous fournissons des outils technologiques pour
-                    faciliter cette connexion, mais ne sommes pas directement responsables des services de coiffure
-                    fournis.</p>
-            </div>
+					<div class="terms-item border-b border-soft-gray/20 pb-6">
+						<h3 class="text-xl md:text-2xl font-heading font-bold mb-4 text-primary-red flex items-center">
+							<span class="text-2xl mr-3" aria-hidden="true">📋</span>
+							3. Compte Utilisateur
+						</h3>
+						<p class="text-soft-gray text-base md:text-lg leading-relaxed">Pour utiliser certaines fonctionnalités de notre service, vous devez créer un compte. Vous êtes responsable de maintenir la confidentialité de vos informations de compte et de toutes les activités qui se produisent sous votre compte. Vous devez immédiatement nous informer de toute utilisation non autorisée de votre compte.</p>
+					</div>
 
-            <div class="terms-item">
-                <h3>3. Compte Utilisateur</h3>
-                <p>Pour utiliser certaines fonctionnalités de notre service, vous devez créer un compte. Vous êtes
-                    responsable de maintenir la confidentialité de vos informations de compte et de toutes les
-                    activités
-                    qui se produisent sous votre compte. Vous devez immédiatement nous informer de toute
-                    utilisation non
-                    autorisée de votre compte.</p>
-            </div>
+					<div class="terms-item border-b border-soft-gray/20 pb-6">
+						<h3 class="text-xl md:text-2xl font-heading font-bold mb-4 text-primary-red flex items-center">
+							<span class="text-2xl mr-3" aria-hidden="true">📋</span>
+							4. Conditions d'Utilisation
+						</h3>
+						<p class="text-soft-gray text-base md:text-lg leading-relaxed mb-4">En utilisant notre service, vous acceptez de :</p>
+						<ul class="text-soft-gray text-base md:text-lg leading-relaxed ml-6 space-y-2">
+							<li class="flex items-start">
+								<span class="text-primary-red mr-2 mt-1" aria-hidden="true">•</span>
+								Fournir des informations exactes, complètes et à jour
+							</li>
+							<li class="flex items-start">
+								<span class="text-primary-red mr-2 mt-1" aria-hidden="true">•</span>
+								Utiliser le service conformément aux lois et réglementations applicables
+							</li>
+							<li class="flex items-start">
+								<span class="text-primary-red mr-2 mt-1" aria-hidden="true">•</span>
+								Ne pas utiliser le service à des fins illégales ou non autorisées
+							</li>
+							<li class="flex items-start">
+								<span class="text-primary-red mr-2 mt-1" aria-hidden="true">•</span>
+								Ne pas interférer avec ou perturber l'intégrité du service
+							</li>
+							<li class="flex items-start">
+								<span class="text-primary-red mr-2 mt-1" aria-hidden="true">•</span>
+								Respecter les droits de propriété intellectuelle
+							</li>
+						</ul>
+					</div>
 
-            <div class="terms-item">
-                <h3>4. Conditions d'Utilisation</h3>
-                <p>En utilisant notre service, vous acceptez de :</p>
-                <ul>
-                    <li>Fournir des informations exactes, complètes et à jour</li>
-                    <li>Utiliser le service conformément aux lois et réglementations applicables</li>
-                    <li>Ne pas utiliser le service à des fins illégales ou non autorisées</li>
-                    <li>Ne pas interférer avec ou perturber l'intégrité du service</li>
-                    <li>Respecter les droits de propriété intellectuelle</li>
-                </ul>
-            </div>
+					<div class="terms-item border-b border-soft-gray/20 pb-6">
+						<h3 class="text-xl md:text-2xl font-heading font-bold mb-4 text-primary-red flex items-center">
+							<span class="text-2xl mr-3" aria-hidden="true">📋</span>
+							5. Réservations et Annulations
+						</h3>
+						<p class="text-soft-gray text-base md:text-lg leading-relaxed">Les réservations sont soumises à la disponibilité des coiffeurs. Les conditions d'annulation peuvent varier selon les coiffeurs. Nous nous efforçons de maintenir des informations exactes sur les disponibilités, mais ne pouvons pas garantir que toutes les informations affichées sont correctes à tout moment.</p>
+					</div>
 
-            <div class="terms-item">
-                <h3>5. Réservations et Annulations</h3>
-                <p>Les réservations sont soumises à la disponibilité des coiffeurs. Les conditions d'annulation
-                    peuvent
-                    varier selon les coiffeurs. Nous nous efforçons de maintenir des informations exactes sur les
-                    disponibilités, mais ne pouvons pas garantir que toutes les informations affichées sont
-                    correctes à
-                    tout moment.</p>
-            </div>
+					<div class="terms-item border-b border-soft-gray/20 pb-6">
+						<h3 class="text-xl md:text-2xl font-heading font-bold mb-4 text-primary-red flex items-center">
+							<span class="text-2xl mr-3" aria-hidden="true">📋</span>
+							6. Paiements
+						</h3>
+						<p class="text-soft-gray text-base md:text-lg leading-relaxed">Les paiements effectués via notre plateforme sont traités par des prestataires de services de paiement tiers. En utilisant notre service, vous acceptez les conditions de ces prestataires. Nous ne stockons pas les informations de carte de crédit.</p>
+					</div>
 
-            <div class="terms-item">
-                <h3>6. Paiements</h3>
-                <p>Les paiements effectués via notre plateforme sont traités par des prestataires de services de
-                    paiement tiers. En utilisant notre service, vous acceptez les conditions de ces prestataires.
-                    Nous
-                    ne stockons pas les informations de carte de crédit.</p>
-            </div>
+					<div class="terms-item border-b border-soft-gray/20 pb-6">
+						<h3 class="text-xl md:text-2xl font-heading font-bold mb-4 text-primary-red flex items-center">
+							<span class="text-2xl mr-3" aria-hidden="true">📋</span>
+							7. Propriété Intellectuelle
+						</h3>
+						<p class="text-soft-gray text-base md:text-lg leading-relaxed">Tout le contenu présent sur notre plateforme, y compris mais sans s'y limiter, les textes, graphiques, logos, icônes, images, clips audio, téléchargements numériques et compilations de données, est la propriété de Babacoiffure ou de ses fournisseurs de contenu et est protégé par les lois françaises et internationales sur la propriété intellectuelle.</p>
+					</div>
 
-            <div class="terms-item">
-                <h3>7. Propriété Intellectuelle</h3>
-                <p>Tout le contenu présent sur notre plateforme, y compris mais sans s'y limiter, les textes,
-                    graphiques, logos, icônes, images, clips audio, téléchargements numériques et compilations de
-                    données, est la propriété de Babacoiffure ou de ses fournisseurs de contenu et est protégé par
-                    les
-                    lois françaises et internationales sur la propriété intellectuelle.</p>
-            </div>
+					<div class="terms-item border-b border-soft-gray/20 pb-6">
+						<h3 class="text-xl md:text-2xl font-heading font-bold mb-4 text-primary-red flex items-center">
+							<span class="text-2xl mr-3" aria-hidden="true">📋</span>
+							8. Limitation de Responsabilité
+						</h3>
+						<p class="text-soft-gray text-base md:text-lg leading-relaxed">Babacoiffure n'est pas responsable de la qualité des services fournis par les coiffeurs. Notre plateforme sert uniquement d'intermédiaire entre vous et les professionnels de la coiffure. Nous ne garantissons pas que notre service sera ininterrompu, opportun, sécurisé ou sans erreur.</p>
+					</div>
 
-            <div class="terms-item">
-                <h3>8. Limitation de Responsabilité</h3>
-                <p>Babacoiffure n'est pas responsable de la qualité des services fournis par les coiffeurs. Notre
-                    plateforme sert uniquement d'intermédiaire entre vous et les professionnels de la coiffure.
-                    Nous ne
-                    garantissons pas que notre service sera ininterrompu, opportun, sécurisé ou sans erreur.</p>
-            </div>
+					<div class="terms-item border-b border-soft-gray/20 pb-6">
+						<h3 class="text-xl md:text-2xl font-heading font-bold mb-4 text-primary-red flex items-center">
+							<span class="text-2xl mr-3" aria-hidden="true">📋</span>
+							9. Politique de Confidentialité
+						</h3>
+						<p class="text-soft-gray text-base md:text-lg leading-relaxed">L'utilisation de vos données personnelles est régie par notre Politique de Confidentialité, que vous acceptez lors de l'utilisation de notre service.</p>
+					</div>
 
-            <div class="terms-item">
-                <h3>9. Politique de Confidentialité</h3>
-                <p>L'utilisation de vos données personnelles est régie par notre Politique de Confidentialité, que
-                    vous
-                    acceptez lors de l'utilisation de notre service.</p>
-            </div>
+					<div class="terms-item border-b border-soft-gray/20 pb-6">
+						<h3 class="text-xl md:text-2xl font-heading font-bold mb-4 text-primary-red flex items-center">
+							<span class="text-2xl mr-3" aria-hidden="true">📋</span>
+							10. Modifications des Conditions
+						</h3>
+						<p class="text-soft-gray text-base md:text-lg leading-relaxed">Nous nous réservons le droit de modifier ces conditions à tout moment. Les modifications entrent en vigueur dès leur publication sur notre plateforme. Votre utilisation continue du service après ces modifications constitue votre acceptation des nouvelles conditions.</p>
+					</div>
 
-            <div class="terms-item">
-                <h3>10. Modifications des Conditions</h3>
-                <p>Nous nous réservons le droit de modifier ces conditions à tout moment. Les modifications entrent
-                    en
-                    vigueur dès leur publication sur notre plateforme. Votre utilisation continue du service après
-                    ces
-                    modifications constitue votre acceptation des nouvelles conditions.</p>
-            </div>
+					<div class="terms-item border-b border-soft-gray/20 pb-6">
+						<h3 class="text-xl md:text-2xl font-heading font-bold mb-4 text-primary-red flex items-center">
+							<span class="text-2xl mr-3" aria-hidden="true">📋</span>
+							11. Résiliation
+						</h3>
+						<p class="text-soft-gray text-base md:text-lg leading-relaxed">Nous nous réservons le droit de résilier ou de suspendre votre compte et l'accès à notre service immédiatement, sans préavis, pour toute violation de ces Conditions d'Utilisation.</p>
+					</div>
 
-            <div class="terms-item">
-                <h3>11. Résiliation</h3>
-                <p>Nous nous réservons le droit de résilier ou de suspendre votre compte et l'accès à notre service
-                    immédiatement, sans préavis, pour toute violation de ces Conditions d'Utilisation.</p>
-            </div>
+					<div class="terms-item border-b border-soft-gray/20 pb-6">
+						<h3 class="text-xl md:text-2xl font-heading font-bold mb-4 text-primary-red flex items-center">
+							<span class="text-2xl mr-3" aria-hidden="true">📋</span>
+							12. Loi Applicable
+						</h3>
+						<p class="text-soft-gray text-base md:text-lg leading-relaxed">Ces conditions sont régies par les lois françaises. Tout litige relatif à ces conditions sera soumis à la compétence exclusive des tribunaux français.</p>
+					</div>
 
-            <div class="terms-item">
-                <h3>12. Loi Applicable</h3>
-                <p>Ces conditions sont régies par les lois françaises. Tout litige relatif à ces conditions sera
-                    soumis
-                    à la compétence exclusive des tribunaux français.</p>
-            </div>
+					<div class="terms-item">
+						<h3 class="text-xl md:text-2xl font-heading font-bold mb-4 text-primary-red flex items-center">
+							<span class="text-2xl mr-3" aria-hidden="true">📋</span>
+							13. Contact
+						</h3>
+						<p class="text-soft-gray text-base md:text-lg leading-relaxed">Pour toute question concernant ces Conditions d'Utilisation, veuillez nous contacter à <a href="mailto:admin@babacoiffure.com" class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded transition-all px-1">admin@babacoiffure.com</a>.</p>
+					</div>
+				</div>
+			</div>
 
-            <div class="terms-item">
-                <h3>13. Contact</h3>
-                <p>Pour toute question concernant ces Conditions d'Utilisation, veuillez nous contacter à
-                    admin@babacoiffure.com.</p>
-            </div>
-        </div>
+			<!-- Navigation Buttons -->
+			<div class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8">
+				<a href="index.html" class="bg-primary-yellow text-black font-bold rounded-full px-6 py-3 transition-colors shadow-lg hover:bg-primary-red hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue">Retour à l'accueil</a>
+				<a href="support.html" class="bg-primary-yellow text-black font-bold rounded-full px-6 py-3 transition-colors shadow-lg hover:bg-primary-red hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue">Centre d'Assistance</a>
+			</div>
+		</section>
+	</main>
 
+	<footer class="bg-background-blue w-full py-8 px-4 sm:px-8 mt-auto" role="contentinfo">
+		<div class="max-w-4xl mx-auto flex flex-col items-center justify-center">
+			<p class="text-center text-soft-gray text-sm md:text-base leading-relaxed">
+				&copy; 2024 Babacoiffure. Tous droits réservés.
+			</p>
+			<nav class="mt-3 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4" role="navigation" aria-label="Footer navigation">
+				<a href="terms.html" class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded transition-all px-2 py-1">Conditions d'Utilisation</a>
+				<span class="hidden sm:inline-block text-soft-gray" aria-hidden="true">|</span>
+				<a href="support.html" class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded transition-all px-2 py-1">Support</a>
+				<span class="hidden sm:inline-block text-soft-gray" aria-hidden="true">|</span>
+				<a href="privacy.html" class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded transition-all px-2 py-1">Politique de Confidentialité</a>
+			</nav>
+		</div>
+	</footer>
 
-        <div class="nav-buttons">
-            <a href="index.html" class="btn">Retour à l'accueil</a>
-            <a href="support.html" class="btn">Centre d'Assistance</a>
-        </div>
-    </div>
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+			// Add animation to terms items
+			const termsItems = document.querySelectorAll('.terms-item');
+			termsItems.forEach((item, index) => {
+				item.style.opacity = '0';
+				item.style.transform = 'translateY(20px)';
+				item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Babacoiffure. Tous droits réservés. | <a href="support.html"
-                    style="color: var(--primary-red); text-decoration: none;">Support</a> | <a href="privacy.html"
-                    style="color: var(--primary-red); text-decoration: none;">Politique de Confidentialité</a></p>
-        </div>
-    </footer>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            // Add animation to terms items
-            const termsItems = document.querySelectorAll('.terms-item');
-            termsItems.forEach((item, index) => {
-                item.style.opacity = '0';
-                item.style.transform = 'translateY(20px)';
-                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-
-                setTimeout(() => {
-                    item.style.opacity = '1';
-                    item.style.transform = 'translateY(0)';
-                }, 100 * index);
-            });
-        });
-    </script>
+				setTimeout(() => {
+					item.style.opacity = '1';
+					item.style.transform = 'translateY(0)';
+				}, 100 * index);
+			});
+		});
+	</script>
 </body>
 
 </html>

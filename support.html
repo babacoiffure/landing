@@ -2,415 +2,187 @@
 <html lang="fr">
 
 <head>
-    <link rel="icon" type="image/png" href="logo.png" />
-    <link rel="apple-touch-icon" href="logo.png" />
-    <meta name="msapplication-TileImage" content="logo.png" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Support - Babacoiffure - Assistance et FAQ" />
-    <meta name="keywords" content="support, aide, coiffure, réservation, coiffeurs, gestion" />
-    <title>Support - Babacoiffure</title>
-    <style>
-        :root {
-            --primary-red: #f63988;
-            --background-blue: #0502a7;
-            --soft-gray: #f3f2f3;
-            --white: #ffffff;
-            --dark-text: #1c1d22;
-            --soft-pink: #ebacca;
-            --accent-yellow: #ffcc00;
-        }
+	<!-- Essential Meta Tags -->
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Support - Babacoiffure - Centre d'assistance et contact pour toute question concernant notre plateforme de réservation de coiffeurs" />
+	<meta name="keywords" content="support, aide, assistance, contact, coiffure, réservation, coiffeurs, gestion" />
+	<meta name="author" content="Babacoiffure" />
+	<meta name="robots" content="index, follow" />
+	
+	<!-- Open Graph Meta Tags -->
+	<meta property="og:title" content="Support - Babacoiffure" />
+	<meta property="og:description" content="Centre d'assistance et contact pour toute question concernant notre plateforme de réservation de coiffeurs" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://babacoiffure.com/support.html" />
+	<meta property="og:image" content="logo.png" />
+	
+	<!-- Twitter Card Meta Tags -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Support - Babacoiffure" />
+	<meta name="twitter:description" content="Centre d'assistance et contact pour toute question concernant notre plateforme de réservation de coiffeurs" />
+	<meta name="twitter:image" content="logo.png" />
+	
+	<title>Support - Babacoiffure</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: "Arial", sans-serif;
-            background-color: var(--background-blue);
-            color: var(--white);
-            line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        header {
-            padding: 2rem 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .logo {
-            max-width: 250px;
-            height: auto;
-            filter: brightness(0) invert(1);
-            transition:
-                transform 0.3s ease,
-                box-shadow 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .hero {
-            text-align: center;
-            padding: 4rem 0;
-            flex: 1;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--white);
-        }
-
-        .hero p {
-            color: var(--soft-pink);
-            margin-bottom: 2rem;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at center,
-                    rgba(246, 57, 136, 0.1) 0%,
-                    transparent 70%);
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-red);
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-            margin-bottom: 1rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn:hover {
-            background-color: var(--accent-yellow);
-            color: var(--dark-text);
-        }
-
-        .btn::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 200%;
-            height: 100%;
-            background: linear-gradient(115deg,
-                    transparent 0%,
-                    rgba(255, 255, 255, 0.3) 50%,
-                    transparent 100%);
-            transition: all 0.5s ease;
-        }
-
-        .btn:hover::before {
-            left: 100%;
-        }
-
-        .support-section {
-            margin: 2rem 0;
-            padding: 2rem;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition:
-                transform 0.3s ease,
-                box-shadow 0.3s ease;
-        }
-
-        .support-section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .support-section h2 {
-            color: var(--primary-red);
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .faq-item {
-            margin-bottom: 1.5rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding-bottom: 1rem;
-        }
-
-        .faq-item h3 {
-            color: var(--white);
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-        }
-
-        .faq-item h3:before {
-            content: "🔹";
-            margin-right: 10px;
-            color: var(--primary-red);
-        }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 1rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--soft-pink);
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid var(--primary-red);
-            border-radius: 30px;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: var(--white);
-            outline: none;
-            transition: all 0.3s ease;
-        }
-
-        .form-control:focus {
-            box-shadow: 0 0 0 3px rgba(246, 57, 136, 0.4);
-        }
-
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            margin-top: 2rem;
-        }
-
-        .contact-method {
-            flex-basis: 30%;
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-icon {
-            font-size: 2.5rem;
-            color: var(--primary-red);
-            margin-bottom: 0.5rem;
-        }
-
-        .nav-buttons {
-            display: flex;
-            justify-content: center;
-            margin-top: 2rem;
-        }
-
-        .nav-buttons .btn {
-            margin: 0 10px;
-        }
-
-        footer {
-            background-color: rgba(255, 255, 255, 0.1);
-            text-align: center;
-            padding: 1.5rem 0;
-            color: var(--white);
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            margin-top: auto;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .resource-item,
-            .contact-method {
-                flex-basis: 100%;
-            }
-
-            .logo {
-                max-width: 150px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                width: 95%;
-                padding: 0 10px;
-            }
-
-            .hero h1 {
-                font-size: 1.5rem;
-            }
-
-            .support-section {
-                padding: 1.5rem;
-            }
-
-            .nav-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .nav-buttons .btn {
-                margin: 5px 0;
-                width: 100%;
-                text-align: center;
-            }
-        }
-    </style>
+	<!-- Favicon and App Icons -->
+	<link rel="icon" type="image/png" href="logo.png" />
+	<link rel="apple-touch-icon" href="logo.png" />
+	<meta name="msapplication-TileImage" content="logo.png" />
+	
+	<!-- Preload Critical Resources -->
+	<link rel="preload" href="https://cdn.tailwindcss.com" as="script" />
+	<link rel="preload" href="logo.png" as="image" />
+	
+	<!-- Tailwind CSS CDN for rapid prototyping. For production, migrate to a build process. -->
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+	  tailwind.config = {
+	    theme: {
+	      extend: {
+	        colors: {
+	          primary: {
+	            red: '#f63988',
+	            yellow: '#FBC217',
+	          },
+	          background: {
+	            blue: '#0502a7',
+	          },
+	          soft: {
+	            gray: '#f3f2f3',
+	            pink: '#ebacca',
+	          },
+	          dark: {
+	            text: '#1c1d22',
+	          },
+	        },
+	        fontFamily: {
+	          heading: ['Impact', 'Arial Black', 'sans-serif'],
+	          body: ['Outfit', 'Arial', 'sans-serif'],
+	        },
+	      },
+	    },
+	  }
+	</script>
 </head>
 
-<body>
-    <header>
-        <a href="index.html">
-            <img src="logo.png" alt="Babacoiffure Logo" class="logo" />
-        </a>
-    </header>
+<body class="bg-background-blue text-white font-body min-h-screen flex flex-col">
+	<!-- Responsive header with logo -->
+	<header class="w-full flex flex-row items-center justify-center px-4 md:px-12 py-4 md:py-8 bg-background-blue" role="banner">
+	  <a href="index.html" class="flex-shrink-0 flex items-center">
+	    <img src="logo.png" alt="Babacoiffure Logo" class="h-12 md:h-20 w-auto filter brightness-0 invert transition-transform duration-300 hover:scale-105 hover:shadow-lg" loading="eager" />
+	  </a>
+	</header>
 
-    <div class="hero">
-        <div class="container">
-            <h1>Centre d'Assistance Babacoiffure</h1>
-            <p>Nous sommes là pour vous aider à tirer le meilleur parti de notre plateforme</p>
-        </div>
-    </div>
+	<main class="flex-1">
+		<!-- Hero Section -->
+		<section class="hero w-full flex flex-col items-center justify-center text-center py-12 md:py-20 flex-1 relative overflow-hidden bg-background-blue" role="banner" aria-labelledby="hero-title">
+			<div class="relative z-10">
+				<h1 id="hero-title" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-4 md:mb-6 text-white leading-tight md:leading-tight">Centre d'Assistance Babacoiffure</h1>
+				<p class="text-base sm:text-lg md:text-xl lg:text-2xl text-soft-pink mb-6 md:mb-10 max-w-2xl mx-auto">Nous sommes là pour vous aider à tirer le meilleur parti de notre plateforme</p>
+			</div>
+			<!-- Background gradient effect -->
+			<div class="absolute inset-0 bg-gradient-to-br from-primary-red/10 via-transparent to-primary-red/5 pointer-events-none"></div>
+		</section>
 
-    <div class="container">
-        <div class="support-section">
-            <h2>Contactez-nous</h2>
-            <form action="https://formspree.io/f/xqakrwyk" method="POST" class="contact-form">
-                <div class="form-group">
-                    <label for="name">Votre nom</label>
-                    <input type="text" id="name" name="name" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Votre email</label>
-                    <input type="email" id="email" name="email" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="subject">Sujet</label>
-                    <select id="subject" name="subject" class="form-control" required>
-                        <option value="">Sélectionnez un sujet</option>
-                        <option value="question">Question générale</option>
-                        <option value="problem">Problème technique</option>
-                        <option value="billing">Facturation</option>
-                        <option value="suggestion">Suggestion</option>
-                        <option value="other">Autre</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Votre message</label>
-                    <textarea id="message" name="message" class="form-control" required></textarea>
-                </div>
-                <button type="submit" class="btn">Envoyer</button>
-            </form>
+		<!-- Support Content Section -->
+		<section class="w-full max-w-4xl mx-auto px-4 sm:px-6 py-10 md:py-16" role="region" aria-labelledby="support-title">
+			<div class="bg-background-blue/90 border-2 border-primary-yellow rounded-3xl p-8 shadow-lg transition-transform duration-200 hover:shadow-xl hover:-translate-y-1">
+				<h2 id="support-title" class="text-3xl md:text-4xl font-heading font-bold text-primary-yellow text-center mb-12 tracking-tight drop-shadow-lg">Contactez-nous</h2>
+				
+				<!-- Contact Form -->
+				<form action="https://formspree.io/f/xqakrwyk" method="POST" class="max-w-2xl mx-auto space-y-6" role="form" aria-label="Formulaire de contact">
+					<div class="form-group">
+						<label for="name" class="block text-soft-pink font-medium mb-2">Votre nom</label>
+						<input type="text" id="name" name="name" class="w-full px-4 py-3 border-2 border-primary-red rounded-full bg-background-blue/50 text-white outline-none transition-all focus:border-primary-yellow focus:ring-2 focus:ring-primary-yellow focus:ring-offset-2 focus:ring-offset-background-blue" required aria-required="true" />
+					</div>
+					
+					<div class="form-group">
+						<label for="email" class="block text-soft-pink font-medium mb-2">Votre email</label>
+						<input type="email" id="email" name="email" class="w-full px-4 py-3 border-2 border-primary-red rounded-full bg-background-blue/50 text-white outline-none transition-all focus:border-primary-yellow focus:ring-2 focus:ring-primary-yellow focus:ring-offset-2 focus:ring-offset-background-blue" required aria-required="true" />
+					</div>
+					
+					<div class="form-group">
+						<label for="subject" class="block text-soft-pink font-medium mb-2">Sujet</label>
+						<select id="subject" name="subject" class="w-full px-4 py-3 border-2 border-primary-red rounded-full bg-background-blue/50 text-white outline-none transition-all focus:border-primary-yellow focus:ring-2 focus:ring-primary-yellow focus:ring-offset-2 focus:ring-offset-background-blue" required aria-required="true">
+							<option value="">Sélectionnez un sujet</option>
+							<option value="question">Question générale</option>
+							<option value="problem">Problème technique</option>
+							<option value="billing">Facturation</option>
+							<option value="suggestion">Suggestion</option>
+							<option value="other">Autre</option>
+						</select>
+					</div>
+					
+					<div class="form-group">
+						<label for="message" class="block text-soft-pink font-medium mb-2">Votre message</label>
+						<textarea id="message" name="message" rows="6" class="w-full px-4 py-3 border-2 border-primary-red rounded-3xl bg-background-blue/50 text-white outline-none transition-all focus:border-primary-yellow focus:ring-2 focus:ring-primary-yellow focus:ring-offset-2 focus:ring-offset-background-blue resize-vertical" required aria-required="true"></textarea>
+					</div>
+					
+					<div class="text-center">
+						<button type="submit" class="bg-primary-yellow text-black font-bold rounded-full px-6 py-3 transition-colors shadow-lg hover:bg-primary-red hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue">Envoyer</button>
+					</div>
+				</form>
 
-            <div class="contact-info">
-                <div class="contact-method">
-                    <div class="contact-icon">📧</div>
-                    <h3>Email</h3>
-                    <p>admin@babacoiffure.com</p>
-                </div>
-            </div>
-        </div>
+				<!-- Contact Information -->
+				<div class="mt-12 text-center">
+					<div class="inline-flex items-center justify-center p-6 bg-background-blue/50 rounded-2xl border border-soft-gray/20">
+						<div class="text-4xl mr-4" aria-hidden="true">📧</div>
+						<div>
+							<h3 class="text-xl font-heading font-bold text-primary-yellow mb-2">Email</h3>
+							<p class="text-soft-gray">admin@babacoiffure.com</p>
+						</div>
+					</div>
+				</div>
+			</div>
 
-        <div class="nav-buttons">
-            <a href="index.html" class="btn">Retour à l'accueil</a>
-            <a href="terms.html" class="btn">Conditions d'Utilisation</a>
-            <a href="privacy.html" class="btn">Politique de Confidentialité</a>
-        </div>
-    </div>
+			<!-- Navigation Buttons -->
+			<div class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8">
+				<a href="index.html" class="bg-primary-yellow text-black font-bold rounded-full px-6 py-3 transition-colors shadow-lg hover:bg-primary-red hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue">Retour à l'accueil</a>
+				<a href="terms.html" class="bg-primary-yellow text-black font-bold rounded-full px-6 py-3 transition-colors shadow-lg hover:bg-primary-red hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue">Conditions d'Utilisation</a>
+				<a href="privacy.html" class="bg-primary-yellow text-black font-bold rounded-full px-6 py-3 transition-colors shadow-lg hover:bg-primary-red hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue">Politique de Confidentialité</a>
+			</div>
+		</section>
+	</main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Babacoiffure. Tous droits réservés. | <a href="terms.html"
-                    style="color: var(--primary-red); text-decoration: none;">Conditions d'Utilisation</a> | <a
-                    href="privacy.html" style="color: var(--primary-red); text-decoration: none;">Politique de
-                    Confidentialité</a></p>
-        </div>
-    </footer>
+	<footer class="bg-background-blue w-full py-8 px-4 sm:px-8 mt-auto" role="contentinfo">
+		<div class="max-w-4xl mx-auto flex flex-col items-center justify-center">
+			<p class="text-center text-soft-gray text-sm md:text-base leading-relaxed">
+				&copy; 2024 Babacoiffure. Tous droits réservés.
+			</p>
+			<nav class="mt-3 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4" role="navigation" aria-label="Footer navigation">
+				<a href="terms.html" class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded transition-all px-2 py-1">Conditions d'Utilisation</a>
+				<span class="hidden sm:inline-block text-soft-gray" aria-hidden="true">|</span>
+				<a href="support.html" class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded transition-all px-2 py-1">Support</a>
+				<span class="hidden sm:inline-block text-soft-gray" aria-hidden="true">|</span>
+				<a href="privacy.html" class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded transition-all px-2 py-1">Politique de Confidentialité</a>
+			</nav>
+		</div>
+	</footer>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            // Add animation to FAQ items
-            const faqItems = document.querySelectorAll('.faq-item');
-            faqItems.forEach((item, index) => {
-                item.style.opacity = '0';
-                item.style.transform = 'translateY(20px)';
-                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-
-                setTimeout(() => {
-                    item.style.opacity = '1';
-                    item.style.transform = 'translateY(0)';
-                }, 100 * index);
-            });
-
-            // Form submission handling
-            const contactForm = document.querySelector('.contact-form');
-            contactForm.addEventListener('submit', function (e) {
-                // Form validation can be added here if needed
-                const successMessage = document.createElement('div');
-                successMessage.style.backgroundColor = 'var(--primary-red)';
-                successMessage.style.color = 'white';
-                successMessage.style.padding = '10px';
-                successMessage.style.borderRadius = '10px';
-                successMessage.style.marginTop = '15px';
-                successMessage.style.textAlign = 'center';
-                successMessage.innerText = 'Message envoyé ! Nous vous répondrons rapidement.';
-
-                // Don't add this if form should actually submit to Formspree
-                // e.preventDefault();
-
-                // Show success message
-                this.appendChild(successMessage);
-
-                // Scroll to message
-                successMessage.scrollIntoView({ behavior: 'smooth' });
-
-                // Reset form (if not actually submitting)
-                // this.reset();
-
-                // Remove message after delay (if not navigating away)
-                setTimeout(() => {
-                    successMessage.remove();
-                }, 5000);
-            });
-        });
-    </script>
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+			// Form submission handling
+			const contactForm = document.querySelector('form');
+			contactForm.addEventListener('submit', function (e) {
+				// Show success message
+				const successMessage = document.createElement('div');
+				successMessage.className = 'mt-4 p-4 bg-green-600 text-white rounded-lg text-center';
+				successMessage.textContent = 'Message envoyé ! Nous vous répondrons rapidement.';
+				
+				// Insert success message after the form
+				this.parentNode.insertBefore(successMessage, this.nextSibling);
+				
+				// Scroll to message
+				successMessage.scrollIntoView({ behavior: 'smooth' });
+				
+				// Remove message after 5 seconds
+				setTimeout(() => {
+					successMessage.remove();
+				}, 5000);
+			});
+		});
+	</script>
 </body>
 
 </html>

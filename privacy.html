@@ -2,423 +2,327 @@
 <html lang="fr">
 
 <head>
-    <link rel="icon" type="image/png" href="logo.png" />
-    <link rel="apple-touch-icon" href="logo.png" />
-    <meta name="msapplication-TileImage" content="logo.png" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Politique de Confidentialité - Babacoiffure - Protection de vos données" />
-    <meta name="keywords"
-        content="confidentialité, vie privée, données personnelles, protection, coiffure, réservation" />
-    <title>Politique de Confidentialité - Babacoiffure</title>
-    <style>
-        :root {
-            --primary-red: #f63988;
-            --background-blue: #0502a7;
-            --soft-gray: #f3f2f3;
-            --white: #ffffff;
-            --dark-text: #1c1d22;
-            --soft-pink: #ebacca;
-            --accent-yellow: #ffcc00;
-        }
+	<!-- Essential Meta Tags -->
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Politique de Confidentialité - Babacoiffure - Protection de vos données personnelles et informations sur notre gestion de la vie privée" />
+	<meta name="keywords" content="confidentialité, vie privée, données personnelles, protection, coiffure, réservation, RGPD" />
+	<meta name="author" content="Babacoiffure" />
+	<meta name="robots" content="index, follow" />
+	
+	<!-- Open Graph Meta Tags -->
+	<meta property="og:title" content="Politique de Confidentialité - Babacoiffure" />
+	<meta property="og:description" content="Protection de vos données personnelles et informations sur notre gestion de la vie privée" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://babacoiffure.com/privacy.html" />
+	<meta property="og:image" content="logo.png" />
+	
+	<!-- Twitter Card Meta Tags -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Politique de Confidentialité - Babacoiffure" />
+	<meta name="twitter:description" content="Protection de vos données personnelles et informations sur notre gestion de la vie privée" />
+	<meta name="twitter:image" content="logo.png" />
+	
+	<title>Politique de Confidentialité - Babacoiffure</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: "Arial", sans-serif;
-            background-color: var(--background-blue);
-            color: var(--white);
-            line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        header {
-            padding: 2rem 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .logo {
-            max-width: 250px;
-            height: auto;
-            filter: brightness(0) invert(1);
-            transition:
-                transform 0.3s ease,
-                box-shadow 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .hero {
-            text-align: center;
-            padding: 4rem 0;
-            flex: 1;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--white);
-        }
-
-        .hero p {
-            color: var(--soft-pink);
-            margin-bottom: 2rem;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at center,
-                    rgba(246, 57, 136, 0.1) 0%,
-                    transparent 70%);
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-red);
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-            margin-bottom: 1rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn:hover {
-            background-color: var(--accent-yellow);
-            color: var(--dark-text);
-        }
-
-        .btn::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 200%;
-            height: 100%;
-            background: linear-gradient(115deg,
-                    transparent 0%,
-                    rgba(255, 255, 255, 0.3) 50%,
-                    transparent 100%);
-            transition: all 0.5s ease;
-        }
-
-        .btn:hover::before {
-            left: 100%;
-        }
-
-        .privacy-section {
-            margin: 2rem 0;
-            padding: 2rem;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition:
-                transform 0.3s ease,
-                box-shadow 0.3s ease;
-        }
-
-        .privacy-section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .privacy-section h2 {
-            color: var(--primary-red);
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .privacy-item {
-            margin-bottom: 1.5rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding-bottom: 1rem;
-        }
-
-        .privacy-item h3 {
-            color: var(--white);
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-        }
-
-        .privacy-item h3:before {
-            content: "🔒";
-            margin-right: 10px;
-            color: var(--primary-red);
-        }
-
-        .privacy-item p {
-            margin-bottom: 1rem;
-        }
-
-        .privacy-item ul {
-            margin-left: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .privacy-item li {
-            margin-bottom: 0.5rem;
-        }
-
-        .nav-buttons {
-            display: flex;
-            justify-content: center;
-            margin-top: 2rem;
-        }
-
-        .nav-buttons .btn {
-            margin: 0 10px;
-        }
-
-        footer {
-            background-color: rgba(255, 255, 255, 0.1);
-            text-align: center;
-            padding: 1.5rem 0;
-            color: var(--white);
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            margin-top: auto;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .logo {
-                max-width: 150px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                width: 95%;
-                padding: 0 10px;
-            }
-
-            .hero h1 {
-                font-size: 1.5rem;
-            }
-
-            .privacy-section {
-                padding: 1.5rem;
-            }
-
-            .nav-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .nav-buttons .btn {
-                margin: 5px 0;
-                width: 100%;
-                text-align: center;
-            }
-        }
-    </style>
+	<!-- Favicon and App Icons -->
+	<link rel="icon" type="image/png" href="logo.png" />
+	<link rel="apple-touch-icon" href="logo.png" />
+	<meta name="msapplication-TileImage" content="logo.png" />
+	
+	<!-- Preload Critical Resources -->
+	<link rel="preload" href="https://cdn.tailwindcss.com" as="script" />
+	<link rel="preload" href="logo.png" as="image" />
+	
+	<!-- Tailwind CSS CDN for rapid prototyping. For production, migrate to a build process. -->
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+	  tailwind.config = {
+	    theme: {
+	      extend: {
+	        colors: {
+	          primary: {
+	            red: '#f63988',
+	            yellow: '#FBC217',
+	          },
+	          background: {
+	            blue: '#0502a7',
+	          },
+	          soft: {
+	            gray: '#f3f2f3',
+	            pink: '#ebacca',
+	          },
+	          dark: {
+	            text: '#1c1d22',
+	          },
+	        },
+	        fontFamily: {
+	          heading: ['Impact', 'Arial Black', 'sans-serif'],
+	          body: ['Outfit', 'Arial', 'sans-serif'],
+	        },
+	      },
+	    },
+	  }
+	</script>
 </head>
 
-<body>
-    <header>
-        <a href="index.html">
-            <img src="logo.png" alt="Babacoiffure Logo" class="logo" />
-        </a>
-    </header>
+<body class="bg-background-blue text-white font-body min-h-screen flex flex-col">
+	<!-- Responsive header with logo -->
+	<header class="w-full flex flex-row items-center justify-center px-4 md:px-12 py-4 md:py-8 bg-background-blue" role="banner">
+	  <a href="index.html" class="flex-shrink-0 flex items-center">
+	    <img src="logo.png" alt="Babacoiffure Logo" class="h-12 md:h-20 w-auto filter brightness-0 invert transition-transform duration-300 hover:scale-105 hover:shadow-lg" loading="eager" />
+	  </a>
+	</header>
 
-    <div class="hero">
-        <div class="container">
-            <h1>Politique de Confidentialité</h1>
-            <p>Comment nous protégeons vos données personnelles</p>
-        </div>
-    </div>
+	<main class="flex-1">
+		<!-- Hero Section -->
+		<section class="hero w-full flex flex-col items-center justify-center text-center py-12 md:py-20 flex-1 relative overflow-hidden bg-background-blue" role="banner" aria-labelledby="hero-title">
+			<div class="relative z-10">
+				<h1 id="hero-title" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-4 md:mb-6 text-white leading-tight md:leading-tight">Politique de Confidentialité</h1>
+				<p class="text-base sm:text-lg md:text-xl lg:text-2xl text-soft-pink mb-6 md:mb-10 max-w-2xl mx-auto">Comment nous protégeons vos données personnelles</p>
+			</div>
+			<!-- Background gradient effect -->
+			<div class="absolute inset-0 bg-gradient-to-br from-primary-red/10 via-transparent to-primary-red/5 pointer-events-none"></div>
+		</section>
 
-    <div class="container">
-        <div class="privacy-section">
-            <h2>Protection de Vos Données</h2>
+		<!-- Privacy Content Section -->
+		<section class="w-full max-w-4xl mx-auto px-4 sm:px-6 py-10 md:py-16" role="region" aria-labelledby="privacy-title">
+			<div class="bg-background-blue/90 border-2 border-primary-yellow rounded-3xl p-8 shadow-lg transition-transform duration-200 hover:shadow-xl hover:-translate-y-1">
+				<h2 id="privacy-title" class="text-3xl md:text-4xl font-heading font-bold text-primary-yellow text-center mb-12 tracking-tight drop-shadow-lg">Protection de Vos Données</h2>
+				
+				<div class="space-y-8">
+					<div class="privacy-item border-b border-soft-gray/20 pb-6">
+						<h3 class="text-xl md:text-2xl font-heading font-bold mb-4 text-primary-red flex items-center">
+							<span class="text-2xl mr-3" aria-hidden="true">🔒</span>
+							1. Introduction
+						</h3>
+						<p class="text-soft-gray text-base md:text-lg leading-relaxed">Chez Babacoiffure, nous accordons une grande importance à la protection de vos données personnelles. Cette politique de confidentialité vise à vous informer de la manière dont nous collectons, utilisons et protégeons vos informations lorsque vous utilisez notre application et nos services. En utilisant Babacoiffure, vous acceptez les pratiques décrites dans cette politique.</p>
+					</div>
 
-            <div class="privacy-item">
-                <h3>1. Introduction</h3>
-                <p>Chez Babacoiffure, nous accordons une grande importance à la protection de vos données personnelles.
-                    Cette politique de confidentialité vise à vous informer de la manière dont nous collectons,
-                    utilisons et protégeons vos informations lorsque vous utilisez notre application et nos services. En
-                    utilisant Babacoiffure, vous acceptez les pratiques décrites dans cette politique.</p>
-            </div>
+					<div class="privacy-item border-b border-soft-gray/20 pb-6">
+						<h3 class="text-xl md:text-2xl font-heading font-bold mb-4 text-primary-red flex items-center">
+							<span class="text-2xl mr-3" aria-hidden="true">🔒</span>
+							2. Données Collectées
+						</h3>
+						<p class="text-soft-gray text-base md:text-lg leading-relaxed mb-4">Nous collectons les types de données suivants :</p>
+						<ul class="text-soft-gray text-base md:text-lg leading-relaxed ml-6 space-y-2">
+							<li class="flex items-start">
+								<span class="text-primary-red mr-2 mt-1" aria-hidden="true">•</span>
+								<strong>Informations d'identification :</strong> nom, prénom, adresse email, numéro de téléphone
+							</li>
+							<li class="flex items-start">
+								<span class="text-primary-red mr-2 mt-1" aria-hidden="true">•</span>
+								<strong>Informations de profil :</strong> préférences de coiffure, historique des rendez-vous
+							</li>
+							<li class="flex items-start">
+								<span class="text-primary-red mr-2 mt-1" aria-hidden="true">•</span>
+								<strong>Données de paiement :</strong> informations de carte bancaire (via nos prestataires de paiement sécurisés)
+							</li>
+							<li class="flex items-start">
+								<span class="text-primary-red mr-2 mt-1" aria-hidden="true">•</span>
+								<strong>Données de localisation :</strong> pour vous suggérer des coiffeurs à proximité (avec votre autorisation)
+							</li>
+							<li class="flex items-start">
+								<span class="text-primary-red mr-2 mt-1" aria-hidden="true">•</span>
+								<strong>Données d'utilisation :</strong> interactions avec l'application, préférences et comportements
+							</li>
+						</ul>
+					</div>
 
-            <div class="privacy-item">
-                <h3>2. Données Collectées</h3>
-                <p>Nous collectons les types de données suivants :</p>
-                <ul>
-                    <li><strong>Informations d'identification :</strong> nom, prénom, adresse email, numéro de téléphone
-                    </li>
-                    <li><strong>Informations de profil :</strong> préférences de coiffure, historique des rendez-vous
-                    </li>
-                    <li><strong>Données de paiement :</strong> informations de carte bancaire (via nos prestataires de
-                        paiement sécurisés)</li>
-                    <li><strong>Données de localisation :</strong> pour vous suggérer des coiffeurs à proximité (avec
-                        votre autorisation)</li>
-                    <li><strong>Données d'utilisation :</strong> interactions avec l'application, préférences et
-                        comportements</li>
-                </ul>
-            </div>
+					<div class="privacy-item border-b border-soft-gray/20 pb-6">
+						<h3 class="text-xl md:text-2xl font-heading font-bold mb-4 text-primary-red flex items-center">
+							<span class="text-2xl mr-3" aria-hidden="true">🔒</span>
+							3. Utilisation des Données
+						</h3>
+						<p class="text-soft-gray text-base md:text-lg leading-relaxed mb-4">Nous utilisons vos données personnelles pour :</p>
+						<ul class="text-soft-gray text-base md:text-lg leading-relaxed ml-6 space-y-2">
+							<li class="flex items-start">
+								<span class="text-primary-red mr-2 mt-1" aria-hidden="true">•</span>
+								Gérer votre compte et vous fournir nos services
+							</li>
+							<li class="flex items-start">
+								<span class="text-primary-red mr-2 mt-1" aria-hidden="true">•</span>
+								Traiter les réservations et les paiements
+							</li>
+							<li class="flex items-start">
+								<span class="text-primary-red mr-2 mt-1" aria-hidden="true">•</span>
+								Personnaliser votre expérience et vous proposer des recommandations
+							</li>
+							<li class="flex items-start">
+								<span class="text-primary-red mr-2 mt-1" aria-hidden="true">•</span>
+								Communiquer avec vous concernant vos rendez-vous, offres spéciales ou mises à jour
+							</li>
+							<li class="flex items-start">
+								<span class="text-primary-red mr-2 mt-1" aria-hidden="true">•</span>
+								Améliorer nos services et développer de nouvelles fonctionnalités
+							</li>
+							<li class="flex items-start">
+								<span class="text-primary-red mr-2 mt-1" aria-hidden="true">•</span>
+								Assurer la sécurité de notre plateforme et prévenir la fraude
+							</li>
+						</ul>
+					</div>
 
-            <div class="privacy-item">
-                <h3>3. Utilisation des Données</h3>
-                <p>Nous utilisons vos données personnelles pour :</p>
-                <ul>
-                    <li>Gérer votre compte et vous fournir nos services</li>
-                    <li>Traiter les réservations et les paiements</li>
-                    <li>Personnaliser votre expérience et vous proposer des recommandations</li>
-                    <li>Communiquer avec vous concernant vos rendez-vous, offres spéciales ou mises à jour</li>
-                    <li>Améliorer nos services et développer de nouvelles fonctionnalités</li>
-                    <li>Assurer la sécurité de notre plateforme et prévenir la fraude</li>
-                </ul>
-            </div>
+					<div class="privacy-item border-b border-soft-gray/20 pb-6">
+						<h3 class="text-xl md:text-2xl font-heading font-bold mb-4 text-primary-red flex items-center">
+							<span class="text-2xl mr-3" aria-hidden="true">🔒</span>
+							4. Partage des Données
+						</h3>
+						<p class="text-soft-gray text-base md:text-lg leading-relaxed mb-4">Nous pouvons partager certaines de vos informations avec :</p>
+						<ul class="text-soft-gray text-base md:text-lg leading-relaxed ml-6 space-y-2">
+							<li class="flex items-start">
+								<span class="text-primary-red mr-2 mt-1" aria-hidden="true">•</span>
+								<strong>Les professionnels de coiffure :</strong> pour traiter vos réservations et vous fournir le service demandé
+							</li>
+							<li class="flex items-start">
+								<span class="text-primary-red mr-2 mt-1" aria-hidden="true">•</span>
+								<strong>Les prestataires de services :</strong> qui nous aident à fournir nos services (traitement des paiements, hébergement, analyses)
+							</li>
+							<li class="flex items-start">
+								<span class="text-primary-red mr-2 mt-1" aria-hidden="true">•</span>
+								<strong>Les autorités légales :</strong> lorsque la loi l'exige ou pour protéger nos droits légaux
+							</li>
+						</ul>
+						<p class="text-soft-gray text-base md:text-lg leading-relaxed mt-4">Nous ne vendons jamais vos données personnelles à des tiers.</p>
+					</div>
 
-            <div class="privacy-item">
-                <h3>4. Partage des Données</h3>
-                <p>Nous pouvons partager certaines de vos informations avec :</p>
-                <ul>
-                    <li><strong>Les professionnels de coiffure :</strong> pour traiter vos réservations et vous fournir
-                        le service demandé</li>
-                    <li><strong>Les prestataires de services :</strong> qui nous aident à fournir nos services
-                        (traitement des paiements, hébergement, analyses)</li>
-                    <li><strong>Les autorités légales :</strong> lorsque la loi l'exige ou pour protéger nos droits
-                        légaux</li>
-                </ul>
-                <p>Nous ne vendons jamais vos données personnelles à des tiers.</p>
-            </div>
+					<div class="privacy-item border-b border-soft-gray/20 pb-6">
+						<h3 class="text-xl md:text-2xl font-heading font-bold mb-4 text-primary-red flex items-center">
+							<span class="text-2xl mr-3" aria-hidden="true">🔒</span>
+							5. Sécurité des Données
+						</h3>
+						<p class="text-soft-gray text-base md:text-lg leading-relaxed">Nous mettons en œuvre des mesures de sécurité techniques et organisationnelles pour protéger vos données contre tout accès, modification, divulgation ou destruction non autorisés. Ces mesures incluent le chiffrement des données, des contrôles d'accès stricts et des audits de sécurité réguliers.</p>
+					</div>
 
-            <div class="privacy-item">
-                <h3>5. Sécurité des Données</h3>
-                <p>Nous mettons en œuvre des mesures de sécurité techniques et organisationnelles pour protéger vos
-                    données contre tout accès, modification, divulgation ou destruction non autorisés. Ces mesures
-                    incluent le chiffrement des données, des contrôles d'accès stricts et des audits de sécurité
-                    réguliers.</p>
-            </div>
+					<div class="privacy-item border-b border-soft-gray/20 pb-6">
+						<h3 class="text-xl md:text-2xl font-heading font-bold mb-4 text-primary-red flex items-center">
+							<span class="text-2xl mr-3" aria-hidden="true">🔒</span>
+							6. Conservation des Données
+						</h3>
+						<p class="text-soft-gray text-base md:text-lg leading-relaxed">Nous conservons vos données personnelles aussi longtemps que nécessaire pour vous fournir nos services et respecter nos obligations légales. Si vous supprimez votre compte, nous supprimons ou anonymisons vos données conformément à notre politique de conservation, sauf si la loi nous oblige à les conserver plus longtemps.</p>
+					</div>
 
-            <div class="privacy-item">
-                <h3>6. Conservation des Données</h3>
-                <p>Nous conservons vos données personnelles aussi longtemps que nécessaire pour vous fournir nos
-                    services et respecter nos obligations légales. Si vous supprimez votre compte, nous supprimons ou
-                    anonymisons vos données conformément à notre politique de conservation, sauf si la loi nous oblige à
-                    les conserver plus longtemps.</p>
-            </div>
+					<div class="privacy-item border-b border-soft-gray/20 pb-6">
+						<h3 class="text-xl md:text-2xl font-heading font-bold mb-4 text-primary-red flex items-center">
+							<span class="text-2xl mr-3" aria-hidden="true">🔒</span>
+							7. Vos Droits
+						</h3>
+						<p class="text-soft-gray text-base md:text-lg leading-relaxed mb-4">Selon les lois applicables sur la protection des données, vous disposez des droits suivants :</p>
+						<ul class="text-soft-gray text-base md:text-lg leading-relaxed ml-6 space-y-2">
+							<li class="flex items-start">
+								<span class="text-primary-red mr-2 mt-1" aria-hidden="true">•</span>
+								Accéder à vos données personnelles
+							</li>
+							<li class="flex items-start">
+								<span class="text-primary-red mr-2 mt-1" aria-hidden="true">•</span>
+								Rectifier vos données si elles sont inexactes
+							</li>
+							<li class="flex items-start">
+								<span class="text-primary-red mr-2 mt-1" aria-hidden="true">•</span>
+								Supprimer vos données dans certaines circonstances
+							</li>
+							<li class="flex items-start">
+								<span class="text-primary-red mr-2 mt-1" aria-hidden="true">•</span>
+								Limiter ou vous opposer au traitement de vos données
+							</li>
+							<li class="flex items-start">
+								<span class="text-primary-red mr-2 mt-1" aria-hidden="true">•</span>
+								Demander la portabilité de vos données
+							</li>
+							<li class="flex items-start">
+								<span class="text-primary-red mr-2 mt-1" aria-hidden="true">•</span>
+								Retirer votre consentement à tout moment
+							</li>
+						</ul>
+						<p class="text-soft-gray text-base md:text-lg leading-relaxed mt-4">Pour exercer ces droits, contactez-nous à <a href="mailto:admin@babacoiffure.com" class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded transition-all px-1">admin@babacoiffure.com</a>.</p>
+					</div>
 
-            <div class="privacy-item">
-                <h3>7. Vos Droits</h3>
-                <p>Selon les lois applicables sur la protection des données, vous disposez des droits suivants :</p>
-                <ul>
-                    <li>Accéder à vos données personnelles</li>
-                    <li>Rectifier vos données si elles sont inexactes</li>
-                    <li>Supprimer vos données dans certaines circonstances</li>
-                    <li>Limiter ou vous opposer au traitement de vos données</li>
-                    <li>Demander la portabilité de vos données</li>
-                    <li>Retirer votre consentement à tout moment</li>
-                </ul>
-                <p>Pour exercer ces droits, contactez-nous à admin@babacoiffure.com.</p>
-            </div>
+					<div class="privacy-item border-b border-soft-gray/20 pb-6">
+						<h3 class="text-xl md:text-2xl font-heading font-bold mb-4 text-primary-red flex items-center">
+							<span class="text-2xl mr-3" aria-hidden="true">🔒</span>
+							8. Cookies et Technologies Similaires
+						</h3>
+						<p class="text-soft-gray text-base md:text-lg leading-relaxed">Nous utilisons des cookies et des technologies similaires pour améliorer votre expérience, analyser l'utilisation de nos services et personnaliser notre contenu. Vous pouvez gérer vos préférences concernant les cookies dans les paramètres de votre navigateur.</p>
+					</div>
 
-            <div class="privacy-item">
-                <h3>8. Cookies et Technologies Similaires</h3>
-                <p>Nous utilisons des cookies et des technologies similaires pour améliorer votre expérience, analyser
-                    l'utilisation de nos services et personnaliser notre contenu. Vous pouvez gérer vos préférences
-                    concernant les cookies dans les paramètres de votre navigateur.</p>
-            </div>
+					<div class="privacy-item border-b border-soft-gray/20 pb-6">
+						<h3 class="text-xl md:text-2xl font-heading font-bold mb-4 text-primary-red flex items-center">
+							<span class="text-2xl mr-3" aria-hidden="true">🔒</span>
+							9. Transferts Internationaux de Données
+						</h3>
+						<p class="text-soft-gray text-base md:text-lg leading-relaxed">Vos données peuvent être transférées et traitées dans des pays autres que celui où vous résidez. Nous prenons des mesures pour garantir que vos données bénéficient d'un niveau de protection adéquat, quel que soit l'endroit où elles sont traitées.</p>
+					</div>
 
-            <div class="privacy-item">
-                <h3>9. Transferts Internationaux de Données</h3>
-                <p>Vos données peuvent être transférées et traitées dans des pays autres que celui où vous résidez. Nous
-                    prenons des mesures pour garantir que vos données bénéficient d'un niveau de protection adéquat,
-                    quel que soit l'endroit où elles sont traitées.</p>
-            </div>
+					<div class="privacy-item border-b border-soft-gray/20 pb-6">
+						<h3 class="text-xl md:text-2xl font-heading font-bold mb-4 text-primary-red flex items-center">
+							<span class="text-2xl mr-3" aria-hidden="true">🔒</span>
+							10. Protection des Mineurs
+						</h3>
+						<p class="text-soft-gray text-base md:text-lg leading-relaxed">Nos services ne sont pas destinés aux personnes de moins de 16 ans. Nous ne collectons pas sciemment des données personnelles concernant des mineurs. Si vous êtes un parent ou un tuteur et que vous pensez que votre enfant nous a fourni des données personnelles, veuillez nous contacter.</p>
+					</div>
 
-            <div class="privacy-item">
-                <h3>10. Protection des Mineurs</h3>
-                <p>Nos services ne sont pas destinés aux personnes de moins de 16 ans. Nous ne collectons pas sciemment
-                    des données personnelles concernant des mineurs. Si vous êtes un parent ou un tuteur et que vous
-                    pensez que votre enfant nous a fourni des données personnelles, veuillez nous contacter.</p>
-            </div>
+					<div class="privacy-item border-b border-soft-gray/20 pb-6">
+						<h3 class="text-xl md:text-2xl font-heading font-bold mb-4 text-primary-red flex items-center">
+							<span class="text-2xl mr-3" aria-hidden="true">🔒</span>
+							11. Modifications de la Politique de Confidentialité
+						</h3>
+						<p class="text-soft-gray text-base md:text-lg leading-relaxed">Nous pouvons modifier cette politique de confidentialité de temps à autre. Nous vous informerons de tout changement important en publiant la nouvelle politique sur notre site et en vous envoyant une notification si nécessaire. Nous vous encourageons à consulter régulièrement cette politique.</p>
+					</div>
 
-            <div class="privacy-item">
-                <h3>11. Modifications de la Politique de Confidentialité</h3>
-                <p>Nous pouvons modifier cette politique de confidentialité de temps à autre. Nous vous informerons de
-                    tout changement important en publiant la nouvelle politique sur notre site et en vous envoyant une
-                    notification si nécessaire. Nous vous encourageons à consulter régulièrement cette politique.</p>
-            </div>
+					<div class="privacy-item">
+						<h3 class="text-xl md:text-2xl font-heading font-bold mb-4 text-primary-red flex items-center">
+							<span class="text-2xl mr-3" aria-hidden="true">🔒</span>
+							12. Contact
+						</h3>
+						<p class="text-soft-gray text-base md:text-lg leading-relaxed">Pour toute question concernant cette politique de confidentialité ou nos pratiques en matière de protection des données, veuillez nous contacter à <a href="mailto:admin@babacoiffure.com" class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded transition-all px-1">admin@babacoiffure.com</a>.</p>
+					</div>
+				</div>
 
-            <div class="privacy-item">
-                <h3>12. Contact</h3>
-                <p>Pour toute question concernant cette politique de confidentialité ou nos pratiques en matière de
-                    protection des données, veuillez nous contacter à admin@babacoiffure.com.</p>
-            </div>
-        </div>
+				<div class="mt-8 p-4 bg-soft-gray/10 rounded-lg border border-soft-gray/20">
+					<p class="text-soft-gray text-sm text-center">Dernière mise à jour : 1 Juin 2024</p>
+				</div>
+			</div>
 
-        <div class="privacy-item">
-            <p>Dernière mise à jour : 1 Juin 2024</p>
-        </div>
+			<!-- Navigation Buttons -->
+			<div class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8">
+				<a href="index.html" class="bg-primary-yellow text-black font-bold rounded-full px-6 py-3 transition-colors shadow-lg hover:bg-primary-red hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue">Retour à l'accueil</a>
+				<a href="terms.html" class="bg-primary-yellow text-black font-bold rounded-full px-6 py-3 transition-colors shadow-lg hover:bg-primary-red hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue">Conditions d'Utilisation</a>
+				<a href="support.html" class="bg-primary-yellow text-black font-bold rounded-full px-6 py-3 transition-colors shadow-lg hover:bg-primary-red hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue">Centre d'Assistance</a>
+			</div>
+		</section>
+	</main>
 
-        <div class="nav-buttons">
-            <a href="index.html" class="btn">Retour à l'accueil</a>
-            <a href="terms.html" class="btn">Conditions d'Utilisation</a>
-            <a href="support.html" class="btn">Centre d'Assistance</a>
-        </div>
-    </div>
+	<footer class="bg-background-blue w-full py-8 px-4 sm:px-8 mt-auto" role="contentinfo">
+		<div class="max-w-4xl mx-auto flex flex-col items-center justify-center">
+			<p class="text-center text-soft-gray text-sm md:text-base leading-relaxed">
+				&copy; 2024 Babacoiffure. Tous droits réservés.
+			</p>
+			<nav class="mt-3 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4" role="navigation" aria-label="Footer navigation">
+				<a href="terms.html" class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded transition-all px-2 py-1">Conditions d'Utilisation</a>
+				<span class="hidden sm:inline-block text-soft-gray" aria-hidden="true">|</span>
+				<a href="support.html" class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded transition-all px-2 py-1">Support</a>
+				<span class="hidden sm:inline-block text-soft-gray" aria-hidden="true">|</span>
+				<a href="privacy.html" class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded transition-all px-2 py-1">Politique de Confidentialité</a>
+			</nav>
+		</div>
+	</footer>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Babacoiffure. Tous droits réservés. | <a href="terms.html"
-                    style="color: var(--primary-red); text-decoration: none;">Conditions d'Utilisation</a> | <a
-                    href="privacy.html" style="color: var(--primary-red); text-decoration: none;">Politique de
-                    Confidentialité</a></p>
-        </div>
-    </footer>
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+			// Add animation to privacy items
+			const privacyItems = document.querySelectorAll('.privacy-item');
+			privacyItems.forEach((item, index) => {
+				item.style.opacity = '0';
+				item.style.transform = 'translateY(20px)';
+				item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            // Add animation to privacy items
-            const privacyItems = document.querySelectorAll('.privacy-item');
-            privacyItems.forEach((item, index) => {
-                item.style.opacity = '0';
-                item.style.transform = 'translateY(20px)';
-                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-
-                setTimeout(() => {
-                    item.style.opacity = '1';
-                    item.style.transform = 'translateY(0)';
-                }, 100 * index);
-            });
-        });
-    </script>
+				setTimeout(() => {
+					item.style.opacity = '1';
+					item.style.transform = 'translateY(0)';
+				}, 100 * index);
+			});
+		});
+	</script>
 </body>
 
 </html>
