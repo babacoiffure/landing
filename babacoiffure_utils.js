@@ -63,6 +63,10 @@ window.translations.en = {
     support: "Support",
     privacy: "Privacy Policy",
     copyright: "All rights reserved."
+  },
+  social: {
+    title: "Follow Us",
+    subtitle: "Stay connected with our latest updates and hair styling tips"
   }
 };
 window.translations.fr = {
@@ -110,6 +114,10 @@ window.translations.fr = {
     support: "Support",
     privacy: "Politique de Confidentialité",
     copyright: "Tous droits réservés."
+  },
+  social: {
+    title: "Suivez-nous",
+    subtitle: "Restez connecté avec nos dernières actualités et conseils de coiffure"
   }
 };
 window.babacoiffureUtils = babacoiffureUtils; 
