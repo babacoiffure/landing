@@ -2,16 +2,44 @@
 <html lang="fr">
 
 <head>
+	<!-- Essential Meta Tags -->
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Babacoiffure - Plateforme de Réservation pour Coiffeurs. Simplifiez votre activité de coiffure avec la gestion automatisée des rendez-vous." />
+	<meta name="keywords" content="coiffure, réservation, coiffeurs, gestion, rendez-vous, salon de coiffure" />
+	<meta name="author" content="Babacoiffure" />
+	<meta name="robots" content="index, follow" />
+	
+	<!-- Open Graph Meta Tags -->
+	<meta property="og:title" content="Babacoiffure - Plateforme de Réservation pour Coiffeurs" />
+	<meta property="og:description" content="Simplifiez votre activité de coiffure avec la gestion automatisée des rendez-vous." />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://babacoiffure.com" />
+	<meta property="og:image" content="logo.png" />
+	
+	<!-- Twitter Card Meta Tags -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Babacoiffure - Plateforme de Réservation pour Coiffeurs" />
+	<meta name="twitter:description" content="Simplifiez votre activité de coiffure avec la gestion automatisée des rendez-vous." />
+	<meta name="twitter:image" content="logo.png" />
+	
+	<title>Babacoiffure - Plateforme de Réservation pour Coiffeurs</title>
+
+	<!-- Favicon and App Icons -->
 	<link rel="icon" type="image/png" href="logo.png" />
 	<link rel="apple-touch-icon" href="logo.png" />
 	<meta name="msapplication-TileImage" content="logo.png" />
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="description" content="Babacoiffure - Plateforme de Réservation pour Coiffeurs" />
-	<meta name="keywords" content="coiffure, réservation, coiffeurs, gestion" />
-	<title>Babacoiffure - Plateforme de Réservation pour Coiffeurs</title>
-
+	
+	<!-- Preload Critical Resources -->
+	<link rel="preload" href="https://cdn.tailwindcss.com" as="script" />
+	<link rel="preload" href="https://unpkg.com/aos@2.3.4/dist/aos.css" as="style" />
+	<link rel="preload" href="logo.png" as="image" />
+	<link rel="preload" href="apple-logo-svgrepo-com.svg" as="image" />
+	<link rel="preload" href="playstore-svgrepo-com.svg" as="image" />
+	
+	<!-- External Stylesheets -->
 	<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+	
 	<!-- Tailwind CSS CDN for rapid prototyping. For production, migrate to a build process. -->
 	<script src="https://cdn.tailwindcss.com"></script>
 	<script src="babacoiffure_utils.js"></script>
@@ -46,116 +74,120 @@
 </head>
 
 <body class="bg-background-blue text-white font-body min-h-screen flex flex-col">
-	<!-- Responsive header with logo and language switcher placeholder -->
-	<header class="w-full flex flex-row items-center justify-between px-4 md:px-12 py-4 md:py-8 bg-background-blue" data-aos="fade-down">
+	<!-- Responsive header with logo and language switcher -->
+	<header class="w-full flex flex-row items-center justify-between px-4 md:px-12 py-4 md:py-8 bg-background-blue" data-aos="fade-down" role="banner">
 	  <div class="flex-shrink-0 flex items-center">
-	    <img src="logo.png" alt="Babacoiffure Logo" class="h-12 md:h-20 w-auto filter brightness-0 invert transition-transform duration-300 hover:scale-105 hover:shadow-lg" />
+	    <img src="logo.png" alt="Babacoiffure Logo" class="h-12 md:h-20 w-auto filter brightness-0 invert transition-transform duration-300 hover:scale-105 hover:shadow-lg" loading="eager" />
 	  </div>
 	  <div class="flex items-center justify-end w-full">
-	    <button id="lang-switcher" class="bg-primary-yellow text-background-blue font-bold rounded-full px-4 py-2 ml-4 shadow hover:bg-primary-red hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow" aria-label="Switch language">FR</button>
+	    <button id="lang-switcher" class="bg-primary-yellow text-background-blue font-bold rounded-full px-4 py-2 ml-4 shadow hover:bg-primary-red hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue" aria-label="Switch language between French and English" aria-pressed="false">FR</button>
 	  </div>
 	</header>
 
-	<section class="hero w-full flex flex-col items-center justify-center text-center py-12 md:py-20 flex-1 relative overflow-hidden bg-background-blue" data-aos="fade-up">
-		<h1 id="hero-title" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-4 md:mb-6 text-white leading-tight md:leading-tight">Simplifiez Votre Activité de Coiffeure</h1>
-		<p id="hero-tagline" class="text-base sm:text-lg md:text-xl lg:text-2xl text-soft-pink mb-6 md:mb-10 max-w-2xl mx-auto">Gestion automatisée des rendez-vous pour coiffeurs indépendants</p>
-		<div class="container hero-content flex justify-center items-center flex-wrap h-full">
-			<div class="text-section flex-1 max-w-full pr-0 flex flex-col justify-center">
+	<main class="flex-1">
+		<section class="hero w-full flex flex-col items-center justify-center text-center py-12 md:py-20 flex-1 relative overflow-hidden bg-background-blue" data-aos="fade-up" role="banner" aria-labelledby="hero-title">
+			<h1 id="hero-title" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-4 md:mb-6 text-white leading-tight md:leading-tight">Simplifiez Votre Activité de Coiffeure</h1>
+			<p id="hero-tagline" class="text-base sm:text-lg md:text-xl lg:text-2xl text-soft-pink mb-6 md:mb-10 max-w-2xl mx-auto">Gestion automatisée des rendez-vous pour coiffeurs indépendants</p>
+			<div class="container hero-content flex justify-center items-center flex-wrap h-full">
+				<div class="text-section flex-1 max-w-full pr-0 flex flex-col justify-center">
 
-
-				<div class="app-badges-container w-full flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
-					<a href="https://apps.apple.com/fr/app/babacoiffure/id6482997794?l=en-GB" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 no-underline w-full sm:w-auto focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow rounded transition-all px-2 py-1" aria-label="Download on the App Store">
-						<img src="apple-logo-svgrepo-com.svg" alt="Télécharger sur l'App Store" class="h-10 w-auto" />
-						<p id="app-store-btn" class="bg-primary-yellow text-black font-bold rounded-full px-6 py-3 transition-colors shadow-lg">Télécharger sur l'App Store</p>
-					</a>
-					<a class="flex items-center justify-center gap-2 no-underline opacity-70 cursor-not-allowed w-full sm:w-auto" aria-disabled="true" tabindex="-1">
-						<img src="playstore-svgrepo-com.svg" alt="Bientôt disponible sur Android" class="h-10 w-auto" />
-						<p id="play-store-btn" class="bg-primary-yellow text-black font-bold rounded-full px-6 py-3 shadow-lg">Bientôt disponible sur Android</p>
-					</a>
+					<div class="app-badges-container w-full flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+						<a href="https://apps.apple.com/fr/app/babacoiffure/id6482997794?l=en-GB" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 no-underline w-full sm:w-auto focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded transition-all px-2 py-1" aria-label="Download Babacoiffure on the App Store">
+							<img src="apple-logo-svgrepo-com.svg" alt="Apple App Store" class="h-10 w-auto" loading="lazy" />
+							<p id="app-store-btn" class="bg-primary-yellow text-black font-bold rounded-full px-6 py-3 transition-colors shadow-lg hover:bg-primary-red hover:text-white">Télécharger sur l'App Store</p>
+						</a>
+						<a class="flex items-center justify-center gap-2 no-underline opacity-70 cursor-not-allowed w-full sm:w-auto" aria-disabled="true" tabindex="-1" aria-label="Coming soon to Google Play Store">
+							<img src="playstore-svgrepo-com.svg" alt="Google Play Store" class="h-10 w-auto" loading="lazy" />
+							<p id="play-store-btn" class="bg-primary-yellow text-black font-bold rounded-full px-6 py-3 shadow-lg">Bientôt disponible sur Android</p>
+						</a>
+					</div>
 				</div>
 			</div>
+		</section>
 
-			<!-- Figma Prototype Integration -->
+		<section class="features w-full max-w-6xl mx-auto px-4 sm:px-6 py-16 flex flex-col gap-12 items-stretch justify-center" data-aos="zoom-in" role="region" aria-labelledby="features-title">
+		  <h2 id="features-title" class="text-4xl md:text-5xl font-heading font-extrabold text-primary-yellow text-center mb-12 tracking-tight drop-shadow-lg" data-fr="Fonctionnalités pour chaque utilisateur" data-en="Features for Every User">Features for Every User</h2>
+		  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+		    <!-- Client Features -->
+		    <div class="feature-group bg-background-blue/90 border-2 border-primary-yellow rounded-3xl p-8 shadow-lg flex flex-col items-center transition-transform duration-200 hover:shadow-xl hover:-translate-y-1 focus-within:shadow-xl focus-within:-translate-y-1" data-aos="fade-up" role="article" aria-labelledby="clients-title">
+		      <h3 id="clients-title" class="text-2xl md:text-3xl font-heading font-bold mb-6 text-primary-red text-center tracking-wide">Clients</h3>
+		      <ul class="text-soft-gray text-left space-y-5 text-base md:text-lg font-medium" role="list">
+		        <li class="flex items-start gap-3" role="listitem"><span aria-hidden="true" class="text-2xl">🔍</span><span id="feature-client-1-title"><b>Provider & Service Discovery:</b> View hairstylist profiles and browse services.</span></li>
+		        <li class="flex items-start gap-3" role="listitem"><span aria-hidden="true" class="text-2xl">📅</span><span id="feature-client-2-title"><b>Advanced Booking:</b> Select services, add-ons, variations, and book with an interactive calendar.</span></li>
+		        <li class="flex items-start gap-3" role="listitem"><span aria-hidden="true" class="text-2xl">📍</span><span id="feature-client-3-title"><b>Flexible Location:</b> Choose service at home or provider's location.</span></li>
+		        <li class="flex items-start gap-3" role="listitem"><span aria-hidden="true" class="text-2xl">📝</span><span id="feature-client-4-title"><b>Booking Summary:</b> Review all details before confirming.</span></li>
+		        <li class="flex items-start gap-3" role="listitem"><span aria-hidden="true" class="text-2xl">💳</span><span id="feature-client-5-title"><b>Payments & Scheduling:</b> Pay securely, view appointment history, receive notifications, and reschedule.</span></li>
+		      </ul>
+		    </div>
+		    <!-- Provider Features -->
+		    <div class="feature-group bg-background-blue/90 border-2 border-primary-red rounded-3xl p-8 shadow-lg flex flex-col items-center transition-transform duration-200 hover:shadow-xl hover:-translate-y-1 focus-within:shadow-xl focus-within:-translate-y-1" data-aos="fade-up" data-aos-delay="100" role="article" aria-labelledby="providers-title">
+		      <h3 id="providers-title" class="text-2xl md:text-3xl font-heading font-bold mb-6 text-primary-yellow text-center tracking-wide">Providers</h3>
+		      <ul class="text-soft-gray text-left space-y-5 text-base md:text-lg font-medium" role="list">
+		        <li class="flex items-start gap-3" role="listitem"><span aria-hidden="true" class="text-2xl">🛠️</span><span id="feature-provider-1-title"><b>Service & Profile Management:</b> Create, edit, and delete services with complex pricing and image galleries.</span></li>
+		        <li class="flex items-start gap-3" role="listitem"><span aria-hidden="true" class="text-2xl">🔗</span><span id="feature-provider-2-title"><b>Shareable Profile:</b> Share a unique booking link with clients.</span></li>
+		        <li class="flex items-start gap-3" role="listitem"><span aria-hidden="true" class="text-2xl">⏰</span><span id="feature-provider-3-title"><b>Availability & Appointments:</b> Manage calendar, accept/reject requests, and propose new times.</span></li>
+		        <li class="flex items-start gap-3" role="listitem"><span aria-hidden="true" class="text-2xl">💸</span><span id="feature-provider-4-title"><b>Payments & Subscriptions:</b> Connect bank account, receive payouts, and manage premium plans.</span></li>
+		      </ul>
+		    </div>
+		    <!-- Shared Features -->
+		    <div class="feature-group bg-background-blue/90 border-2 border-soft-pink rounded-3xl p-8 shadow-lg flex flex-col items-center transition-transform duration-200 hover:shadow-xl hover:-translate-y-1 focus-within:shadow-xl focus-within:-translate-y-1" data-aos="fade-up" data-aos-delay="200" role="article" aria-labelledby="shared-title">
+		      <h3 id="shared-title" class="text-2xl md:text-3xl font-heading font-bold mb-6 text-primary-red text-center tracking-wide">Shared</h3>
+		      <ul class="text-soft-gray text-left space-y-5 text-base md:text-lg font-medium" role="list">
+		        <li class="flex items-start gap-3" role="listitem"><span aria-hidden="true" class="text-2xl">👤</span><span id="feature-shared-1-title"><b>Account & Profile:</b> Secure registration, login, password recovery, and profile updates.</span></li>
+		        <li class="flex items-start gap-3" role="listitem"><span aria-hidden="true" class="text-2xl">💬</span><span id="feature-shared-2-title"><b>Real-time Communication:</b> 1:1 chat and push notifications for messages and appointments.</span></li>
+		        <li class="flex items-start gap-3" role="listitem"><span aria-hidden="true" class="text-2xl">🛡️</span><span id="feature-shared-3-title"><b>Safety & Moderation:</b> Block or report users for safety.</span></li>
+		        <li class="flex items-start gap-3" role="listitem"><span aria-hidden="true" class="text-2xl">🌐</span><span id="feature-shared-4-title"><b>Multilingual:</b> Switch between English and French.</span></li>
+		      </ul>
+		    </div>
+		  </div>
+		</section>
 
-		</div>
-	</section>
+		<!-- Testimonials Section (EN/FR, responsive) -->
+		<section class="testimonials w-full max-w-4xl mx-auto px-4 sm:px-6 py-10 md:py-16" data-aos="fade-left" role="region" aria-labelledby="testimonials-title">
+		  <h2 id="testimonials-title" class="text-2xl md:text-3xl font-heading font-bold text-primary-yellow text-center mb-8" data-fr="Témoignages" data-en="Testimonials">Témoignages</h2>
+		  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" role="list">
+		    <!-- Testimonial 1 -->
+		    <div class="flex-1 bg-background-blue/80 rounded-2xl p-6 md:p-8 shadow-lg text-left flex flex-col justify-between min-h-[180px] border border-soft-gray/20" tabindex="0" role="listitem">
+		      <blockquote>
+		        <p class="text-base md:text-lg text-white italic mb-3" data-fr="Super application, très pratique pour gérer mes rendez-vous !" data-en="Great app, makes my booking process so much easier!">"Super application, très pratique pour gérer mes rendez-vous !"</p>
+		        <cite class="block text-soft-pink font-bold" data-fr="— Marie, Coiffeuse" data-en="— Marie, Coiffeuse">— Marie, Coiffeuse</cite>
+		      </blockquote>
+		    </div>
+		    <!-- Testimonial 2 -->
+		    <div class="flex-1 bg-background-blue/80 rounded-2xl p-6 md:p-8 shadow-lg text-left flex flex-col justify-between min-h-[180px] border border-soft-gray/20" tabindex="0" role="listitem">
+		      <blockquote>
+		        <p class="text-base md:text-lg text-white italic mb-3" data-fr="Interface intuitive, je gagne un temps fou chaque semaine." data-en="Super intuitive and saves me hours every week.">"Interface intuitive, je gagne un temps fou chaque semaine."</p>
+		        <cite class="block text-soft-pink font-bold" data-fr="— Sophie, Gérante de salon" data-en="— Sophie, Gérante de salon">— Sophie, Gérante de salon</cite>
+		      </blockquote>
+		    </div>
+		    <!-- Testimonial 3 -->
+		    <div class="flex-1 bg-background-blue/80 rounded-2xl p-6 md:p-8 shadow-lg text-left flex flex-col justify-between min-h-[180px] border border-soft-gray/20" tabindex="0" role="listitem">
+		      <blockquote>
+		        <p class="text-base md:text-lg text-white italic mb-3" data-fr="Mes clients adorent la réservation en ligne !" data-en="My clients love the easy booking experience!">"Mes clients adorent la réservation en ligne !"</p>
+		        <cite class="block text-soft-pink font-bold" data-fr="— Emma, Coiffeuse" data-en="— Emma, Coiffeuse">— Emma, Coiffeuse</cite>
+		      </blockquote>
+		    </div>
+		  </div>
+		</section>
+	</main>
 
-	<section class="features w-full max-w-6xl mx-auto px-4 sm:px-6 py-16 flex flex-col gap-12 items-stretch justify-center" data-aos="zoom-in">
-  <h2 class="text-4xl md:text-5xl font-heading font-extrabold text-primary-yellow text-center mb-12 tracking-tight drop-shadow-lg" data-fr="Fonctionnalités pour chaque utilisateur" data-en="Features for Every User">Features for Every User</h2>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-    <!-- Client Features -->
-    <div class="feature-group bg-background-blue/90 border-2 border-primary-yellow rounded-3xl p-8 shadow-lg flex flex-col items-center transition-transform duration-200 hover:shadow-xl hover:-translate-y-1 focus-within:shadow-xl focus-within:-translate-y-1" data-aos="fade-up">
-      <h3 class="text-2xl md:text-3xl font-heading font-bold mb-6 text-primary-red text-center tracking-wide">Clients</h3>
-      <ul class="text-soft-gray text-left space-y-5 text-base md:text-lg font-medium">
-        <li class="flex items-start gap-3"><span aria-hidden="true" class="text-2xl">🔍</span><span id="feature-client-1-title"><b>Provider & Service Discovery:</b> View hairstylist profiles and browse services.</span></li>
-        <li class="flex items-start gap-3"><span aria-hidden="true" class="text-2xl">📅</span><span id="feature-client-2-title"><b>Advanced Booking:</b> Select services, add-ons, variations, and book with an interactive calendar.</span></li>
-        <li class="flex items-start gap-3"><span aria-hidden="true" class="text-2xl">📍</span><span id="feature-client-3-title"><b>Flexible Location:</b> Choose service at home or provider’s location.</span></li>
-        <li class="flex items-start gap-3"><span aria-hidden="true" class="text-2xl">📝</span><span id="feature-client-4-title"><b>Booking Summary:</b> Review all details before confirming.</span></li>
-        <li class="flex items-start gap-3"><span aria-hidden="true" class="text-2xl">💳</span><span id="feature-client-5-title"><b>Payments & Scheduling:</b> Pay securely, view appointment history, receive notifications, and reschedule.</span></li>
-      </ul>
-    </div>
-    <!-- Provider Features -->
-    <div class="feature-group bg-background-blue/90 border-2 border-primary-red rounded-3xl p-8 shadow-lg flex flex-col items-center transition-transform duration-200 hover:shadow-xl hover:-translate-y-1 focus-within:shadow-xl focus-within:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
-      <h3 class="text-2xl md:text-3xl font-heading font-bold mb-6 text-primary-yellow text-center tracking-wide">Providers</h3>
-      <ul class="text-soft-gray text-left space-y-5 text-base md:text-lg font-medium">
-        <li class="flex items-start gap-3"><span aria-hidden="true" class="text-2xl">🛠️</span><span id="feature-provider-1-title"><b>Service & Profile Management:</b> Create, edit, and delete services with complex pricing and image galleries.</span></li>
-        <li class="flex items-start gap-3"><span aria-hidden="true" class="text-2xl">🔗</span><span id="feature-provider-2-title"><b>Shareable Profile:</b> Share a unique booking link with clients.</span></li>
-        <li class="flex items-start gap-3"><span aria-hidden="true" class="text-2xl">⏰</span><span id="feature-provider-3-title"><b>Availability & Appointments:</b> Manage calendar, accept/reject requests, and propose new times.</span></li>
-        <li class="flex items-start gap-3"><span aria-hidden="true" class="text-2xl">💸</span><span id="feature-provider-4-title"><b>Payments & Subscriptions:</b> Connect bank account, receive payouts, and manage premium plans.</span></li>
-      </ul>
-    </div>
-    <!-- Shared Features -->
-    <div class="feature-group bg-background-blue/90 border-2 border-soft-pink rounded-3xl p-8 shadow-lg flex flex-col items-center transition-transform duration-200 hover:shadow-xl hover:-translate-y-1 focus-within:shadow-xl focus-within:-translate-y-1" data-aos="fade-up" data-aos-delay="200">
-      <h3 class="text-2xl md:text-3xl font-heading font-bold mb-6 text-primary-red text-center tracking-wide">Shared</h3>
-      <ul class="text-soft-gray text-left space-y-5 text-base md:text-lg font-medium">
-        <li class="flex items-start gap-3"><span aria-hidden="true" class="text-2xl">👤</span><span id="feature-shared-1-title"><b>Account & Profile:</b> Secure registration, login, password recovery, and profile updates.</span></li>
-        <li class="flex items-start gap-3"><span aria-hidden="true" class="text-2xl">💬</span><span id="feature-shared-2-title"><b>Real-time Communication:</b> 1:1 chat and push notifications for messages and appointments.</span></li>
-        <li class="flex items-start gap-3"><span aria-hidden="true" class="text-2xl">🛡️</span><span id="feature-shared-3-title"><b>Safety & Moderation:</b> Block or report users for safety.</span></li>
-        <li class="flex items-start gap-3"><span aria-hidden="true" class="text-2xl">🌐</span><span id="feature-shared-4-title"><b>Multilingual:</b> Switch between English and French.</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-	<!-- Testimonials Section (EN/FR, responsive) -->
-	<section class="testimonials w-full max-w-4xl mx-auto px-4 sm:px-6 py-10 md:py-16" data-aos="fade-left">
-	  <h2 class="text-2xl md:text-3xl font-heading font-bold text-primary-yellow text-center mb-8" data-fr="Témoignages" data-en="Testimonials">Témoignages</h2>
-	  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-	    <!-- Testimonial 1 -->
-	    <div class="flex-1 bg-background-blue/80 rounded-2xl p-6 md:p-8 shadow-lg text-left flex flex-col justify-between min-h-[180px] border border-soft-gray/20" tabindex="0">
-	      <p class="text-base md:text-lg text-white italic mb-3" data-fr="Super application, très pratique pour gérer mes rendez-vous !" data-en="Great app, makes my booking process so much easier!">"Super application, très pratique pour gérer mes rendez-vous !"</p>
-	      <span class="block text-soft-pink font-bold" data-fr="— Marie, Coiffeuse" data-en="— Marie, Coiffeuse">— Marie, Coiffeuse</span>
-	    </div>
-	    <!-- Testimonial 2 -->
-	    <div class="flex-1 bg-background-blue/80 rounded-2xl p-6 md:p-8 shadow-lg text-left flex flex-col justify-between min-h-[180px] border border-soft-gray/20" tabindex="0">
-	      <p class="text-base md:text-lg text-white italic mb-3" data-fr="Interface intuitive, je gagne un temps fou chaque semaine." data-en="Super intuitive and saves me hours every week.">"Interface intuitive, je gagne un temps fou chaque semaine."</p>
-	      <span class="block text-soft-pink font-bold" data-fr="— Sophie, Gérante de salon" data-en="— Sophie, Gérante de salon">— Sophie, Gérante de salon</span>
-	    </div>
-	    <!-- Testimonial 3 -->
-	    <div class="flex-1 bg-background-blue/80 rounded-2xl p-6 md:p-8 shadow-lg text-left flex flex-col justify-between min-h-[180px] border border-soft-gray/20" tabindex="0">
-	      <p class="text-base md:text-lg text-white italic mb-3" data-fr="Mes clients adorent la réservation en ligne !" data-en="My clients love the easy booking experience!">"Mes clients adorent la réservation en ligne !"</p>
-	      <span class="block text-soft-pink font-bold" data-fr="— Emma, Coiffeuse" data-en="— Emma, Coiffeuse">— Emma, Coiffeuse</span>
-	    </div>
-	  </div>
-	</section>
-
-	<footer class="bg-background-blue w-full py-8 px-4 sm:px-8 mt-auto" data-aos="fade-up">
+	<footer class="bg-background-blue w-full py-8 px-4 sm:px-8 mt-auto" data-aos="fade-up" role="contentinfo">
 	  <div class="max-w-4xl mx-auto flex flex-col items-center justify-center">
 	    <p id="footer-copyright" class="text-center text-soft-gray text-sm md:text-base leading-relaxed">
 	      &copy; 2024 Babacoiffure. Tous droits réservés.
 	    </p>
-	    <nav class="mt-3 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
-	      <a id="footer-terms" href="terms.html" class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow rounded transition-all px-2 py-1">Conditions d'Utilisation</a>
-	      <span class="hidden sm:inline-block text-soft-gray">|</span>
-	      <a id="footer-support" href="support.html" class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow rounded transition-all px-2 py-1">Support</a>
-	      <span class="hidden sm:inline-block text-soft-gray">|</span>
-	      <a id="footer-privacy" href="privacy.html" class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow rounded transition-all px-2 py-1">Politique de Confidentialité</a>
+	    <nav class="mt-3 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4" role="navigation" aria-label="Footer navigation">
+	      <a id="footer-terms" href="terms.html" class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded transition-all px-2 py-1">Conditions d'Utilisation</a>
+	      <span class="hidden sm:inline-block text-soft-gray" aria-hidden="true">|</span>
+	      <a id="footer-support" href="support.html" class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded transition-all px-2 py-1">Support</a>
+	      <span class="hidden sm:inline-block text-soft-gray" aria-hidden="true">|</span>
+	      <a id="footer-privacy" href="privacy.html" class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded transition-all px-2 py-1">Politique de Confidentialité</a>
 	    </nav>
 	  </div>
 	</footer>
 
 	<script>
-// Language switcher logic
+// Language switcher logic with improved accessibility
 const langSwitcher = document.getElementById('lang-switcher');
 let currentLang = 'fr';
 
@@ -178,7 +210,7 @@ function updateTestimonials(lang) {
   testimonialTexts.forEach(text => {
     text.textContent = text.getAttribute(`data-${lang}`);
   });
-  const testimonialAuthors = document.querySelectorAll('.testimonials span[data-fr][data-en]');
+  const testimonialAuthors = document.querySelectorAll('.testimonials cite[data-fr][data-en]');
   testimonialAuthors.forEach(author => {
     author.textContent = author.getAttribute(`data-${lang}`);
   });
@@ -236,6 +268,7 @@ function updateContent(lang) {
 langSwitcher.addEventListener('click', () => {
   currentLang = currentLang === 'fr' ? 'en' : 'fr';
   langSwitcher.textContent = currentLang.toUpperCase();
+  langSwitcher.setAttribute('aria-pressed', currentLang === 'en' ? 'true' : 'false');
   updateContent(currentLang);
   localStorage.setItem('lang', currentLang);
 });
@@ -246,6 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (savedLang && (savedLang === 'en' || savedLang === 'fr')) {
     currentLang = savedLang;
     langSwitcher.textContent = currentLang.toUpperCase();
+    langSwitcher.setAttribute('aria-pressed', currentLang === 'en' ? 'true' : 'false');
   }
   updateContent(currentLang);
   updateTestimonials(currentLang);
