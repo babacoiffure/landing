@@ -23,7 +23,8 @@ window.translations.en = {
     title: "Simplify Your Hairdressing Business",
     tagline: "Automated appointment management for independent hairdressers",
     app_store: "Download on the App Store",
-    play_store: "Coming soon to Android"
+    play_store: "Coming soon to Android",
+    tutorials_cta: 'See Tutorials'
   },
   features: [
     { title: "Smart Scheduling", desc: "Effortlessly manage your appointments and client bookings" },
@@ -74,7 +75,8 @@ window.translations.fr = {
     title: "Simplifiez Votre Activité de Coiffure",
     tagline: "Gestion automatisée des rendez-vous pour coiffeurs indépendants",
     app_store: "Télécharger sur l'App Store",
-    play_store: "Bientôt disponible sur Android"
+    play_store: "Bientôt disponible sur Android",
+    tutorials_cta: 'Voir les tutoriels'
   },
   features: [
     { title: "Planification Intelligente", desc: "Gérez sans effort vos rendez-vous et réservations clients" },
