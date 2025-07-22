@@ -1,166 +1,198 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Tutoriels Babacoiffure - Apprenez à utiliser la plateforme grâce à nos vidéos." />
-  <title>Tutoriels Babacoiffure</title>
-  <link rel="icon" type="image/png" href="logo.png" />
-  <link rel="apple-touch-icon" href="logo.png" />
-  <meta name="msapplication-TileImage" content="logo.png" />
-  <link rel="preload" href="https://cdn.tailwindcss.com" as="script" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: {
-              red: '#f63988',
-              yellow: '#FBC217',
-            },
-            background: {
-              blue: '#0502a7',
-            },
-            soft: {
-              gray: '#f3f2f3',
-              pink: '#ebacca',
-            },
-            dark: {
-              text: '#1c1d22',
-            },
-          },
-          fontFamily: {
-            heading: ['Impact', 'Arial Black', 'sans-serif'],
-            body: ['Outfit', 'Arial', 'sans-serif'],
-          },
-        },
-      },
-    }
-  </script>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-H9ERMN8HCX"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-H9ERMN8HCX');
+	</script>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description"
+		content="Tutoriels Babacoiffure - Apprenez à utiliser la plateforme grâce à nos vidéos." />
+	<title>Tutoriels Babacoiffure</title>
+	<link rel="icon" type="image/png" href="logo.png" />
+	<link rel="apple-touch-icon" href="logo.png" />
+	<meta name="msapplication-TileImage" content="logo.png" />
+	<link rel="preload" href="https://cdn.tailwindcss.com" as="script" />
+	<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					colors: {
+						primary: {
+							red: '#f63988',
+							yellow: '#FBC217',
+						},
+						background: {
+							blue: '#0502a7',
+						},
+						soft: {
+							gray: '#f3f2f3',
+							pink: '#ebacca',
+						},
+						dark: {
+							text: '#1c1d22',
+						},
+					},
+					fontFamily: {
+						heading: ['Impact', 'Arial Black', 'sans-serif'],
+						body: ['Outfit', 'Arial', 'sans-serif'],
+					},
+				},
+			},
+		}
+	</script>
 </head>
+
 <body class="bg-background-blue text-white font-body min-h-screen flex flex-col">
-  <header class="w-full flex flex-row items-center justify-between px-4 md:px-12 py-4 md:py-8 bg-background-blue" role="banner">
-    <div class="flex-shrink-0 flex items-center">
-      <a href="index.html"><img src="logo.png" alt="Babacoiffure Logo" class="h-12 md:h-20 w-auto filter brightness-0 invert transition-transform duration-300 hover:scale-105 hover:shadow-lg" loading="eager" /></a>
-    </div>
-    <div class="flex items-center justify-end w-full">
-      <a href="index.html" class="bg-primary-yellow text-background-blue font-bold rounded-full px-4 py-2 ml-4 shadow hover:bg-primary-red hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue">Accueil</a>
-      <button id="lang-switcher" class="bg-primary-yellow text-background-blue font-bold rounded-full px-4 py-2 ml-4 shadow hover:bg-primary-red hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue" aria-label="Switch language between French and English" aria-pressed="false">FR</button>
-    </div>
-  </header>
-  <main class="flex-1 flex flex-col items-center justify-center px-4 py-12 md:py-20">
-    <section class="w-full max-w-3xl mx-auto text-center" data-aos="fade-up">
-      <h1 id="tutorial-title" class="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-6 text-primary-yellow">Tutoriels Vidéo</h1>
-      <p id="tutorial-desc" class="text-lg md:text-xl text-soft-pink mb-8">Découvrez comment utiliser Babacoiffure grâce à nos tutoriels vidéo. Retrouvez ci-dessous toutes les vidéos de la playlist, accessibles individuellement !</p>
-      <div id="playlist-videos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-8"></div>
-      <a id="playlist-link" href="https://www.youtube.com/playlist?list=PLTdwtSds-6VMEuLmboINz4H8g8MPkyBqg" target="_blank" rel="noopener noreferrer" class="inline-block bg-primary-red text-white font-bold rounded-full px-6 py-3 shadow-lg hover:bg-primary-yellow hover:text-background-blue transition-colors">Voir la playlist sur YouTube</a>
-      <noscript>
-        <div class="text-red-500 mt-4">Activez JavaScript pour voir la liste des vidéos.</div>
-      </noscript>
-    </section>
-  </main>
-  <footer class="bg-background-blue w-full py-8 px-4 sm:px-8 mt-auto" role="contentinfo">
-    <div class="max-w-4xl mx-auto flex flex-col items-center justify-center">
-      <nav class="mt-3 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4" role="navigation" aria-label="Footer navigation">
-        <a id="footer-terms" href="terms.html" class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded transition-all px-2 py-1">Conditions d'Utilisation</a>
-        <span class="hidden sm:inline-block text-soft-gray" aria-hidden="true">|</span>
-        <a id="footer-support" href="support.html" class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded transition-all px-2 py-1">Support</a>
-        <span class="hidden sm:inline-block text-soft-gray" aria-hidden="true">|</span>
-        <a id="footer-privacy" href="privacy.html" class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded transition-all px-2 py-1">Politique de Confidentialité</a>
-      </nav>
-      <p id="footer-copyright" class="text-center text-soft-gray text-sm md:text-base leading-relaxed mt-4">&copy; 2024 Babacoiffure. Tous droits réservés.</p>
-    </div>
-  </footer>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      once: true,
-      duration: 700,
-      easing: 'ease-out-cubic',
-    });
+	<header class="w-full flex flex-row items-center justify-between px-4 md:px-12 py-4 md:py-8 bg-background-blue"
+		role="banner">
+		<div class="flex-shrink-0 flex items-center">
+			<a href="index.html"><img src="logo.png" alt="Babacoiffure Logo"
+					class="h-12 md:h-20 w-auto filter brightness-0 invert transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+					loading="eager" /></a>
+		</div>
+		<div class="flex items-center justify-end w-full">
+			<a href="index.html"
+				class="bg-primary-yellow text-background-blue font-bold rounded-full px-4 py-2 ml-4 shadow hover:bg-primary-red hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue">Accueil</a>
+			<button id="lang-switcher"
+				class="bg-primary-yellow text-background-blue font-bold rounded-full px-4 py-2 ml-4 shadow hover:bg-primary-red hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue"
+				aria-label="Switch language between French and English" aria-pressed="false">FR</button>
+		</div>
+	</header>
+	<main class="flex-1 flex flex-col items-center justify-center px-4 py-12 md:py-20">
+		<section class="w-full max-w-3xl mx-auto text-center" data-aos="fade-up">
+			<h1 id="tutorial-title"
+				class="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-6 text-primary-yellow">Tutoriels
+				Vidéo</h1>
+			<p id="tutorial-desc" class="text-lg md:text-xl text-soft-pink mb-8">Découvrez comment utiliser
+				Babacoiffure grâce à nos tutoriels vidéo. Retrouvez ci-dessous toutes les vidéos de la playlist,
+				accessibles individuellement !</p>
+			<div id="playlist-videos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-8"></div>
+			<a id="playlist-link" href="https://www.youtube.com/playlist?list=PLTdwtSds-6VMEuLmboINz4H8g8MPkyBqg"
+				target="_blank" rel="noopener noreferrer"
+				class="inline-block bg-primary-red text-white font-bold rounded-full px-6 py-3 shadow-lg hover:bg-primary-yellow hover:text-background-blue transition-colors">Voir
+				la playlist sur YouTube</a>
+			<noscript>
+				<div class="text-red-500 mt-4">Activez JavaScript pour voir la liste des vidéos.</div>
+			</noscript>
+		</section>
+	</main>
+	<footer class="bg-background-blue w-full py-8 px-4 sm:px-8 mt-auto" role="contentinfo">
+		<div class="max-w-4xl mx-auto flex flex-col items-center justify-center">
+			<nav class="mt-3 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4" role="navigation"
+				aria-label="Footer navigation">
+				<a id="footer-terms" href="terms.html"
+					class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded transition-all px-2 py-1">Conditions
+					d'Utilisation</a>
+				<span class="hidden sm:inline-block text-soft-gray" aria-hidden="true">|</span>
+				<a id="footer-support" href="support.html"
+					class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded transition-all px-2 py-1">Support</a>
+				<span class="hidden sm:inline-block text-soft-gray" aria-hidden="true">|</span>
+				<a id="footer-privacy" href="privacy.html"
+					class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded transition-all px-2 py-1">Politique
+					de Confidentialité</a>
+			</nav>
+			<p id="footer-copyright" class="text-center text-soft-gray text-sm md:text-base leading-relaxed mt-4">
+				&copy; 2024 Babacoiffure. Tous droits réservés.</p>
+		</div>
+	</footer>
+	<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+	<script>
+		AOS.init({
+			once: true,
+			duration: 700,
+			easing: 'ease-out-cubic',
+		});
 
-    // --- Language Switcher Logic ---
-    const langSwitcher = document.getElementById('lang-switcher');
-    let currentLang = 'fr';
-    const translations = {
-      fr: {
-        tutorial: {
-          title: 'Tutoriels Vidéo',
-          desc: 'Découvrez comment utiliser Babacoiffure grâce à nos tutoriels vidéo. Retrouvez ci-dessous toutes les vidéos de la playlist, accessibles individuellement !',
-          playlist: 'Voir la playlist sur YouTube',
-          video: 'Voir la vidéo',
-        },
-        footer: {
-          terms: "Conditions d'Utilisation",
-          support: 'Support',
-          privacy: 'Politique de Confidentialité',
-          copyright: 'Tous droits réservés.'
-        },
-        js_disabled: 'Activez JavaScript pour voir la liste des vidéos.'
-      },
-      en: {
-        tutorial: {
-          title: 'Video Tutorials',
-          desc: 'Learn how to use Babacoiffure with our video tutorials. Find all playlist videos below, each accessible individually!',
-          playlist: 'View playlist on YouTube',
-          video: 'Watch video',
-        },
-        footer: {
-          terms: 'Terms of Use',
-          support: 'Support',
-          privacy: 'Privacy Policy',
-          copyright: 'All rights reserved.'
-        },
-        js_disabled: 'Enable JavaScript to see the list of videos.'
-      }
-    };
-    function updateContent(lang) {
-      const t = translations[lang];
-      document.getElementById('tutorial-title').textContent = t.tutorial.title;
-      document.getElementById('tutorial-desc').textContent = t.tutorial.desc;
-      document.getElementById('playlist-link').textContent = t.tutorial.playlist;
-      document.getElementById('footer-terms').textContent = t.footer.terms;
-      document.getElementById('footer-support').textContent = t.footer.support;
-      document.getElementById('footer-privacy').textContent = t.footer.privacy;
-      document.getElementById('footer-copyright').innerHTML = `&copy; 2024 Babacoiffure. ${t.footer.copyright}`;
-      // Update video button labels
-      document.querySelectorAll('.video-btn-label').forEach(el => {
-        el.textContent = t.tutorial.video;
-      });
-      // Update noscript message
-      const noscript = document.querySelector('noscript div');
-      if (noscript) noscript.textContent = t.js_disabled;
-    }
-    langSwitcher.addEventListener('click', () => {
-      currentLang = currentLang === 'fr' ? 'en' : 'fr';
-      langSwitcher.textContent = currentLang.toUpperCase();
-      langSwitcher.setAttribute('aria-pressed', currentLang === 'en' ? 'true' : 'false');
-      updateContent(currentLang);
-      localStorage.setItem('lang', currentLang);
-      renderVideos(videoIds); // re-render to update button labels
-    });
-    document.addEventListener('DOMContentLoaded', () => {
-      const savedLang = localStorage.getItem('lang');
-      if (savedLang && (savedLang === 'en' || savedLang === 'fr')) {
-        currentLang = savedLang;
-        langSwitcher.textContent = currentLang.toUpperCase();
-        langSwitcher.setAttribute('aria-pressed', currentLang === 'en' ? 'true' : 'false');
-      }
-      updateContent(currentLang);
-      renderVideos(videoIds);
-    });
+		// --- Language Switcher Logic ---
+		const langSwitcher = document.getElementById('lang-switcher');
+		let currentLang = 'fr';
+		const translations = {
+			fr: {
+				tutorial: {
+					title: 'Tutoriels Vidéo',
+					desc: 'Découvrez comment utiliser Babacoiffure grâce à nos tutoriels vidéo. Retrouvez ci-dessous toutes les vidéos de la playlist, accessibles individuellement !',
+					playlist: 'Voir la playlist sur YouTube',
+					video: 'Voir la vidéo',
+				},
+				footer: {
+					terms: "Conditions d'Utilisation",
+					support: 'Support',
+					privacy: 'Politique de Confidentialité',
+					copyright: 'Tous droits réservés.'
+				},
+				js_disabled: 'Activez JavaScript pour voir la liste des vidéos.'
+			},
+			en: {
+				tutorial: {
+					title: 'Video Tutorials',
+					desc: 'Learn how to use Babacoiffure with our video tutorials. Find all playlist videos below, each accessible individually!',
+					playlist: 'View playlist on YouTube',
+					video: 'Watch video',
+				},
+				footer: {
+					terms: 'Terms of Use',
+					support: 'Support',
+					privacy: 'Privacy Policy',
+					copyright: 'All rights reserved.'
+				},
+				js_disabled: 'Enable JavaScript to see the list of videos.'
+			}
+		};
+		function updateContent(lang) {
+			const t = translations[lang];
+			document.getElementById('tutorial-title').textContent = t.tutorial.title;
+			document.getElementById('tutorial-desc').textContent = t.tutorial.desc;
+			document.getElementById('playlist-link').textContent = t.tutorial.playlist;
+			document.getElementById('footer-terms').textContent = t.footer.terms;
+			document.getElementById('footer-support').textContent = t.footer.support;
+			document.getElementById('footer-privacy').textContent = t.footer.privacy;
+			document.getElementById('footer-copyright').innerHTML = `&copy; 2024 Babacoiffure. ${t.footer.copyright}`;
+			// Update video button labels
+			document.querySelectorAll('.video-btn-label').forEach(el => {
+				el.textContent = t.tutorial.video;
+			});
+			// Update noscript message
+			const noscript = document.querySelector('noscript div');
+			if (noscript) noscript.textContent = t.js_disabled;
+		}
+		langSwitcher.addEventListener('click', () => {
+			currentLang = currentLang === 'fr' ? 'en' : 'fr';
+			langSwitcher.textContent = currentLang.toUpperCase();
+			langSwitcher.setAttribute('aria-pressed', currentLang === 'en' ? 'true' : 'false');
+			updateContent(currentLang);
+			localStorage.setItem('lang', currentLang);
+			renderVideos(videoIds); // re-render to update button labels
+		});
+		document.addEventListener('DOMContentLoaded', () => {
+			const savedLang = localStorage.getItem('lang');
+			if (savedLang && (savedLang === 'en' || savedLang === 'fr')) {
+				currentLang = savedLang;
+				langSwitcher.textContent = currentLang.toUpperCase();
+				langSwitcher.setAttribute('aria-pressed', currentLang === 'en' ? 'true' : 'false');
+			}
+			updateContent(currentLang);
+			renderVideos(videoIds);
+		});
 
-    // Responsive YouTube playlist grid
-    const playlistId = 'PLTdwtSds-6VMEuLmboINz4H8g8MPkyBqg';
-    const apiKey = '';
-    const playlistContainer = document.getElementById('playlist-videos');
-    const videoIds = [
-      'PwOK3AFKOKA'
-    ];
-    function renderVideos(ids) {
-      playlistContainer.innerHTML = ids.map(id => `
+		// Responsive YouTube playlist grid
+		const playlistId = 'PLTdwtSds-6VMEuLmboINz4H8g8MPkyBqg';
+		const apiKey = '';
+		const playlistContainer = document.getElementById('playlist-videos');
+		const videoIds = [
+			'PwOK3AFKOKA'
+		];
+		function renderVideos(ids) {
+			playlistContainer.innerHTML = ids.map(id => `
         <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col items-center">
           <a href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener noreferrer" class="block w-full">
             <img src="https://img.youtube.com/vi/${id}/hqdefault.jpg" alt="Miniature vidéo YouTube" class="w-full aspect-video object-cover hover:opacity-80 transition-opacity" loading="lazy" />
@@ -169,32 +201,33 @@
           <a href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener noreferrer" class="text-primary-red font-bold py-2 px-4 hover:underline video-btn-label">${translations[currentLang].tutorial.video}</a>
         </div>
       `).join('');
-      // Fetch and display titles
-      ids.forEach(id => {
-        fetch(`https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${id}&format=json`)
-          .then(r => r.json())
-          .then(data => {
-            const el = document.getElementById(`video-title-${id}`);
-            if (el) el.textContent = data.title;
-          })
-          .catch(() => {
-            const el = document.getElementById(`video-title-${id}`);
-            if (el) el.textContent = '';
-          });
-      });
-    }
+			// Fetch and display titles
+			ids.forEach(id => {
+				fetch(`https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${id}&format=json`)
+					.then(r => r.json())
+					.then(data => {
+						const el = document.getElementById(`video-title-${id}`);
+						if (el) el.textContent = data.title;
+					})
+					.catch(() => {
+						const el = document.getElementById(`video-title-${id}`);
+						if (el) el.textContent = '';
+					});
+			});
+		}
     // Uncomment below to fetch dynamically (requires API key and CORS):
-    /*
-    function fetchPlaylistVideos() {
-      fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=20&playlistId=${playlistId}&key=${apiKey}`)
-        .then(res => res.json())
-        .then(data => {
-          const ids = data.items.map(item => item.snippet.resourceId.videoId);
-          renderVideos(ids);
-        });
-    }
-    fetchPlaylistVideos();
-    */
-  </script>
+		/*
+		function fetchPlaylistVideos() {
+		  fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=20&playlistId=${playlistId}&key=${apiKey}`)
+		    .then(res => res.json())
+		    .then(data => {
+			 const ids = data.items.map(item => item.snippet.resourceId.videoId);
+			 renderVideos(ids);
+		    });
+		}
+		fetchPlaylistVideos();
+		*/
+	</script>
 </body>
-</html> 
+
+</html>

@@ -2,109 +2,143 @@
 <html lang="fr">
 
 <head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-H9ERMN8HCX"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-H9ERMN8HCX');
+	</script>
 	<!-- Essential Meta Tags -->
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="description" content="Support - Babacoiffure - Centre d'assistance et contact pour toute question concernant notre plateforme de réservation de coiffeurs" />
+	<meta name="description"
+		content="Support - Babacoiffure - Centre d'assistance et contact pour toute question concernant notre plateforme de réservation de coiffeurs" />
 	<meta name="keywords" content="support, aide, assistance, contact, coiffure, réservation, coiffeurs, gestion" />
 	<meta name="author" content="Babacoiffure" />
 	<meta name="robots" content="index, follow" />
-	
+
 	<!-- Open Graph Meta Tags -->
 	<meta property="og:title" content="Support - Babacoiffure" />
-	<meta property="og:description" content="Centre d'assistance et contact pour toute question concernant notre plateforme de réservation de coiffeurs" />
+	<meta property="og:description"
+		content="Centre d'assistance et contact pour toute question concernant notre plateforme de réservation de coiffeurs" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://babacoiffure.com/support.html" />
 	<meta property="og:image" content="logo.png" />
-	
+
 	<!-- Twitter Card Meta Tags -->
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="Support - Babacoiffure" />
-	<meta name="twitter:description" content="Centre d'assistance et contact pour toute question concernant notre plateforme de réservation de coiffeurs" />
+	<meta name="twitter:description"
+		content="Centre d'assistance et contact pour toute question concernant notre plateforme de réservation de coiffeurs" />
 	<meta name="twitter:image" content="logo.png" />
-	
+
 	<title>Support - Babacoiffure</title>
 
 	<!-- Favicon and App Icons -->
 	<link rel="icon" type="image/png" href="logo.png" />
 	<link rel="apple-touch-icon" href="logo.png" />
 	<meta name="msapplication-TileImage" content="logo.png" />
-	
+
 	<!-- Preload Critical Resources -->
 	<link rel="preload" href="https://cdn.tailwindcss.com" as="script" />
 	<link rel="preload" href="logo.png" as="image" />
-	
+
 	<!-- Tailwind CSS CDN for rapid prototyping. For production, migrate to a build process. -->
 	<script src="https://cdn.tailwindcss.com"></script>
 	<script>
-	  tailwind.config = {
-	    theme: {
-	      extend: {
-	        colors: {
-	          primary: {
-	            red: '#f63988',
-	            yellow: '#FBC217',
-	          },
-	          background: {
-	            blue: '#0502a7',
-	          },
-	          soft: {
-	            gray: '#f3f2f3',
-	            pink: '#ebacca',
-	          },
-	          dark: {
-	            text: '#1c1d22',
-	          },
-	        },
-	        fontFamily: {
-	          heading: ['Impact', 'Arial Black', 'sans-serif'],
-	          body: ['Outfit', 'Arial', 'sans-serif'],
-	        },
-	      },
-	    },
-	  }
+		tailwind.config = {
+			theme: {
+				extend: {
+					colors: {
+						primary: {
+							red: '#f63988',
+							yellow: '#FBC217',
+						},
+						background: {
+							blue: '#0502a7',
+						},
+						soft: {
+							gray: '#f3f2f3',
+							pink: '#ebacca',
+						},
+						dark: {
+							text: '#1c1d22',
+						},
+					},
+					fontFamily: {
+						heading: ['Impact', 'Arial Black', 'sans-serif'],
+						body: ['Outfit', 'Arial', 'sans-serif'],
+					},
+				},
+			},
+		}
 	</script>
 </head>
 
 <body class="bg-background-blue text-white font-body min-h-screen flex flex-col">
 	<!-- Responsive header with logo -->
-	<header class="w-full flex flex-row items-center justify-center px-4 md:px-12 py-4 md:py-8 bg-background-blue" role="banner">
-	  <a href="index.html" class="flex-shrink-0 flex items-center">
-	    <img src="logo.png" alt="Babacoiffure Logo" class="h-12 md:h-20 w-auto filter brightness-0 invert transition-transform duration-300 hover:scale-105 hover:shadow-lg" loading="eager" />
-	  </a>
+	<header class="w-full flex flex-row items-center justify-center px-4 md:px-12 py-4 md:py-8 bg-background-blue"
+		role="banner">
+		<a href="index.html" class="flex-shrink-0 flex items-center">
+			<img src="logo.png" alt="Babacoiffure Logo"
+				class="h-12 md:h-20 w-auto filter brightness-0 invert transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+				loading="eager" />
+		</a>
 	</header>
 
 	<main class="flex-1">
 		<!-- Hero Section -->
-		<section class="hero w-full flex flex-col items-center justify-center text-center py-12 md:py-20 flex-1 relative overflow-hidden bg-background-blue" role="banner" aria-labelledby="hero-title">
+		<section
+			class="hero w-full flex flex-col items-center justify-center text-center py-12 md:py-20 flex-1 relative overflow-hidden bg-background-blue"
+			role="banner" aria-labelledby="hero-title">
 			<div class="relative z-10">
-				<h1 id="hero-title" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-4 md:mb-6 text-white leading-tight md:leading-tight">Centre d'Assistance Babacoiffure</h1>
-				<p class="text-base sm:text-lg md:text-xl lg:text-2xl text-soft-pink mb-6 md:mb-10 max-w-2xl mx-auto">Nous sommes là pour vous aider à tirer le meilleur parti de notre plateforme</p>
+				<h1 id="hero-title"
+					class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-4 md:mb-6 text-white leading-tight md:leading-tight">
+					Centre d'Assistance Babacoiffure</h1>
+				<p
+					class="text-base sm:text-lg md:text-xl lg:text-2xl text-soft-pink mb-6 md:mb-10 max-w-2xl mx-auto">
+					Nous sommes là pour vous aider à tirer le meilleur parti de notre plateforme</p>
 			</div>
 			<!-- Background gradient effect -->
-			<div class="absolute inset-0 bg-gradient-to-br from-primary-red/10 via-transparent to-primary-red/5 pointer-events-none"></div>
+			<div
+				class="absolute inset-0 bg-gradient-to-br from-primary-red/10 via-transparent to-primary-red/5 pointer-events-none">
+			</div>
 		</section>
 
 		<!-- Support Content Section -->
-		<section class="w-full max-w-4xl mx-auto px-4 sm:px-6 py-10 md:py-16" role="region" aria-labelledby="support-title">
-			<div class="bg-background-blue/90 border-2 border-primary-yellow rounded-3xl p-8 shadow-lg transition-transform duration-200 hover:shadow-xl hover:-translate-y-1">
-				<h2 id="support-title" class="text-3xl md:text-4xl font-heading font-bold text-primary-yellow text-center mb-12 tracking-tight drop-shadow-lg">Contactez-nous</h2>
-				
+		<section class="w-full max-w-4xl mx-auto px-4 sm:px-6 py-10 md:py-16" role="region"
+			aria-labelledby="support-title">
+			<div
+				class="bg-background-blue/90 border-2 border-primary-yellow rounded-3xl p-8 shadow-lg transition-transform duration-200 hover:shadow-xl hover:-translate-y-1">
+				<h2 id="support-title"
+					class="text-3xl md:text-4xl font-heading font-bold text-primary-yellow text-center mb-12 tracking-tight drop-shadow-lg">
+					Contactez-nous</h2>
+
 				<!-- Contact Form -->
-				<form action="https://formspree.io/f/xqakrwyk" method="POST" class="max-w-2xl mx-auto space-y-6" role="form" aria-label="Formulaire de contact">
+				<form action="https://formspree.io/f/xqakrwyk" method="POST" class="max-w-2xl mx-auto space-y-6"
+					role="form" aria-label="Formulaire de contact">
 					<div class="form-group">
 						<label for="name" class="block text-soft-pink font-medium mb-2">Votre nom</label>
-						<input type="text" id="name" name="name" class="w-full px-4 py-3 border-2 border-primary-red rounded-full bg-background-blue/50 text-white outline-none transition-all focus:border-primary-yellow focus:ring-2 focus:ring-primary-yellow focus:ring-offset-2 focus:ring-offset-background-blue" required aria-required="true" />
+						<input type="text" id="name" name="name"
+							class="w-full px-4 py-3 border-2 border-primary-red rounded-full bg-background-blue/50 text-white outline-none transition-all focus:border-primary-yellow focus:ring-2 focus:ring-primary-yellow focus:ring-offset-2 focus:ring-offset-background-blue"
+							required aria-required="true" />
 					</div>
-					
+
 					<div class="form-group">
 						<label for="email" class="block text-soft-pink font-medium mb-2">Votre email</label>
-						<input type="email" id="email" name="email" class="w-full px-4 py-3 border-2 border-primary-red rounded-full bg-background-blue/50 text-white outline-none transition-all focus:border-primary-yellow focus:ring-2 focus:ring-primary-yellow focus:ring-offset-2 focus:ring-offset-background-blue" required aria-required="true" />
+						<input type="email" id="email" name="email"
+							class="w-full px-4 py-3 border-2 border-primary-red rounded-full bg-background-blue/50 text-white outline-none transition-all focus:border-primary-yellow focus:ring-2 focus:ring-primary-yellow focus:ring-offset-2 focus:ring-offset-background-blue"
+							required aria-required="true" />
 					</div>
-					
+
 					<div class="form-group">
 						<label for="subject" class="block text-soft-pink font-medium mb-2">Sujet</label>
-						<select id="subject" name="subject" class="w-full px-4 py-3 border-2 border-primary-red rounded-full bg-background-blue/50 text-white outline-none transition-all focus:border-primary-yellow focus:ring-2 focus:ring-primary-yellow focus:ring-offset-2 focus:ring-offset-background-blue" required aria-required="true">
+						<select id="subject" name="subject"
+							class="w-full px-4 py-3 border-2 border-primary-red rounded-full bg-background-blue/50 text-white outline-none transition-all focus:border-primary-yellow focus:ring-2 focus:ring-primary-yellow focus:ring-offset-2 focus:ring-offset-background-blue"
+							required aria-required="true">
 							<option value="">Sélectionnez un sujet</option>
 							<option value="question">Question générale</option>
 							<option value="problem">Problème technique</option>
@@ -113,20 +147,24 @@
 							<option value="other">Autre</option>
 						</select>
 					</div>
-					
+
 					<div class="form-group">
 						<label for="message" class="block text-soft-pink font-medium mb-2">Votre message</label>
-						<textarea id="message" name="message" rows="6" class="w-full px-4 py-3 border-2 border-primary-red rounded-3xl bg-background-blue/50 text-white outline-none transition-all focus:border-primary-yellow focus:ring-2 focus:ring-primary-yellow focus:ring-offset-2 focus:ring-offset-background-blue resize-vertical" required aria-required="true"></textarea>
+						<textarea id="message" name="message" rows="6"
+							class="w-full px-4 py-3 border-2 border-primary-red rounded-3xl bg-background-blue/50 text-white outline-none transition-all focus:border-primary-yellow focus:ring-2 focus:ring-primary-yellow focus:ring-offset-2 focus:ring-offset-background-blue resize-vertical"
+							required aria-required="true"></textarea>
 					</div>
-					
+
 					<div class="text-center">
-						<button type="submit" class="bg-primary-yellow text-black font-bold rounded-full px-6 py-3 transition-colors shadow-lg hover:bg-primary-red hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue">Envoyer</button>
+						<button type="submit"
+							class="bg-primary-yellow text-black font-bold rounded-full px-6 py-3 transition-colors shadow-lg hover:bg-primary-red hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue">Envoyer</button>
 					</div>
 				</form>
 
 				<!-- Contact Information -->
 				<div class="mt-12 text-center">
-					<div class="inline-flex items-center justify-center p-6 bg-background-blue/50 rounded-2xl border border-soft-gray/20">
+					<div
+						class="inline-flex items-center justify-center p-6 bg-background-blue/50 rounded-2xl border border-soft-gray/20">
 						<div class="text-4xl mr-4" aria-hidden="true">📧</div>
 						<div>
 							<h3 class="text-xl font-heading font-bold text-primary-yellow mb-2">Email</h3>
@@ -138,9 +176,15 @@
 
 			<!-- Navigation Buttons -->
 			<div class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8">
-				<a href="index.html" class="bg-primary-yellow text-black font-bold rounded-full px-6 py-3 transition-colors shadow-lg hover:bg-primary-red hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue">Retour à l'accueil</a>
-				<a href="terms.html" class="bg-primary-yellow text-black font-bold rounded-full px-6 py-3 transition-colors shadow-lg hover:bg-primary-red hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue">Conditions d'Utilisation</a>
-				<a href="privacy.html" class="bg-primary-yellow text-black font-bold rounded-full px-6 py-3 transition-colors shadow-lg hover:bg-primary-red hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue">Politique de Confidentialité</a>
+				<a href="index.html"
+					class="bg-primary-yellow text-black font-bold rounded-full px-6 py-3 transition-colors shadow-lg hover:bg-primary-red hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue">Retour
+					à l'accueil</a>
+				<a href="terms.html"
+					class="bg-primary-yellow text-black font-bold rounded-full px-6 py-3 transition-colors shadow-lg hover:bg-primary-red hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue">Conditions
+					d'Utilisation</a>
+				<a href="privacy.html"
+					class="bg-primary-yellow text-black font-bold rounded-full px-6 py-3 transition-colors shadow-lg hover:bg-primary-red hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue">Politique
+					de Confidentialité</a>
 			</div>
 		</section>
 	</main>
@@ -149,26 +193,38 @@
 		<div class="max-w-4xl mx-auto flex flex-col items-center justify-center">
 			<!-- Social Media Links in Footer -->
 			<div class="flex items-center justify-center gap-4 mb-4">
-				<a href="https://www.instagram.com/babacoiffure/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-primary-yellow transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded" aria-label="Follow us on Instagram">
+				<a href="https://www.instagram.com/babacoiffure/" target="_blank" rel="noopener noreferrer"
+					class="text-white hover:text-primary-yellow transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded"
+					aria-label="Follow us on Instagram">
 					<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-						<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+						<path
+							d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
 					</svg>
 				</a>
-				<a href="https://www.tiktok.com/@babacoiffure?lang=en" target="_blank" rel="noopener noreferrer" class="text-white hover:text-primary-yellow transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded" aria-label="Follow us on TikTok">
+				<a href="https://www.tiktok.com/@babacoiffure?lang=en" target="_blank" rel="noopener noreferrer"
+					class="text-white hover:text-primary-yellow transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded"
+					aria-label="Follow us on TikTok">
 					<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-						<path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.35 3.17-5.35 3.21-1.43-.07-2.83-.44-4.08-1.03-2.02-.87-3.44-2.71-3.65-4.82-.42-4.07 2.67-7.42 6.71-7.65.76-.04 1.56.04 2.28.23.01-.95-.01-1.89-.02-2.84z"/>
+						<path
+							d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.35 3.17-5.35 3.21-1.43-.07-2.83-.44-4.08-1.03-2.02-.87-3.44-2.71-3.65-4.82-.42-4.07 2.67-7.42 6.71-7.65.76-.04 1.56.04 2.28.23.01-.95-.01-1.89-.02-2.84z" />
 					</svg>
 				</a>
 			</div>
 			<p class="text-center text-soft-gray text-sm md:text-base leading-relaxed">
 				&copy; 2024 Babacoiffure. Tous droits réservés.
 			</p>
-			<nav class="mt-3 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4" role="navigation" aria-label="Footer navigation">
-				<a href="terms.html" class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded transition-all px-2 py-1">Conditions d'Utilisation</a>
+			<nav class="mt-3 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4" role="navigation"
+				aria-label="Footer navigation">
+				<a href="terms.html"
+					class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded transition-all px-2 py-1">Conditions
+					d'Utilisation</a>
 				<span class="hidden sm:inline-block text-soft-gray" aria-hidden="true">|</span>
-				<a href="support.html" class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded transition-all px-2 py-1">Support</a>
+				<a href="support.html"
+					class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded transition-all px-2 py-1">Support</a>
 				<span class="hidden sm:inline-block text-soft-gray" aria-hidden="true">|</span>
-				<a href="privacy.html" class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded transition-all px-2 py-1">Politique de Confidentialité</a>
+				<a href="privacy.html"
+					class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded transition-all px-2 py-1">Politique
+					de Confidentialité</a>
 			</nav>
 		</div>
 	</footer>
@@ -182,13 +238,13 @@
 				const successMessage = document.createElement('div');
 				successMessage.className = 'mt-4 p-4 bg-green-600 text-white rounded-lg text-center';
 				successMessage.textContent = 'Message envoyé ! Nous vous répondrons rapidement.';
-				
+
 				// Insert success message after the form
 				this.parentNode.insertBefore(successMessage, this.nextSibling);
-				
+
 				// Scroll to message
-				successMessage.scrollIntoView({ behavior: 'smooth' });
-				
+				successMessage.scrollIntoView({behavior: 'smooth'});
+
 				// Remove message after 5 seconds
 				setTimeout(() => {
 					successMessage.remove();
