@@ -48,34 +48,7 @@
 
 	<!-- Tailwind CSS CDN for rapid prototyping. For production, migrate to a build process. -->
 	<script src="https://cdn.tailwindcss.com"></script>
-	<script>
-		tailwind.config = {
-			theme: {
-				extend: {
-					colors: {
-						primary: {
-							red: '#f63988',
-							yellow: '#FBC217',
-						},
-						background: {
-							blue: '#333277',
-						},
-						soft: {
-							gray: '#f3f2f3',
-							pink: '#ebacca',
-						},
-						dark: {
-							text: '#1c1d22',
-						},
-					},
-					fontFamily: {
-						heading: ['Impact', 'Arial Black', 'sans-serif'],
-						body: ['Outfit', 'Arial', 'sans-serif'],
-					},
-				},
-			},
-		}
-	</script>
+	<script src="tailwind-config.js"></script>
 </head>
 
 <body class="bg-background-blue text-white font-body min-h-screen flex flex-col">
