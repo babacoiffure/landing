@@ -5,6 +5,13 @@
 	<!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-H9ERMN8HCX"></script>
 	<script>
+		if (location.hostname.includes('babacoiffure')) {
+			window.ENV_NEWSLETTER_ENDPOINT = "https://api-production-x1x1.onrender.com/trpc/api/newsletter.signup";
+		} else {
+			window.ENV_NEWSLETTER_ENDPOINT = "http://localhost:3001/trpc/api/newsletter.signup";
+		}
+	</script>
+	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag() {dataLayer.push(arguments);}
 		gtag('js', new Date());
@@ -259,7 +266,7 @@
 			event.preventDefault();
 			const email = document.getElementById('email-input').value;
 			const formMessage = document.getElementById('form-message');
-			const endpoint = window.ENV_NEWSLETTER_ENDPOINT || 'http://localhost:3001/trpc/api/newsletter/signup';
+			const endpoint = window.ENV_NEWSLETTER_ENDPOINT
 
 			try {
 				const response = await fetch(endpoint, {
