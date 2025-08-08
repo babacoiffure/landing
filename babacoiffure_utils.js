@@ -68,6 +68,21 @@ window.translations.en = {
   social: {
     title: "Follow Us",
     subtitle: "Stay connected with our latest updates and hair styling tips"
+  },
+  ai_page: {
+    hero: {
+      title: "Discover Babacoiffure AI",
+      tagline: "Manage your appointments directly via Instagram DM with our artificial intelligence."
+    },
+    features: {
+      title: "Key AI Features"
+    },
+    newsletter: {
+      title: "Sign Up for Our AI Newsletter",
+      description: "Be the first to know about the latest advancements in our AI and new features.",
+      placeholder: "Your email address",
+      button: "Sign Up"
+    }
   }
 };
 window.translations.fr = {
@@ -120,6 +135,21 @@ window.translations.fr = {
   social: {
     title: "Suivez-nous",
     subtitle: "Restez connecté avec nos dernières actualités et conseils de coiffure"
+  },
+  ai_page: {
+    hero: {
+      title: "Découvrez l'IA Babacoiffure",
+      tagline: "Gérez vos rendez-vous directement via Instagram DM grâce à notre intelligence artificielle."
+    },
+    features: {
+      title: "Fonctionnalités Clés de l'IA"
+    },
+    newsletter: {
+      title: "Inscrivez-vous à notre Newsletter IA",
+      description: "Soyez les premiers informés des dernières avancées de notre IA et des nouvelles fonctionnalités.",
+      placeholder: "Votre adresse email",
+      button: "S'inscrire"
+    }
   }
 };
 window.babacoiffureUtils = babacoiffureUtils; 
