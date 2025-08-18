@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://babacoiffure.com/</loc>
+    <lastmod>2024-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://babacoiffure.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://babacoiffure.com/" />
+  </url>
+  
+  <!-- AI Features Page -->
+  <url>
+    <loc>https://babacoiffure.com/ai.html</loc>
+    <lastmod>2024-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://babacoiffure.com/ai.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://babacoiffure.com/ai.html" />
+  </url>
+  
+  <!-- Tutorial Page -->
+  <url>
+    <loc>https://babacoiffure.com/tutorial.html</loc>
+    <lastmod>2024-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Support Page -->
+  <url>
+    <loc>https://babacoiffure.com/support.html</loc>
+    <lastmod>2024-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://babacoiffure.com/privacy.html</loc>
+    <lastmod>2024-08-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  
+  <!-- Terms of Service -->
+  <url>
+    <loc>https://babacoiffure.com/terms.html</loc>
+    <lastmod>2024-08-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  
+  <!-- Onboarding Success -->
+  <url>
+    <loc>https://babacoiffure.com/onboarding_success.html</loc>
+    <lastmod>2024-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <!-- Onboarding Refresh -->
+  <url>
+    <loc>https://babacoiffure.com/onboarding_refresh.html</loc>
+    <lastmod>2024-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+</urlset>
