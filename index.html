@@ -2,28 +2,50 @@
 <html lang="fr">
 
 <head>
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-H9ERMN8HCX"></script>
+	<!-- Google Analytics - Load after page load -->
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag() {dataLayer.push(arguments);}
-		gtag('js', new Date());
-
-		gtag('config', 'G-H9ERMN8HCX');
+		// Defer gtag loading for better performance
+		window.addEventListener('load', function() {
+			const script = document.createElement('script');
+			script.async = true;
+			script.src = 'https://www.googletagmanager.com/gtag/js?id=G-H9ERMN8HCX';
+			document.head.appendChild(script);
+			script.onload = function() {
+				gtag('js', new Date());
+				gtag('config', 'G-H9ERMN8HCX');
+			};
+		});
 	</script>
-	<script defer data-website-id="68ca9615a8961cfeecb603ec" data-domain="www.babacoiffure.com"
-		data-allow-localhost="true" src="https://datafa.st/js/script.js">
-		</script>
-	<!-- Google Tag Manager -->
-	<script>(function (w, d, s, l, i) {
-			w[l] = w[l] || []; w[l].push({
-				'gtm.start':
-					new Date().getTime(), event: 'gtm.js'
-			}); var f = d.getElementsByTagName(s)[0],
-				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-		})(window, document, 'script', 'dataLayer', 'GTM-M263XFHP');</script>
-	<!-- End Google Tag Manager -->
+	<!-- Analytics script - Load after page interaction -->
+	<script>
+		window.addEventListener('load', function() {
+			const script = document.createElement('script');
+			script.defer = true;
+			script.setAttribute('data-website-id', '68ca9615a8961cfeecb603ec');
+			script.setAttribute('data-domain', 'www.babacoiffure.com');
+			script.setAttribute('data-allow-localhost', 'true');
+			script.src = 'https://datafa.st/js/script.js';
+			document.head.appendChild(script);
+		});
+	</script>
+	<!-- Google Tag Manager - Load after user interaction -->
+	<script>
+		window.addEventListener('load', function() {
+			(function (w, d, s, l, i) {
+				w[l] = w[l] || []; w[l].push({
+					'gtm.start': new Date().getTime(), event: 'gtm.js'
+				}); 
+				const f = d.getElementsByTagName(s)[0];
+				const j = d.createElement(s);
+				const dl = l != 'dataLayer' ? '&l=' + l : ''; 
+				j.async = true; 
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; 
+				f.parentNode.insertBefore(j, f);
+			})(window, document, 'script', 'dataLayer', 'GTM-M263XFHP');
+		});
+	</script>
 	<!-- Essential Meta Tags -->
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -95,22 +117,54 @@
 	<meta name="msapplication-TileImage" content="logo.png" />
 
 	<!-- Preload Critical Resources -->
-	<link rel="preload" href="https://cdn.tailwindcss.com" as="script" />
-	<link rel="preload" href="https://unpkg.com/aos@2.3.4/dist/aos.css" as="style" />
 	<link rel="preload" href="logo.png" as="image" />
 	<link rel="preload" href="apple-logo-svgrepo-com.svg" as="image" />
 	<link rel="preload" href="playstore-svgrepo-com.svg" as="image" />
+	<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+	<link rel="preconnect" href="https://unpkg.com" />
+	<link rel="preconnect" href="https://www.googletagmanager.com" />
+	<link rel="preconnect" href="https://datafa.st" />
 
 	<!-- SEO Links -->
 	<link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 
-	<!-- External Stylesheets -->
-	<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+	<!-- Critical CSS for above-the-fold content -->
+	<style>
+		/* Critical CSS - Inline for immediate rendering */
+		body{margin:0;padding:0;font-family:system-ui,-apple-system,sans-serif;background-color:#1a202c;color:#fff;line-height:1.6}
+		header{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;background-color:#1a202c}
+		.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:3rem 1rem}
+		h1{font-size:clamp(2rem,5vw,4rem);font-weight:bold;margin:0 0 1rem;line-height:1.2}
+		.hero p{font-size:clamp(1rem,3vw,1.5rem);margin-bottom:2rem;max-width:600px}
+		button,a{cursor:pointer;transition:all 0.3s ease}
+		.app-badges-container{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-top:2rem}
+		@media (max-width:768px){header{padding:1rem}.hero{padding:2rem 1rem}}
+	</style>
+	
+	<!-- External Stylesheets - Load async -->
+	<link rel="preload" href="https://unpkg.com/aos@2.3.4/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+	<noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" /></noscript>
 
-	<!-- Tailwind CSS CDN for rapid prototyping. For production, migrate to a build process. -->
-	<script src="https://cdn.tailwindcss.com"></script>
-	<script src="babacoiffure_utils.js"></script>
-	<script src="tailwind-config.js"></script>
+	<!-- Load JavaScript after page load for better performance -->
+	<script>
+		window.addEventListener('load', function() {
+			// Load Tailwind CSS
+			const tailwindScript = document.createElement('script');
+			tailwindScript.src = 'https://cdn.tailwindcss.com';
+			document.head.appendChild(tailwindScript);
+			
+			// Load utilities after Tailwind
+			tailwindScript.onload = function() {
+				const utilsScript = document.createElement('script');
+				utilsScript.src = 'babacoiffure_utils.js';
+				document.head.appendChild(utilsScript);
+				
+				const configScript = document.createElement('script');
+				configScript.src = 'tailwind-config.js';
+				document.head.appendChild(configScript);
+			};
+		});
+	</script>
 </head>
 
 <body class="bg-background-blue text-white font-body">
@@ -124,7 +178,7 @@
 		<div class="flex-shrink-0 flex items-center">
 			<img src="logo.png" alt="Babacoiffure Logo"
 				class="h-12 md:h-20 w-auto filter brightness-0 invert transition-transform duration-300 hover:scale-105 hover:shadow-lg"
-				loading="eager" />
+				loading="eager" width="80" height="80" />
 		</div>
 		<div class="flex items-center justify-end w-full">
 			<a href="ai.html" id="ai-page-link"
@@ -156,7 +210,7 @@
 							class="flex items-center justify-center gap-2 no-underline w-full sm:w-auto focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded transition-all px-2 py-1"
 							aria-label="Download Babacoiffure on the App Store">
 							<img src="apple-logo-svgrepo-com.svg" alt="Apple App Store" class="h-10 w-auto"
-								loading="lazy" />
+								loading="lazy" width="40" height="40" />
 							<p id="app-store-btn"
 								class="bg-primary-yellow text-black font-bold rounded-full px-6 py-3 transition-colors shadow-lg hover:bg-primary-red hover:text-white">
 								Télécharger sur l'App Store</p>
@@ -164,7 +218,7 @@
 						<a class="flex items-center justify-center gap-2 no-underline opacity-70 cursor-not-allowed w-full sm:w-auto"
 							aria-disabled="true" tabindex="-1" aria-label="Coming soon to Google Play Store">
 							<img src="playstore-svgrepo-com.svg" alt="Google Play Store" class="h-10 w-auto"
-								loading="lazy" />
+								loading="lazy" width="40" height="40" />
 							<p id="play-store-btn"
 								class="bg-primary-yellow text-black font-bold rounded-full px-6 py-3 shadow-lg">
 								Bientôt disponible sur Android</p>
@@ -363,115 +417,95 @@
 		</div>
 	</footer>
 
-	<script>
-		// Language switcher logic with improved accessibility
-		const langSwitcher = document.getElementById('lang-switcher');
-		let currentLang = 'fr';
-
-		function updateAllTranslations(lang) {
-			// Update all elements with data-fr and data-en attributes
-			document.querySelectorAll('[data-fr][data-en]').forEach(el => {
-				el.textContent = el.getAttribute(`data-${lang}`);
-			});
-		}
-
-		function updateTestimonials(lang) {
-			updateAllTranslations(lang); // Ensure testimonials and their heading are updated
-			// Update testimonials section title (redundant, but safe)
-			const title = document.querySelector('.testimonials h2');
-			if (title) {
-				title.textContent = title.getAttribute(`data-${lang}`);
-			}
-			// Update all testimonial texts and authors
-			const testimonialTexts = document.querySelectorAll('.testimonials p[data-fr][data-en]');
-			testimonialTexts.forEach(text => {
-				text.textContent = text.getAttribute(`data-${lang}`);
-			});
-			const testimonialAuthors = document.querySelectorAll('.testimonials cite[data-fr][data-en]');
-			testimonialAuthors.forEach(author => {
-				author.textContent = author.getAttribute(`data-${lang}`);
-			});
-		}
-
-		function updateContent(lang) {
-			updateAllTranslations(lang); // Update all static translations
-			const t = window.translations && window.translations[lang];
-			if (!t) {
-				console.log('Translations not available yet, retrying...');
-				setTimeout(() => updateContent(lang), 200);
-				return;
-			}
-			// Hero
-			document.getElementById('hero-title').textContent = t.hero.title;
-			document.getElementById('hero-tagline').textContent = t.hero.tagline;
-			document.getElementById('app-store-btn').textContent = t.hero.app_store;
-			document.getElementById('play-store-btn').textContent = t.hero.play_store;
-			// Features (full)
-			if (t.features_full) {
-				// Clients
-				const clientFeatures = t.features_full.clients;
-				for (let i = 0; i < clientFeatures.length; i++) {
-					const el = document.getElementById(`feature-client-${i + 1}-title`);
-					if (el) el.innerHTML = `<b>${clientFeatures[i].title}:</b> ${clientFeatures[i].desc}`;
-				}
-				// Providers
-				const providerFeatures = t.features_full.providers;
-				for (let i = 0; i < providerFeatures.length; i++) {
-					const el = document.getElementById(`feature-provider-${i + 1}-title`);
-					if (el) el.innerHTML = `<b>${providerFeatures[i].title}:</b> ${providerFeatures[i].desc}`;
-				}
-				// Shared
-				const sharedFeatures = t.features_full.shared;
-				for (let i = 0; i < sharedFeatures.length; i++) {
-					const el = document.getElementById(`feature-shared-${i + 1}-title`);
-					if (el) el.innerHTML = `<b>${sharedFeatures[i].title}:</b> ${sharedFeatures[i].desc}`;
-				}
-				// Fallback: warn if mismatch
-				const clientEls = document.querySelectorAll('[id^="feature-client-"]');
-				const providerEls = document.querySelectorAll('[id^="feature-provider-"]');
-				const sharedEls = document.querySelectorAll('[id^="feature-shared-"]');
-				if (clientEls.length !== clientFeatures.length) console.warn('Mismatch in client features count');
-				if (providerEls.length !== providerFeatures.length) console.warn('Mismatch in provider features count');
-				if (sharedEls.length !== sharedFeatures.length) console.warn('Mismatch in shared features count');
-				// Set placeholder if missing translation
-				clientEls.forEach((el, i) => {if (!clientFeatures[i]) el.textContent = '[Traduction manquante]';});
-				providerEls.forEach((el, i) => {if (!providerFeatures[i]) el.textContent = '[Traduction manquante]';});
-				sharedEls.forEach((el, i) => {if (!sharedFeatures[i]) el.textContent = '[Traduction manquante]';});
-			}
-			// Features (old, fallback)
-			if (t.features) {
-				document.getElementById('feature-1-title').textContent = t.features[0].title;
-				document.getElementById('feature-1-desc').textContent = t.features[0].desc;
-				document.getElementById('feature-2-title').textContent = t.features[1].title;
-				document.getElementById('feature-2-desc').textContent = t.features[1].desc;
-				document.getElementById('feature-3-title').textContent = t.features[2].title;
-				document.getElementById('feature-3-desc').textContent = t.features[2].desc;
-			}
-			// Footer
-			document.getElementById('footer-terms').textContent = t.footer.terms;
-			document.getElementById('footer-support').textContent = t.footer.support;
-			document.getElementById('footer-privacy').textContent = t.footer.privacy;
-			document.getElementById('footer-copyright').innerHTML = `&copy; 2024 Babacoiffure. ${t.footer.copyright}`;
-			// Update tutorials CTA button
-			const tutorialsCta = document.getElementById('tutorials-cta-label');
-			if (tutorialsCta && t.hero.tutorials_cta) tutorialsCta.textContent = t.hero.tutorials_cta;
-			// Correction: retry if translation not yet available
-			if (!t.hero.tutorials_cta) {
-				setTimeout(() => updateContent(lang), 200);
-			}
-			updateTestimonials(lang);
-		}
-
-		langSwitcher.addEventListener('click', () => {
-			currentLang = currentLang === 'fr' ? 'en' : 'fr';
-			langSwitcher.textContent = currentLang.toUpperCase();
-			langSwitcher.setAttribute('aria-pressed', currentLang === 'en' ? 'true' : 'false');
-			updateContent(currentLang);
-			localStorage.setItem('lang', currentLang);
-		});
-
-		// On load, set language from localStorage or default
+	<script defer>
+		// Language switcher logic with improved accessibility - optimized for performance
 		document.addEventListener('DOMContentLoaded', () => {
+			const langSwitcher = document.getElementById('lang-switcher');
+			let currentLang = 'fr';
+
+			// Use requestAnimationFrame for DOM updates to improve performance
+			function updateAllTranslations(lang) {
+				requestAnimationFrame(() => {
+					document.querySelectorAll('[data-fr][data-en]').forEach(el => {
+						el.textContent = el.getAttribute(`data-${lang}`);
+					});
+				});
+			}
+
+			function updateTestimonials(lang) {
+				updateAllTranslations(lang);
+				requestAnimationFrame(() => {
+					const title = document.querySelector('.testimonials h2');
+					if (title) title.textContent = title.getAttribute(`data-${lang}`);
+					
+					const testimonialTexts = document.querySelectorAll('.testimonials p[data-fr][data-en]');
+					testimonialTexts.forEach(text => {
+						text.textContent = text.getAttribute(`data-${lang}`);
+					});
+					
+					const testimonialAuthors = document.querySelectorAll('.testimonials cite[data-fr][data-en]');
+					testimonialAuthors.forEach(author => {
+						author.textContent = author.getAttribute(`data-${lang}`);
+					});
+				});
+			}
+
+			function updateContent(lang) {
+				if (!window.translations || !window.translations[lang]) {
+					setTimeout(() => updateContent(lang), 100);
+					return;
+				}
+				
+				requestAnimationFrame(() => {
+					updateAllTranslations(lang);
+					const t = window.translations[lang];
+					
+					// Batch DOM updates for better performance
+					const updates = [
+						['hero-title', t.hero.title],
+						['hero-tagline', t.hero.tagline],
+						['app-store-btn', t.hero.app_store],
+						['play-store-btn', t.hero.play_store],
+						['footer-terms', t.footer.terms],
+						['footer-support', t.footer.support],
+						['footer-privacy', t.footer.privacy]
+					];
+					
+					updates.forEach(([id, text]) => {
+						const el = document.getElementById(id);
+						if (el) el.textContent = text;
+					});
+					
+					const copyrightEl = document.getElementById('footer-copyright');
+					if (copyrightEl) copyrightEl.innerHTML = `&copy; 2024 Babacoiffure. ${t.footer.copyright}`;
+					
+					const tutorialsCta = document.getElementById('tutorials-cta-label');
+					if (tutorialsCta && t.hero.tutorials_cta) tutorialsCta.textContent = t.hero.tutorials_cta;
+					
+					// Update features efficiently
+					if (t.features_full) {
+						const sections = [['client', t.features_full.clients], ['provider', t.features_full.providers], ['shared', t.features_full.shared]];
+						sections.forEach(([type, features]) => {
+							features.forEach((feature, i) => {
+								const el = document.getElementById(`feature-${type}-${i + 1}-title`);
+								if (el) el.innerHTML = `<b>${feature.title}:</b> ${feature.desc}`;
+							});
+						});
+					}
+					
+					updateTestimonials(lang);
+				});
+			}
+
+			langSwitcher.addEventListener('click', () => {
+				currentLang = currentLang === 'fr' ? 'en' : 'fr';
+				langSwitcher.textContent = currentLang.toUpperCase();
+				langSwitcher.setAttribute('aria-pressed', currentLang === 'en' ? 'true' : 'false');
+				updateContent(currentLang);
+				localStorage.setItem('lang', currentLang);
+			});
+
+			// Initialize language
 			const savedLang = localStorage.getItem('lang');
 			if (savedLang && (savedLang === 'en' || savedLang === 'fr')) {
 				currentLang = savedLang;
@@ -479,16 +513,27 @@
 				langSwitcher.setAttribute('aria-pressed', currentLang === 'en' ? 'true' : 'false');
 			}
 			updateContent(currentLang);
-			updateTestimonials(currentLang);
 		});
 	</script>
-	<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-	<script>
-		AOS.init({
-			once: true,
-			duration: 700,
-			easing: 'ease-out-cubic',
-		});
+	<script defer src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+	<script defer>
+		// Initialize AOS with intersection observer for better performance
+		function initAOS() {
+			if (typeof AOS !== 'undefined') {
+				AOS.init({
+					once: true,
+					duration: 700,
+					easing: 'ease-out-cubic',
+					disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+				});
+			}
+		}
+		
+		if (document.readyState === 'loading') {
+			document.addEventListener('DOMContentLoaded', initAOS);
+		} else {
+			initAOS();
+		}
 	</script>
 </body>
 
