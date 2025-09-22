@@ -35,7 +35,7 @@ window.translations.en = {
     clients: [
       { title: 'Provider & Service Discovery', desc: 'View hairstylist profiles and browse services.' },
       { title: 'Advanced Booking', desc: 'Select services, add-ons, variations, and book with an interactive calendar.' },
-      { title: 'Flexible Location', desc: 'Choose service at home or provider’s location.' },
+      { title: 'Flexible Location', desc: 'Choose service at home or provider\'s location.' },
       { title: 'Booking Summary', desc: 'Review all details before confirming.' },
       { title: 'Payments & Scheduling', desc: 'Pay securely, view appointment history, receive notifications, and reschedule.' },
     ],
@@ -104,10 +104,10 @@ window.translations.fr = {
       { title: 'Réservation avancée', desc: 'Sélectionnez des services, options, variantes et réservez via un calendrier interactif.' },
       { title: 'Lieu flexible', desc: 'Choisissez le service à domicile ou chez le prestataire.' },
       { title: 'Résumé de réservation', desc: 'Vérifiez tous les détails avant de confirmer.' },
-      { title: 'Paiements & planning', desc: 'Payez en toute sécurité, consultez l’historique, recevez des notifications et replanifiez.' },
+      { title: 'Paiements & planning', desc: 'Payez en toute sécurité, consultez l\'historique, recevez des notifications et replanifiez.' },
     ],
     providers: [
-      { title: 'Gestion des services & profil', desc: 'Créez, modifiez, supprimez des services avec tarification complexe et galerie d’images.' },
+      { title: 'Gestion des services & profil', desc: 'Créez, modifiez, supprimez des services avec tarification complexe et galerie d\'images.' },
       { title: 'Profil partageable', desc: 'Partagez un lien de réservation unique avec vos clients.' },
       { title: 'Disponibilité & rendez-vous', desc: 'Gérez le calendrier, acceptez/refusez les demandes, proposez de nouveaux créneaux.' },
       { title: 'Paiements & abonnements', desc: 'Connectez un compte bancaire, recevez des paiements, gérez les offres premium.' },
@@ -152,4 +152,4 @@ window.translations.fr = {
     }
   }
 };
-window.babacoiffureUtils = babacoiffureUtils; 
+window.babacoiffureUtils = babacoiffureUtils;
