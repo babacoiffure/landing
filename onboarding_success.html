@@ -11,106 +11,338 @@
 
 		gtag('config', 'G-H9ERMN8HCX');
 	</script>
-	<link rel="icon" type="image/png" href="logo.png" />
-	<link rel="apple-touch-icon" href="logo.png" />
-	<meta name="msapplication-TileImage" content="logo.png" />
+
+	<!-- Essential Meta Tags -->
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="description" content="Félicitations - Babacoiffure - Compte connecté avec succès" />
 	<meta name="keywords" content="paiement, compte, coiffure, réservation, coiffeurs, gestion" />
+	<meta name="author" content="Babacoiffure" />
+	<meta name="robots" content="noindex, nofollow" />
+
+	<!-- Favicon and App Icons -->
+	<link rel="icon" type="image/png" href="logo.png" />
+	<link rel="apple-touch-icon" href="logo.png" />
+	<meta name="msapplication-TileImage" content="logo.png" />
+
 	<title>Compte Connecté - Babacoiffure</title>
+
+	<!-- Preconnect for better performance -->
+	<link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin />
+
 	<script src="https://cdn.tailwindcss.com"></script>
 	<script src="tailwind-config.js"></script>
+
+	<style>
+		/* Animated check icon */
+		.success-icon {
+			width: 80px;
+			height: 80px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 48px;
+			margin: 0 auto 2rem;
+			animation: scaleIn 0.5s ease-out;
+			background: linear-gradient(135deg, #10b981, #059669);
+			color: white;
+		}
+
+		@keyframes scaleIn {
+			0% {
+				transform: scale(0);
+				opacity: 0;
+			}
+
+			50% {
+				transform: scale(1.1);
+			}
+
+			100% {
+				transform: scale(1);
+				opacity: 1;
+			}
+		}
+
+		.step-item {
+			transition: all 0.3s ease;
+		}
+
+		.step-item:hover {
+			transform: translateY(-4px);
+		}
+	</style>
 </head>
 
-<body>
-	<header>
-		<a href="index.html">
-			<img src="logo.png" alt="Babacoiffure Logo" class="logo" />
-		</a>
+<body class="bg-background-blue text-white font-body min-h-screen flex flex-col">
+	<!-- Header -->
+	<header class="w-full flex items-center justify-between px-4 md:px-12 py-4 md:py-8 bg-background-blue">
+		<div class="flex-shrink-0 flex items-center">
+			<a href="index.html">
+				<img src="logo.png" alt="Babacoiffure Logo"
+					class="h-12 md:h-20 w-auto filter brightness-0 invert transition-transform duration-300 hover:scale-105"
+					loading="eager" width="80" height="80" decoding="async" />
+			</a>
+		</div>
 	</header>
 
-	<div class="hero">
-		<div class="container">
-			<h1>Félicitations !</h1>
-			<p>Votre compte de paiement a été connecté avec succès à Babacoiffure</p>
-		</div>
-	</div>
+	<main class="flex-grow">
+		<!-- Hero Section -->
+		<section class="w-full flex flex-col items-center justify-center text-center py-12 md:py-16 px-4">
+			<div class="max-w-4xl mx-auto">
+				<div class="success-icon">✓</div>
+				<h1
+					class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-4 md:mb-6 text-white leading-tight">
+					Félicitations !
+				</h1>
+				<p class="text-base sm:text-lg md:text-xl lg:text-2xl text-soft-pink mb-6 md:mb-10">
+					Votre compte de paiement a été connecté avec succès à Babacoiffure
+				</p>
+			</div>
+		</section>
 
-	<div class="container">
-		<div class="success-section">
-			<div class="success-icon">✓</div>
-			<h2>Configuration Terminée</h2>
-			<p>Votre compte Stripe est maintenant connecté à la plateforme Babacoiffure. Vous pouvez désormais
-				recevoir
-				des paiements de vos clients directement via notre application.</p>
-		</div>
-
-		<div class="next-steps">
-			<h2>Prochaines Étapes</h2>
-
-			<div class="step-item">
-				<h3>Configurez vos services</h3>
-				<p>Accédez à votre tableau de bord pour configurer les services que vous proposez, leurs durées et
-					leurs
-					tarifs.</p>
+		<!-- Success Details Section -->
+		<section class="w-full max-w-5xl mx-auto px-4 sm:px-6 py-8">
+			<div class="bg-white rounded-3xl p-6 md:p-10 shadow-xl mb-8">
+				<h2 class="text-2xl md:text-3xl font-heading font-bold mb-4 text-primary-red text-center">
+					Configuration Terminée
+				</h2>
+				<p class="text-base md:text-lg text-dark-text text-center leading-relaxed">
+					Votre compte Stripe est maintenant connecté à la plateforme Babacoiffure. Vous pouvez désormais
+					recevoir des paiements de vos clients directement via notre application.
+				</p>
+				<div id="account-info-container" class="text-center mt-4"></div>
 			</div>
 
-			<div class="step-item">
-				<h3>Définissez vos disponibilités</h3>
-				<p>Mettez à jour votre calendrier avec vos heures d'ouverture et blocages pour les rendez-vous
-					personnels.</p>
+			<!-- Next Steps Section -->
+			<div class="bg-white rounded-3xl p-6 md:p-10 shadow-xl mb-8">
+				<h2 class="text-2xl md:text-3xl font-heading font-bold mb-8 text-primary-yellow text-center">
+					Prochaines Étapes
+				</h2>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+					<div
+						class="step-item bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-6 shadow-md border border-gray-200">
+						<div class="flex items-start gap-4">
+							<span class="text-3xl flex-shrink-0">🛠️</span>
+							<div>
+								<h3 class="text-lg md:text-xl font-heading font-bold text-primary-red mb-2">
+									Configurez vos services
+								</h3>
+								<p class="text-dark-text text-sm md:text-base">
+									Accédez à votre tableau de bord pour configurer les services que vous
+									proposez, leurs durées et leurs tarifs.
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div
+						class="step-item bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-6 shadow-md border border-gray-200">
+						<div class="flex items-start gap-4">
+							<span class="text-3xl flex-shrink-0">⏰</span>
+							<div>
+								<h3 class="text-lg md:text-xl font-heading font-bold text-primary-red mb-2">
+									Définissez vos disponibilités
+								</h3>
+								<p class="text-dark-text text-sm md:text-base">
+									Mettez à jour votre calendrier avec vos heures d'ouverture et blocages pour
+									les rendez-vous personnels.
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div
+						class="step-item bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-6 shadow-md border border-gray-200">
+						<div class="flex items-start gap-4">
+							<span class="text-3xl flex-shrink-0">📸</span>
+							<div>
+								<h3 class="text-lg md:text-xl font-heading font-bold text-primary-red mb-2">
+									Personnalisez votre profil
+								</h3>
+								<p class="text-dark-text text-sm md:text-base">
+									Ajoutez des photos de vos travaux et complétez votre profil pour attirer
+									plus de clients.
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div
+						class="step-item bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-6 shadow-md border border-gray-200">
+						<div class="flex items-start gap-4">
+							<span class="text-3xl flex-shrink-0">🔗</span>
+							<div>
+								<h3 class="text-lg md:text-xl font-heading font-bold text-primary-red mb-2">
+									Partagez votre lien de réservation
+								</h3>
+								<p class="text-dark-text text-sm md:text-base">
+									Utilisez les outils de partage pour générer un lien de réservation pour vos
+									réseaux sociaux et clients existants.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 
-			<div class="step-item">
-				<h3>Personnalisez votre profil</h3>
-				<p>Ajoutez des photos de vos travaux et complétez votre profil pour attirer plus de clients.</p>
+			<!-- Action Buttons -->
+			<div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+				<a href="index.html"
+					class="bg-primary-yellow text-background-blue font-bold rounded-full px-8 py-4 text-lg shadow-xl hover:bg-primary-red hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 w-full sm:w-auto text-center">
+					Retour à l'accueil
+				</a>
 			</div>
+		</section>
+	</main>
 
-			<div class="step-item">
-				<h3>Partagez votre lien de réservation</h3>
-				<p>Utilisez les outils de partage pour générer un lien de réservation pour vos réseaux sociaux et
-					clients existants.</p>
-			</div>
-		</div>
-
-		<div class="nav-buttons">
-			<a href="index.html" class="btn">Retour à l'accueil</a>
-			<a href="#" class="btn" id="dashboardBtn">Accéder à mon tableau de bord</a>
-		</div>
-	</div>
-
-	<footer>
-		<div class="container">
-			<!-- Social Media Links in Footer -->
-			<div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 1rem;">
+	<!-- Footer -->
+	<footer class="bg-background-blue w-full py-8 px-4 sm:px-8 mt-auto" role="contentinfo">
+		<div class="max-w-4xl mx-auto flex flex-col items-center justify-center">
+			<!-- Social Media Links -->
+			<div class="flex items-center justify-center gap-4 mb-4">
 				<a href="https://www.instagram.com/babacoiffure/" target="_blank" rel="noopener noreferrer"
-					style="color: var(--white); text-decoration: none; transition: color 0.3s ease;"
+					class="text-white hover:text-primary-yellow transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded"
 					aria-label="Follow us on Instagram">
-					<svg style="width: 24px; height: 24px; fill: currentColor;" viewBox="0 0 24 24">
+					<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
 						<path
 							d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
 					</svg>
 				</a>
 				<a href="https://www.tiktok.com/@babacoiffure?lang=en" target="_blank" rel="noopener noreferrer"
-					style="color: var(--white); text-decoration: none; transition: color 0.3s ease;"
+					class="text-white hover:text-primary-yellow transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded"
 					aria-label="Follow us on TikTok">
-					<svg style="width: 24px; height: 24px; fill: currentColor;" viewBox="0 0 24 24">
+					<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
 						<path
 							d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.35 3.17-5.35 3.21-1.43-.07-2.83-.44-4.08-1.03-2.02-.87-3.44-2.71-3.65-4.82-.42-4.07 2.67-7.42 6.71-7.65.76-.04 1.56.04 2.28.23.01-.95-.01-1.89-.02-2.84z" />
 					</svg>
 				</a>
 			</div>
-			<p>&copy; 2024 Babacoiffure. Tous droits réservés. | <a href="terms.html"
-					style="color: var(--primary-red); text-decoration: none;">Conditions d'Utilisation</a> | <a
-					href="support.html" style="color: var(--primary-red); text-decoration: none;">Support</a> | <a
-					href="privacy.html" style="color: var(--primary-red); text-decoration: none;">Politique de
-					Confidentialité</a></p>
+			<p class="text-center text-soft-gray text-sm md:text-base mb-3">
+				&copy; 2024 Babacoiffure. Tous droits réservés.
+			</p>
+			<nav class="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4" role="navigation"
+				aria-label="Footer navigation">
+				<a href="terms.html"
+					class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded transition-all px-2 py-1">
+					Conditions d'Utilisation
+				</a>
+				<span class="hidden sm:inline-block text-soft-gray" aria-hidden="true">|</span>
+				<a href="support.html"
+					class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded transition-all px-2 py-1">
+					Support
+				</a>
+				<span class="hidden sm:inline-block text-soft-gray" aria-hidden="true">|</span>
+				<a href="privacy.html"
+					class="text-primary-red hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-background-blue rounded transition-all px-2 py-1">
+					Politique de Confidentialité
+				</a>
+			</nav>
 		</div>
 	</footer>
 
 	<script>
+		// Translations
+		const translations = {
+			fr: {
+				title: 'Félicitations !',
+				subtitle: 'Votre compte de paiement a été connecté avec succès à Babacoiffure',
+				configTitle: 'Configuration Terminée',
+				configDesc: 'Votre compte Stripe est maintenant connecté à la plateforme Babacoiffure. Vous pouvez désormais recevoir des paiements de vos clients directement via notre application.',
+				accountSuccess: 'connecté avec succès!',
+				nextSteps: 'Prochaines Étapes',
+				step1Title: 'Configurez vos services',
+				step1Desc: 'Accédez à votre tableau de bord pour configurer les services que vous proposez, leurs durées et leurs tarifs.',
+				step2Title: 'Définissez vos disponibilités',
+				step2Desc: 'Mettez à jour votre calendrier avec vos heures d\'ouverture et blocages pour les rendez-vous personnels.',
+				step3Title: 'Personnalisez votre profil',
+				step3Desc: 'Ajoutez des photos de vos travaux et complétez votre profil pour attirer plus de clients.',
+				step4Title: 'Partagez votre lien de réservation',
+				step4Desc: 'Utilisez les outils de partage pour générer un lien de réservation pour vos réseaux sociaux et clients existants.',
+				btnHome: 'Retour à l\'accueil',
+				copyright: 'Tous droits réservés.',
+				terms: 'Conditions d\'Utilisation',
+				support: 'Support',
+				privacy: 'Politique de Confidentialité'
+			},
+			en: {
+				title: 'Congratulations!',
+				subtitle: 'Your payment account has been successfully connected to Babacoiffure',
+				configTitle: 'Setup Complete',
+				configDesc: 'Your Stripe account is now connected to the Babacoiffure platform. You can now receive payments from your clients directly through our application.',
+				accountSuccess: 'successfully connected!'
+		teps: 'Next Steps',
+				step1Title: 'Configure your services',
+				step1Desc: 'Access your dashboard to configure the services you offer, their durations and prices.',
+				step2Title: 'Set your availability',
+				step2Desc: 'Update your calendar with your opening hours and blocks for personal appointments.',
+				step3Title: 'Customize your profile',
+				step3Desc: 'Add photos of your work and complete your profile to attract more clients.',
+				step4Title: 'Share your booking link',
+				step4Desc: 'Use sharing tools to generate a booking link for your social networks and existing clients.',
+				btnHome: 'Back to home',
+				copyright: 'All rights reserved.',
+				terms: 'Terms of Use',
+				support: 'Support',
+				privacy: 'Privacy Policy'
+			}
+		};
+
 		document.addEventListener("DOMContentLoaded", () => {
+			// Detect language from browser or localStorage
+			let currentLang = localStorage.getItem('lang') || (navigator.language.startsWith('fr') ? 'fr' : 'en');
+
+			// Update content based on language
+			function updateContent(lang) {
+				const t = translations[lang];
+
+				// Update main content
+				document.querySelector('h1').textContent = t.title;
+				document.querySelector('h1').nextElementSibling.textContent = t.subtitle;
+				document.querySelector('h2').textContent = t.configTitle;
+				document.querySelectorAll('section p')[0].textContent = t.configDesc;
+
+				// Update next steps
+				const nextStepsTitle = document.querySelectorAll('h2')[1];
+				if (nextStepsTitle) nextStepsTitle.textContent = t.nextSteps;
+
+				// Update step titles and descriptions
+				const steps = [
+					{ title: t.step1Title, desc: t.step1Desc },
+					{ title: t.step2Title, desc: t.step2Desc },
+					{ title: t.step3Title, desc: t.step3Desc },
+					{ title: t.step4Title, desc: t.step4Desc }
+				];
+
+				document.querySelectorAll('.step-item').forEach((item, index) => {
+					const h3 = item.querySelector('h3');
+					const p = item.querySelector('p');
+					if (h3 && steps[index]) h3.textContent = steps[index].title;
+					if (p && steps[index]) p.textContent = steps[index].desc;
+				});
+
+				// Update buttons
+				const homeBtn = document.querySelector('a[href="index.html"]');
+				if (homeBtn) homeBtn.textContent = t.btnHome;
+
+				// Update footer
+				const copyright = document.querySelector('footer p');
+				if (copyright) copyright.textContent = `© 2024 Babacoiffure. ${t.copyright}`;
+
+				const footerLinks = document.querySelectorAll('footer nav a');
+				if (footerLinks[0]) footerLinks[0].textContent = t.terms;
+				if (footerLinks[1]) footerLinks[1].textContent = t.support;
+				if (footerLinks[2]) footerLinks[2].textContent = t.privacy;
+
+				// Store language preference
+				localStorage.setItem('lang', lang);
+			}
+
+			// Initialize with detected language
+			updateContent(currentLang);
+
 			// Check for success parameters in URL
 			const urlParams = new URLSearchParams(window.location.search);
 			const success = urlParams.get('success');
@@ -125,18 +357,16 @@
 			// If coming from Stripe onboarding with success=true
 			if (success === 'true' && accountId) {
 				console.log('Onboarding successful for account:', accountId);
-				// You could store this in localStorage or send to your backend
 				localStorage.setItem('stripeAccountId', accountId);
 
-				// Add a special success message
-				const successSection = document.querySelector('.success-section');
-				if (successSection) {
+				// Add account info message
+				const container = document.getElementById('account-info-container');
+				if (container) {
 					const specialMessage = document.createElement('p');
-					specialMessage.style.color = 'var(--success-green)';
-					specialMessage.style.fontWeight = 'bold';
-					specialMessage.style.marginTop = '1rem';
-					specialMessage.innerText = `Compte #${accountId.substring(0, 8)}... connecté avec succès!`;
-					successSection.appendChild(specialMessage);
+					specialMessage.className = 'text-primary-red font-bold text-lg mt-4';
+					const t = translations[currentLang];
+					specialMessage.innerText = `${accountId.substring(0, 8)}... ${t.accountSuccess}`;
+					container.appendChild(specialMessage);
 				}
 			}
 
@@ -152,19 +382,6 @@
 					item.style.transform = 'translateY(0)';
 				}, 300 + (100 * index));
 			});
-
-			// For demonstration purposes, redirect to a dashboard URL
-			// In production, this would be your actual dashboard URL
-			const dashboardBtn = document.getElementById('dashboardBtn');
-			if (dashboardBtn) {
-				dashboardBtn.addEventListener('click', function (e) {
-					e.preventDefault();
-					// In a real implementation, replace with your actual dashboard URL
-					console.log('Redirecting to dashboard...');
-					// window.location.href = '/dashboard'; 
-					alert('Cette fonctionnalité sera disponible prochainement. Vous serez redirigé vers votre tableau de bord.');
-				});
-			}
 		});
 	</script>
 </body>
