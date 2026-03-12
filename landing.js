@@ -1,3 +1,169 @@
+const ACQUISITION_STORAGE_KEY = 'babacoiffure.landing.acquisition';
+const TRACKING_QUERY_KEYS = [
+	'utm_source',
+	'utm_medium',
+	'utm_campaign',
+	'utm_term',
+	'utm_content',
+	'fbclid',
+	'gclid',
+	'igshid',
+	'mc_cid',
+	'mc_eid'
+];
+
+function sanitizeString(value, maxLength = 1024) {
+	if (typeof value !== 'string') return undefined;
+	const trimmed = value.trim();
+	return trimmed ? trimmed.slice(0, maxLength) : undefined;
+}
+
+function normalizeReferrer(referrer) {
+	const normalized = sanitizeString(referrer);
+	if (!normalized) return undefined;
+
+	try {
+		const url = new URL(normalized);
+		return `${url.origin}${url.pathname}`.replace(/\/$/, '') || url.origin;
+	} catch {
+		return normalized;
+	}
+}
+
+function normalizePath(url) {
+	const sanitizedUrl = new URL(url.toString());
+	TRACKING_QUERY_KEYS.forEach(key => sanitizedUrl.searchParams.delete(key));
+	const search = sanitizedUrl.searchParams.toString();
+	return `${sanitizedUrl.pathname}${search ? `?${search}` : ''}`;
+}
+
+function inferSourceFromReferrer(referrer) {
+	if (!referrer) return '(direct)';
+
+	try {
+		const referrerUrl = new URL(referrer);
+		const currentHost = window.location.hostname.replace(/^www\./, '');
+		const referrerHost = referrerUrl.hostname.replace(/^www\./, '');
+		return referrerHost === currentHost ? '(direct)' : referrerHost;
+	} catch {
+		return undefined;
+	}
+}
+
+function inferMedium(referrer, source) {
+	if (source === '(direct)') return '(none)';
+	if (!referrer) return source ? undefined : '(none)';
+	return 'referral';
+}
+
+function readStoredAcquisition() {
+	try {
+		const storedValue = localStorage.getItem(ACQUISITION_STORAGE_KEY);
+		return storedValue ? JSON.parse(storedValue) : null;
+	} catch {
+		return null;
+	}
+}
+
+function mergeFirstTouchAcquisition(existing, incoming) {
+	if (!existing) return incoming;
+
+	const merged = { ...incoming };
+	Object.entries(existing).forEach(([key, value]) => {
+		if (typeof value === 'string' && value.trim()) {
+			merged[key] = value;
+		}
+	});
+	merged.clientSource = 'landing';
+	return merged;
+}
+
+function persistAcquisition(context) {
+	localStorage.setItem(ACQUISITION_STORAGE_KEY, JSON.stringify(context));
+}
+
+function stripTrackingParamsFromCurrentUrl() {
+	const currentUrl = new URL(window.location.href);
+	let hasTrackingParam = false;
+
+	TRACKING_QUERY_KEYS.forEach(key => {
+		if (currentUrl.searchParams.has(key)) {
+			currentUrl.searchParams.delete(key);
+			hasTrackingParam = true;
+		}
+	});
+
+	if (!hasTrackingParam) return;
+
+	const search = currentUrl.searchParams.toString();
+	const sanitizedUrl = `${currentUrl.pathname}${search ? `?${search}` : ''}${currentUrl.hash}`;
+	window.history.replaceState(window.history.state, '', sanitizedUrl);
+}
+
+function buildAcquisitionContext() {
+	const currentUrl = new URL(window.location.href);
+	const referrer = normalizeReferrer(document.referrer);
+	const source = sanitizeString(currentUrl.searchParams.get('utm_source')) || inferSourceFromReferrer(referrer);
+	const medium = sanitizeString(currentUrl.searchParams.get('utm_medium')) || inferMedium(referrer, source);
+
+	return {
+		clientSource: 'landing',
+		source,
+		medium,
+		campaign: sanitizeString(currentUrl.searchParams.get('utm_campaign')),
+		term: sanitizeString(currentUrl.searchParams.get('utm_term')),
+		content: sanitizeString(currentUrl.searchParams.get('utm_content')),
+		referrer,
+		landingPage: normalizePath(currentUrl),
+		initialUrl: `${currentUrl.origin}${normalizePath(currentUrl)}`,
+		fbclid: sanitizeString(currentUrl.searchParams.get('fbclid')),
+		gclid: sanitizeString(currentUrl.searchParams.get('gclid')),
+		capturedAt: new Date().toISOString()
+	};
+}
+
+function initializeLandingAcquisition() {
+	const merged = mergeFirstTouchAcquisition(
+		readStoredAcquisition(),
+		buildAcquisitionContext()
+	);
+	persistAcquisition(merged);
+	stripTrackingParamsFromCurrentUrl();
+	return merged;
+}
+
+function trackAppStoreClick(context, linkUrl) {
+	const payload = {
+		link_url: linkUrl,
+		acquisition_source: context?.source,
+		acquisition_medium: context?.medium,
+		acquisition_campaign: context?.campaign,
+		landing_page: context?.landingPage
+	};
+
+	if (typeof window.gtag === 'function') {
+		window.gtag('event', 'app_store_click', payload);
+	}
+
+	if (Array.isArray(window.dataLayer)) {
+		window.dataLayer.push({
+			event: 'app_store_click',
+			...payload
+		});
+	}
+}
+
+function bindAppStoreTracking() {
+	const context = readStoredAcquisition() || initializeLandingAcquisition();
+	document.querySelectorAll('a[href*="apps.apple.com"]').forEach(link => {
+		if (link.dataset.acquisitionBound === 'true') return;
+		link.dataset.acquisitionBound = 'true';
+		link.addEventListener('click', () => trackAppStoreClick(context, link.href));
+	});
+}
+
+initializeLandingAcquisition();
+
 document.addEventListener('DOMContentLoaded', () => {
 	const langSwitcher = document.getElementById('lang-switcher');
 	let currentLang = 'fr';
@@ -105,6 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	applyLanguageState(currentLang);
 	updateContent(currentLang);
+	bindAppStoreTracking();
 });
 
 function loadAOS() {
